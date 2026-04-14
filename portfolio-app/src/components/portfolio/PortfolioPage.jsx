@@ -11,7 +11,7 @@ import {
 } from '../../data/portfolioData.js'
 
 import PageWrapper from '../layout/PageWrapper.jsx'
-import Hero       from './Hero.jsx'
+import Hero       from './HeroOverview.jsx'
 import Projects   from './Projects.jsx'
 
 /**
