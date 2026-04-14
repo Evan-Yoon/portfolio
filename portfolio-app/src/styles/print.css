@@ -102,4 +102,33 @@
   .section-divider {
     border-color: #ccc !important;
   }
+
+  /* ── Project pages ──────────────────────────────────── */
+
+  /* Preserve background fills — must be on the element itself */
+  .project-page {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+
+    /* Fill the A4 content area (297mm minus 15mm top + 18mm bottom margins) */
+    min-height: 264mm !important;
+
+    /* Never split a project across pages */
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+
+    /* Flex column must be preserved for the middle zone to grow */
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Shrink title slightly so it reads cleanly at A4 scale */
+  .project-page h2 {
+    font-size: 16pt !important;
+  }
+
+  /* The growing middle grid must also be flex-compatible in print */
+  .project-page .flex-1 {
+    flex: 1 1 auto !important;
+  }
 }
