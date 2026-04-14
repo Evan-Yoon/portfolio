@@ -1,35 +1,48 @@
 import React from 'react'
 import {
   profile,
+  about,
   experience,
-  projects,
-  skills,
   education,
   certifications,
+  strengths,
+  projects,
+  seFit,
+  contact,
 } from '../../data/portfolioData.js'
 
 import PageWrapper   from '../layout/PageWrapper.jsx'
-import Header        from './Header.jsx'
-import Summary       from './Summary.jsx'
-import Experience    from './Experience.jsx'
+import Hero          from './Hero.jsx'
+import About         from './About.jsx'
+import CoreStrengths from './CoreStrengths.jsx'
 import Projects      from './Projects.jsx'
-import Skills        from './Skills.jsx'
-import Education     from './Education.jsx'
+import SEFit         from './SEFit.jsx'
+import Contact       from './Contact.jsx'
 
 /**
  * PortfolioPage
- * Composes all sections in vertical order.
- * This is the single entry point rendered by App.jsx.
+ * Vertical section order:
+ *   Hero → About → Core Strengths → Projects → SE Fit → Contact
  */
 export default function PortfolioPage() {
   return (
     <PageWrapper>
-      <Header profile={profile} />
-      <Summary summary={profile.summary} />
-      <Experience experience={experience} />
+      <Hero profile={profile} />
+
+      <About
+        about={about}
+        experience={experience}
+        education={education}
+        certifications={certifications}
+      />
+
+      <CoreStrengths strengths={strengths} />
+
       <Projects projects={projects} />
-      <Skills skills={skills} />
-      <Education education={education} certifications={certifications} />
+
+      <SEFit seFit={seFit} />
+
+      <Contact profile={profile} contact={contact} />
     </PageWrapper>
   )
 }

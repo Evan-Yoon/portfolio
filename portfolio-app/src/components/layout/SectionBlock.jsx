@@ -2,17 +2,24 @@ import React from 'react'
 
 /**
  * SectionBlock
- * Consistent padding + optional bottom divider for each portfolio section.
- * Add className="print-section" on the parent to avoid mid-section page breaks.
+ * Vertical rhythm wrapper for every portfolio section.
+ *
+ * Props:
+ *   label        – section label text (small-caps accent)
+ *   noDivider    – suppress the top hairline (use on the first section after Hero)
+ *   printBreak   – add print-break-before to force a new PDF page before this section
  */
-export default function SectionBlock({ title, children, noDivider = false }) {
+export default function SectionBlock({ label, noDivider = false, printBreak = false, children }) {
   return (
-    <section className="print-section px-8 py-6">
-      {title && (
-        <h2 className="section-title">{title}</h2>
-      )}
+    <section
+      className={[
+        'portfolio-section px-8 py-7',
+        printBreak ? 'print-break-before' : '',
+      ].join(' ')}
+    >
+      {!noDivider && <hr className="section-divider border-gray-200 mb-7" />}
+      {label && <h2 className="section-label">{label}</h2>}
       {children}
-      {!noDivider && <div className="divider" />}
     </section>
   )
 }

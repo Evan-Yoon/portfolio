@@ -1,67 +1,105 @@
-/* ──────────────────────────────────────────────
-   print.css  –  browser print / PDF export styles
-   Loaded globally via main.jsx
-   ────────────────────────────────────────────── */
+/* ────────────────────────────────────────────────────────
+   print.css  –  browser print / Save as PDF styles
+   Imported globally in main.jsx.
+   Target: A4 portrait, clean black-on-white output.
+   ──────────────────────────────────────────────────────── */
 
 @media print {
-  /* Page setup */
+
+  /* ── Page geometry ──────────────────────────────────── */
   @page {
     size: A4 portrait;
-    margin: 16mm 18mm;
+    margin: 15mm 20mm 18mm 20mm; /* top right bottom left */
   }
 
-  /* Reset screen-only decorations */
-  html,
-  body {
+  /* ── Reset screen chrome ────────────────────────────── */
+  html, body {
     background: #fff !important;
-    color: #000 !important;
-    font-size: 11pt;
+    color: #111 !important;
+    font-size: 10.5pt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
-  /* Hide controls that make no sense on paper */
+  /* Remove the screen card container — content fills the page directly */
+  .screen-wrapper {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .screen-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* ── Visibility ─────────────────────────────────────── */
   .no-print {
     display: none !important;
   }
 
-  /* Keep sections from splitting across pages where possible */
-  .print-section {
-    page-break-inside: avoid;
+  /* ── Page-break control ─────────────────────────────── */
+
+  /* Sections may span pages — but avoid orphan headings */
+  .portfolio-section {
+    break-inside: auto;
+  }
+
+  /* Heading + first item stay together */
+  .section-label {
+    break-after: avoid;
+  }
+
+  /* Individual items (cards, experience rows, SE-fit points) never split */
+  .print-keep {
     break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  /* Allow a deliberate page break before major sections */
+  /* Force a new page before a section when needed */
   .print-break-before {
-    page-break-before: always;
     break-before: page;
+    page-break-before: always;
   }
 
-  /* Flatten card shadows for print */
-  .shadow,
-  .shadow-sm,
-  .shadow-md,
-  .shadow-lg {
-    box-shadow: none !important;
+  /* ── Typography ─────────────────────────────────────── */
+  h1 { font-size: 20pt !important; }
+  h3 { font-size: 10.5pt !important; }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+    line-height: 1.6 !important;
   }
 
-  /* Ensure links show their URL in printed output */
+  /* ── Colour adjustments ─────────────────────────────── */
+  .text-brand-500,
+  .text-brand-600 {
+    color: #2440ab !important;
+  }
+
+  .section-label {
+    color: #2440ab !important;
+  }
+
+  /* ── Links: suppress URL expansion ─────────────────── */
+  /* URLs are already visible in the contact section.
+     Suppress the default browser "URL in parentheses" output. */
   a[href]::after {
-    content: " (" attr(href) ")";
-    font-size: 9pt;
-    color: #555;
+    content: "" !important;
   }
 
-  /* But skip icon links and internal anchors */
-  a[href^="#"]::after,
-  a.no-print-url::after {
-    content: "";
+  /* ── Tags: border instead of background fill ────────── */
+  .tag {
+    border: 0.5pt solid #2440ab !important;
+    background: transparent !important;
+    color: #2440ab !important;
+    padding: 0 3pt !important;
   }
 
-  /* Keep brand accent readable on white paper */
-  .text-brand-500 {
-    color: #2f4ac2 !important;
-  }
-
-  .border-brand-500 {
-    border-color: #2f4ac2 !important;
+  /* ── Borders and dividers ───────────────────────────── */
+  .section-divider {
+    border-color: #ccc !important;
   }
 }
