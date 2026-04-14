@@ -133,7 +133,7 @@ export default function SEFit({ seFit }) {
       headline: 'Customer-Centric Thinking',
       detail: 'Started from the problem, not the product',
       evidence: [
-        'Four years in HR operations means I've been the customer — responsible for onboarding, process gaps, and making vendor decisions under constraints.',
+        "Four years in HR operations means I've been the customer — responsible for onboarding, process gaps, and making vendor decisions under constraints.",
         'I evaluate solutions by asking what the user actually experiences, not what the feature list says.',
       ],
     },
