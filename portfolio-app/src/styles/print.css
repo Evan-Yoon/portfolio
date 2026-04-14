@@ -1,0 +1,67 @@
+/* ──────────────────────────────────────────────
+   print.css  –  browser print / PDF export styles
+   Loaded globally via main.jsx
+   ────────────────────────────────────────────── */
+
+@media print {
+  /* Page setup */
+  @page {
+    size: A4 portrait;
+    margin: 16mm 18mm;
+  }
+
+  /* Reset screen-only decorations */
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  /* Hide controls that make no sense on paper */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Keep sections from splitting across pages where possible */
+  .print-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Allow a deliberate page break before major sections */
+  .print-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Flatten card shadows for print */
+  .shadow,
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  /* Ensure links show their URL in printed output */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* But skip icon links and internal anchors */
+  a[href^="#"]::after,
+  a.no-print-url::after {
+    content: "";
+  }
+
+  /* Keep brand accent readable on white paper */
+  .text-brand-500 {
+    color: #2f4ac2 !important;
+  }
+
+  .border-brand-500 {
+    border-color: #2f4ac2 !important;
+  }
+}
