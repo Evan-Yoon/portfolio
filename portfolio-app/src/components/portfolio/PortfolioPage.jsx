@@ -27,7 +27,7 @@ import Contact       from './Contact.jsx'
 export default function PortfolioPage() {
   return (
     <PageWrapper>
-      <Hero profile={profile} />
+      <Hero profile={profile} strengths={strengths} />
 
       <About
         about={about}
