@@ -108,6 +108,7 @@ export default function Hero({ profile, strengths }) {
 
   return (
     <header
+      className="portfolio-hero"
       style={{
         backgroundColor: '#ffffff',
         WebkitPrintColorAdjust: 'exact',

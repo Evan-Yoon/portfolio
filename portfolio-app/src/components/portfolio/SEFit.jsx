@@ -159,7 +159,7 @@ export default function SEFit({ seFit }) {
 
   return (
     <div
-      className="print-break-before flex flex-col"
+      className="portfolio-full-page print-break-before flex flex-col"
       style={{
         backgroundColor: '#ffffff',
         minHeight: '920px',

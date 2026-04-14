@@ -123,7 +123,7 @@ function EduRow({ degree, institution, period }) {
 export default function About({ about, experience, education, certifications }) {
   return (
     <div
-      className="print-break-before flex flex-col"
+      className="portfolio-full-page print-break-before flex flex-col"
       style={{
         backgroundColor: '#ffffff',
         minHeight: '920px',

@@ -99,7 +99,7 @@ export default function Contact({ profile, contact }) {
 
   return (
     <div
-      className="print-break-before flex flex-col"
+      className="portfolio-full-page print-break-before flex flex-col"
       style={{
         backgroundColor: '#ffffff',
         minHeight: '920px',
