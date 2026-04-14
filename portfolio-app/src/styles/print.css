@@ -1,180 +1,53 @@
-/* ─────────────────────────────────────────────────────────────
-   print.css  –  browser print / Save as PDF
-   Target: A4 portrait, clean output.
-
-   Page map (5 pages):
-     1  Summary       (portfolio-hero)
-     2  Project 1     (project-page)
-     3  Project 2     (project-page)
-     4  Project 3     (project-page)
-     5  Project 4     (project-page)
-   ───────────────────────────────────────────────────────────── */
-
 @media print {
-
-  /* ── Page geometry ────────────────────────────────────────── */
   @page {
     size: A4 portrait;
-    margin: 15mm 20mm 18mm 20mm;
+    margin: 0;
   }
 
-  /* ── Global reset ─────────────────────────────────────────── */
-  *, *::before, *::after {
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  html, body {
-    background: #fff !important;
-    color: #111 !important;
-    font-size: 10.5pt !important;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* Remove screen card chrome */
   .screen-wrapper {
-    background: transparent !important;
+    background: #ffffff !important;
     padding: 0 !important;
     margin: 0 !important;
   }
 
   .screen-card {
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    width: 210mm !important;
+    max-width: none !important;
     margin: 0 !important;
-    padding: 0 !important;
+    box-shadow: none !important;
   }
 
-  /* ── Visibility ───────────────────────────────────────────── */
-  .no-print { display: none !important; }
-
-  /* ── Link URL suppression ─────────────────────────────────── */
-  a[href]::after { content: "" !important; }
-
-  /* ── Generic break utilities ──────────────────────────────── */
-  .print-break-before {
-    break-before: page !important;
-    page-break-before: always !important;
-  }
-
-  .print-keep {
+  .portfolio-hero,
+  .project-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
+    overflow: hidden !important;
   }
 
-  /* ── Typography ───────────────────────────────────────────── */
-  p, li {
-    orphans: 3;
-    widows: 3;
-    line-height: 1.6 !important;
-  }
-
-  /* ── Pill tags: border-only for print clarity ─────────────── */
-  .tag {
-    border: 0.5pt solid #2440ab !important;
-    background: transparent !important;
-    color: #2440ab !important;
-    padding: 0 3pt !important;
-  }
-
-  /* ══════════════════════════════════════════════════════════
-     SUMMARY PAGE (page 1)
-     The hero section fills exactly one A4 page.
-     break-after pushes projects to page 2.
-     ══════════════════════════════════════════════════════════ */
   .portfolio-hero {
-    min-height: 264mm !important;
-    height: 264mm !important;
     break-after: page !important;
     page-break-after: always !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    display: flex !important;
-    flex-direction: column !important;
-    background-color: #ffffff !important;
-    overflow: hidden !important;
   }
 
-  /* Inner content column must grow to fill the A4 height */
-  .portfolio-hero > div:last-child {
-    flex: 1 1 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    /* Tighten padding so more content fits in print */
-    padding-top: 22px !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Experience zone grows to push the bottom strip to the page foot */
-  .portfolio-hero .exp-zone {
-    flex: 1 1 auto !important;
-  }
-
-  /* ── Hero typography overrides ────────────────────────────── */
-  .portfolio-hero h1 {
-    font-size: 24pt !important;
-    line-height: 1.0 !important;
-  }
-
-  /* Bottom strip must bleed to the physical page margins */
-  .portfolio-hero .bottom-strip {
-    margin-left: -20mm !important;
-    margin-right: -20mm !important;
-    padding-left: 20mm !important;
-    padding-right: 20mm !important;
-  }
-
-  /* ══════════════════════════════════════════════════════════
-     PROJECT PAGES (pages 2–5)
-     One project = one A4 page. Content must never split.
-     ══════════════════════════════════════════════════════════ */
   .project-page {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    min-height: 264mm !important;
-    height: 264mm !important;
     break-before: page !important;
     page-break-before: always !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    display: flex !important;
-    flex-direction: column !important;
-    background-color: #ffffff !important;
-    overflow: hidden !important;
   }
 
-  /* Growing middle zone must stretch in print */
-  .project-page .flex-1 {
-    flex: 1 1 auto !important;
+  a[href]::after {
+    content: "" !important;
   }
-
-  /* Grids inside project pages */
-  .project-page .grid {
-    display: grid !important;
-  }
-
-  .project-page .grid-cols-2 {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  /* Scale headline to fit A4 column width */
-  .project-page h2 {
-    font-size: 15pt !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Project index badge */
-  .project-page .rounded-full {
-    border-radius: 999pt !important;
-  }
-
-  /* First project wrapper: the Projects div carries print-break-before,
-     so the first .project-page itself does not repeat the break. */
-  .print-break-before > div:first-child > .project-page {
-    break-before: avoid !important;
-    page-break-before: avoid !important;
-  }
-
 }

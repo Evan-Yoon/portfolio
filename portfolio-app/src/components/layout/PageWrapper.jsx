@@ -1,17 +1,11 @@
-import React from 'react'
+import React from "react";
 
-/**
- * PageWrapper
- * Screen: centres a white card on a light background.
- * Print:  .screen-wrapper and .screen-card are targeted by print.css
- *         to strip padding, shadow, and max-width so content fills the A4 page.
- */
 export default function PageWrapper({ children }) {
   return (
-    <div className="screen-wrapper min-h-screen bg-[#f0f2f5] py-10 px-4">
-      <main className="screen-card max-w-[720px] mx-auto bg-white shadow-[0_1px_4px_rgba(0,0,0,0.08)] rounded-md">
+    <div className="screen-wrapper min-h-screen bg-[#dfe3e8] px-4 py-8 print:bg-white print:p-0">
+      <div className="screen-card mx-auto w-[210mm] max-w-full overflow-hidden bg-white shadow-[0_18px_60px_rgba(15,23,42,0.10)] print:w-full print:max-w-none print:shadow-none">
         {children}
-      </main>
+      </div>
     </div>
-  )
+  );
 }
