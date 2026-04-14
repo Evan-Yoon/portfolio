@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ji Hyun Yoon Portfolio</title>
+    <meta name="description"
+        content="Ji Hyun Yoon — Sales Engineer Portfolio. Applied AI, product prototyping, and customer-facing solution design." />
+    <title>Ji Hyun Yoon — Portfolio 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./print.css" />
+    <link rel="stylesheet" href="./print.css" media="print" />
 </head>
 
 <body>
@@ -157,338 +163,296 @@
             </footer>
         </section>
 
-        <!-- PAGE 2 -->
-        <section class="page project-page project-blue">
-            <div class="project-accent"></div>
-
-            <header class="project-header">
-                <div>
-                    <p class="project-index">Project 01</p>
-                    <h2 class="project-title">WalkMate</h2>
-                    <p class="project-subtitle">AI Navigation for Visually Impaired</p>
+        <!-- PAGE 2 — WALKMATE: Navy split sidebar -->
+        <section class="page page-walkmate">
+            <aside class="wm-sidebar">
+                <p class="wm-num">01</p>
+                <p class="wm-eyebrow">Project 01</p>
+                <h2 class="wm-title">Walk<br>Mate</h2>
+                <p class="wm-subtitle">AI Navigation<br>for Visually<br>Impaired</p>
+                <div class="wm-tags">
+                    <span class="wm-tag">Accessibility</span>
+                    <span class="wm-tag">AI</span>
+                    <span class="wm-tag">Mobile</span>
                 </div>
-                <div class="project-meta">
-                    <p>Accessibility / AI / Mobile</p>
-                </div>
-            </header>
+            </aside>
 
-            <section class="project-hero">
-                <div class="project-opening">
-                    Safer pedestrian movement through real-time hazard detection and navigation logic.
-                </div>
-                <div class="project-visual">
-                    <img src="./assets/walkmate.png" alt="WalkMate preview" />
-                </div>
-            </section>
-
-            <section class="project-main-grid">
-                <div class="project-block tint-strong">
-                    <div class="block-title">The Problem</div>
-                    <p>
-                        Traditional navigation apps can guide routes, but they do not recognize real-world obstacles
-                        such as
-                        scooters, bollards, or street hazards. For visually impaired users, that gap becomes a direct
-                        safety
-                        issue.
-                    </p>
-                </div>
-
-                <div class="project-block tint-soft">
-                    <div class="block-title">The Solution</div>
-                    <p>
-                        WalkMate combines obstacle detection and navigation in one mobile experience. Instead of relying
-                        on
-                        unstable compass-heavy behavior, it uses direction-vector logic for clearer guidance and sends
-                        detected
-                        hazard data to the backend for reporting and follow-up.
-                    </p>
-
-                    <ul class="highlight-list">
-                        <li>Real-time hazard detection during walking</li>
-                        <li>Direction-vector navigation instead of compass-heavy UX</li>
-                        <li>Automatic hazard reporting pipeline with image + location</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="project-bottom-grid">
-                <div class="project-support">
-                    <div class="block-title">My Contribution</div>
-                    <ul class="bullet-list">
-                        <li>Led the overall mobile / backend / admin architecture</li>
-                        <li>Designed GPS direction calculation logic and navigation flow</li>
-                        <li>Connected detection, reporting, and data flow end to end</li>
-                    </ul>
-                </div>
-
-                <div class="project-support">
-                    <div class="block-title">Tech Stack</div>
-                    <div class="chip-wrap">
-                        <span class="chip">React</span>
-                        <span class="chip">Capacitor</span>
-                        <span class="chip">FastAPI</span>
-                        <span class="chip">Supabase (PostGIS)</span>
-                        <span class="chip">TFLite</span>
-                        <span class="chip">AWS S3</span>
+            <div class="wm-main">
+                <div class="wm-img-band">
+                    <div class="wm-hero-copy">
+                        <p class="wm-hero-kicker">Accessibility Solution Proposal</p>
+                        <h3 class="wm-hero-title">WalkMate는 시각장애인의 보행 문제를<br>기술 기반 안전 솔루션으로 재구성한 프로젝트입니다.</h3>
+                        <p class="wm-hero-text">실시간 위험 인지, 안전한 음성 안내, 현장 데이터 축적을 하나의 흐름으로 연결해
+                            PoC 수준의 end-to-end 제안으로 구현했습니다.</p>
+                    </div>
+                    <div class="wm-hero-brand">
+                        <img src="./assets/walkmate.png" alt="WalkMate preview" />
                     </div>
                 </div>
+                <div class="wm-body">
+                    <div class="wm-row wm-row-primary">
+                        <div class="wm-section wm-overview">
+                            <p class="wm-section-label">Project Overview</p>
+                            <p class="wm-keyline">문제는 길찾기 부족이 아니라, 전방 위험을 설명해주는 안내 공백이었습니다.</p>
+                            <p>기존 보조도구와 일반 내비게이션은 발밑 또는 경로 중심이라 실제 보행 중 마주치는 장애물,
+                                GPS 흔들림, 안내 신뢰성 문제를 충분히 해결하지 못했습니다.</p>
+                            <ul class="wm-list">
+                                <li>사용자 관점에서는 안전한 이동 경험의 부재</li>
+                                <li>운영 관점에서는 위험 데이터를 축적할 구조의 부재</li>
+                            </ul>
+                        </div>
+                        <div class="wm-section wm-solution">
+                            <p class="wm-section-label">Solution Architecture</p>
+                            <p class="wm-keyline">온디바이스 AI, Tmap, 음성 UX, 관리자 대시보드를 한 흐름으로 묶었습니다.</p>
+                            <p>앱에서 위험을 감지하고, 즉시 음성으로 행동을 안내하며, 동일한 이벤트를 운영 데이터로
+                                전환해 관리 화면까지 이어지도록 설계했습니다.</p>
+                            <ul class="wm-list">
+                                <li>지연을 줄이기 위한 온디바이스 추론 기반 위험 감지</li>
+                                <li>Tmap 경로와 방향 안내를 결합한 음성 중심 UX</li>
+                                <li>위험 이미지·좌표를 축적하는 관리자 대시보드 연동</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <div class="project-support tint-soft">
-                    <div class="block-title">Business Impact</div>
-                    <p>
-                        Demonstrates how AI can solve a real accessibility problem and scale into public safety or
-                        smart-city use
-                        cases.
-                    </p>
+                    <div class="wm-row wm-row-secondary">
+                        <div class="wm-section">
+                            <p class="wm-section-label">My Role &amp; Demo</p>
+                            <p class="wm-keyline">저는 팀장 겸 프론트엔드 담당으로, “어떻게 보여줄 것인가”를 설계했습니다.</p>
+                            <ul class="wm-list">
+                                <li>사용자 접점이 되는 모바일 UX와 데모 시나리오를 직접 설계</li>
+                                <li>모바일, AI, 백엔드, 관리자 화면을 연결한 end-to-end PoC 주도</li>
+                                <li>이해관계자별로 다른 가치 제안과 설명 포인트를 구성</li>
+                            </ul>
+                        </div>
+                        <div class="wm-section">
+                            <p class="wm-section-label">Technical Decisions</p>
+                            <p class="wm-keyline">트러블슈팅은 기능 수정이 아니라, 신뢰 가능한 데모와 운영성을 만드는 작업이었습니다.</p>
+                            <ul class="wm-list">
+                                <li>TTS 중복은 우선순위 큐로 정리해 사용자 피로도와 혼선을 줄였습니다.</li>
+                                <li>GPS 흔들림은 방향 안정화 로직으로 보정해 안내 신뢰성을 높였습니다.</li>
+                                <li>API 구조와 S3 권한 이슈를 정리해 연동 안정성과 데모 완성도를 높였습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="wm-team-inline">
+                        <span class="wm-team-inline-label">Team</span>
+                        <span class="wm-team-inline-item"><strong>윤지현</strong> UI/UX · Team Lead</span>
+                        <span class="wm-team-inline-item">이지호 Back-End</span>
+                        <span class="wm-team-inline-item">최현석 Model</span>
+                    </div>
+
+                    <div class="wm-impact">
+                        <p class="wm-section-label">Business Value</p>
+                        <p class="wm-keyline">같은 기술도 고객마다 다른 가치로 설명할 수 있어야 실제 제안이 됩니다.</p>
+                        <p>WalkMate를 단순 앱이 아닌 B2G/B2B형 보행 안전 솔루션으로 포지셔닝하며 TAM/SAM/SOM,
+                            수익 구조, 파트너십, ROI까지 함께 검토했습니다. 사용자에게는 안전한 이동 경험을,
+                            지자체에는 위험구역 관리 데이터를, PM 업체에는 운영 효율을, ESG 기업에는 측정 가능한
+                            사회적 임팩트를 제안했습니다.</p>
+                    </div>
                 </div>
-            </section>
+            </div>
         </section>
 
-        <!-- PAGE 3 -->
-        <section class="page project-page project-green">
-            <div class="project-accent"></div>
-
-            <header class="project-header">
+        <!-- PAGE 3 — ONBOARDING ASSISTANT: Forest green editorial -->
+        <section class="page page-onboarding">
+            <header class="ob-header">
                 <div>
-                    <p class="project-index">Project 02</p>
-                    <h2 class="project-title">Onboarding Assistant</h2>
-                    <p class="project-subtitle">HR-focused AI Assistant</p>
+                    <p class="ob-eyebrow">Project 02</p>
+                    <h2 class="ob-title">Onboarding<br>Assistant</h2>
+                    <p class="ob-subtitle">HR-focused AI Assistant · B2B SaaS / HR / AI</p>
                 </div>
-                <div class="project-meta">
-                    <p>B2B SaaS / HR / AI Assistant</p>
-                </div>
-            </header>
-
-            <section class="project-hero">
-                <div class="project-opening">
-                    A mobile-first onboarding assistant built to reduce confusion, repetitive HR work, and fragmented
-                    information for new employees.
-                </div>
-                <div class="project-visual">
+                <div class="ob-img-box">
                     <img src="./assets/onboarding.png" alt="Onboarding Assistant preview" />
                 </div>
-            </section>
-
-            <section class="project-main-grid">
-                <div class="project-block tint-strong">
-                    <div class="block-title">The Problem</div>
-                    <p>
-                        New hires often receive information in scattered documents and repeated verbal guidance. That
-                        creates
-                        friction for employees and recurring manual workload for HR teams.
-                    </p>
-                </div>
-
-                <div class="project-block tint-soft">
-                    <div class="block-title">The Solution</div>
-                    <p>
-                        This product combines FAQ cards, checklist flows, and AI chatbot support in one onboarding
-                        experience. It
-                        also includes fallback logic so the product remains usable even when AI responses fail.
-                    </p>
-
-                    <ul class="highlight-list">
-                        <li>FAQ, checklist, and chatbot in one onboarding flow</li>
-                        <li>Built from real HR pain points, not hypothetical use cases</li>
-                        <li>Fallback UX designed for reliability during AI failure</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="project-bottom-grid">
-                <div class="project-support">
-                    <div class="block-title">My Contribution</div>
-                    <ul class="bullet-list">
-                        <li>Defined the full user flow based on real onboarding operations</li>
-                        <li>Implemented chatbot integration and fallback interaction logic</li>
-                        <li>Positioned the product as a clear B2B SaaS use case</li>
-                    </ul>
-                </div>
-
-                <div class="project-support">
-                    <div class="block-title">Tech Stack</div>
-                    <div class="chip-wrap">
-                        <span class="chip">React Native (Expo)</span>
-                        <span class="chip">Node.js</span>
-                        <span class="chip">Express</span>
-                        <span class="chip">OpenAI API</span>
-                    </div>
-                </div>
-
-                <div class="project-support tint-soft">
-                    <div class="block-title">Business Impact</div>
-                    <p>
-                        Shows how AI can reduce operational friction and create measurable value in HR-facing enterprise
-                        workflows.
-                    </p>
-                </div>
-            </section>
-        </section>
-
-        <!-- PAGE 4 -->
-        <section class="page project-page project-purple">
-            <div class="project-accent"></div>
-
-            <header class="project-header">
-                <div>
-                    <p class="project-index">Project 03</p>
-                    <h2 class="project-title">Wedding AI</h2>
-                    <p class="project-subtitle">Data-driven Vendor Recommendation</p>
-                </div>
-                <div class="project-meta">
-                    <p>Recommendation / Data / AI</p>
-                </div>
             </header>
 
-            <section class="project-hero">
-                <div class="project-opening">
-                    A recommendation system that helps users make better wedding planning decisions through structured
-                    data,
-                    filtering, and AI-assisted guidance.
+            <div class="ob-body">
+                <p class="ob-lead">
+                    A mobile-first onboarding assistant built to eliminate the friction of fragmented
+                    documents, repeated verbal guidance, and first-week information overload.
+                </p>
+
+                <div class="ob-grid">
+                    <div class="ob-col">
+                        <div class="ob-section">
+                            <p class="ob-section-label">The Problem</p>
+                            <p>New hires get information scattered across documents and repeated verbal guidance —
+                                creating friction for employees and recurring manual burden for HR teams.</p>
+                        </div>
+                        <div class="ob-section">
+                            <p class="ob-section-label">The Solution</p>
+                            <p>Combines FAQ cards, checklist flows, and AI chatbot support in a single onboarding
+                                experience — with fallback logic for reliability when AI responses fail.</p>
+                            <ul class="ob-list">
+                                <li>FAQ, checklist, chatbot in one unified flow</li>
+                                <li>Built from real HR operations, not hypothetical cases</li>
+                                <li>Fallback UX designed for AI failure scenarios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ob-col">
+                        <div class="ob-section">
+                            <p class="ob-section-label">My Contribution</p>
+                            <ul class="ob-list">
+                                <li>Defined full user flow from real onboarding operations</li>
+                                <li>Built chatbot integration and fallback interaction logic</li>
+                                <li>Positioned product as a clear B2B SaaS use case</li>
+                            </ul>
+                        </div>
+                        <div class="ob-section">
+                            <p class="ob-section-label">Tech Stack</p>
+                            <div class="ob-chips">
+                                <span class="ob-chip">React Native (Expo)</span>
+                                <span class="ob-chip">Node.js</span>
+                                <span class="ob-chip">Express</span>
+                                <span class="ob-chip">OpenAI API</span>
+                            </div>
+                        </div>
+
+                        <div class="ob-impact-band">
+                            <p class="ob-section-label">Business Impact</p>
+                            <p>Shows how AI reduces operational friction and creates measurable value in HR-facing
+                                enterprise workflows.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-visual">
+            </div>
+        </section>
+
+        <!-- PAGE 4 — WEDDING AI: Burgundy luxury split -->
+        <section class="page page-wedding">
+            <div class="wa-left">
+                <p class="wa-eyebrow">Project 03</p>
+                <h2 class="wa-title">Wedding<br>AI</h2>
+                <p class="wa-subtitle">Data-driven Vendor Recommendation</p>
+                <div class="wa-divider"></div>
+                <p class="wa-lead">
+                    A recommendation system that helps users make confident wedding planning decisions
+                    through structured data, smart filtering, and AI-assisted guidance.
+                </p>
+
+                <p class="wa-section-label">The Problem</p>
+                <p>Wedding planning is full of fragmented information, inconsistent pricing, and difficult comparisons —
+                    making vendor selection slow, stressful, and opaque.</p>
+
+                <p class="wa-section-label" style="margin-top: 18px;">The Solution</p>
+                <p>Uses Supabase, vector embeddings, and AI-powered filtering to turn vague user requests into
+                    structured recommendation flows by category, region, and budget.</p>
+                <ul class="wa-list">
+                    <li>RAG-based recommendation architecture</li>
+                    <li>Natural language → structured search conditions</li>
+                    <li>Designed for high-friction, high-choice decisions</li>
+                </ul>
+            </div>
+
+            <div class="wa-right">
+                <p class="wa-panel-label">Preview</p>
+                <div class="wa-img-frame">
                     <img src="./assets/wedding-ai.png" alt="Wedding AI preview" />
                 </div>
-            </section>
 
-            <section class="project-main-grid">
-                <div class="project-block tint-strong">
-                    <div class="block-title">The Problem</div>
-                    <p>
-                        Wedding planning is full of fragmented information, inconsistent pricing, and difficult
-                        comparisons. That
-                        makes vendor selection slow, stressful, and opaque.
-                    </p>
-                </div>
-
-                <div class="project-block tint-soft">
-                    <div class="block-title">The Solution</div>
-                    <p>
-                        The system uses Supabase, vector embeddings, and AI-powered filtering by category, region, and
-                        budget to
-                        turn vague user requests into structured recommendation flows.
-                    </p>
-
-                    <ul class="highlight-list">
-                        <li>RAG-based recommendation architecture</li>
-                        <li>Natural language filters converted into structured search conditions</li>
-                        <li>Designed for high-friction, high-choice decision-making</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="project-bottom-grid">
-                <div class="project-support">
-                    <div class="block-title">My Contribution</div>
-                    <ul class="bullet-list">
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">My Contribution</p>
+                    <ul class="wa-panel-list">
                         <li>Designed schema and embedding pipeline across vendor data</li>
-                        <li>Implemented structured filter extraction from user queries</li>
-                        <li>Positioned the product as an AI-assisted decision support tool</li>
+                        <li>Implemented filter extraction from natural language queries</li>
+                        <li>Positioned as an AI-assisted decision support tool</li>
                     </ul>
                 </div>
 
-                <div class="project-support">
-                    <div class="block-title">Tech Stack</div>
-                    <div class="chip-wrap">
-                        <span class="chip">Supabase</span>
-                        <span class="chip">PostgreSQL</span>
-                        <span class="chip">pgvector</span>
-                        <span class="chip">Python</span>
-                        <span class="chip">OpenAI API</span>
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">Tech Stack</p>
+                    <div class="wa-panel-chips">
+                        <span class="wa-panel-chip">Supabase</span>
+                        <span class="wa-panel-chip">PostgreSQL</span>
+                        <span class="wa-panel-chip">pgvector</span>
+                        <span class="wa-panel-chip">Python</span>
+                        <span class="wa-panel-chip">OpenAI API</span>
                     </div>
                 </div>
 
-                <div class="project-support tint-soft">
-                    <div class="block-title">Business Impact</div>
-                    <p>
-                        Demonstrates how AI supports complex marketplace decisions where users need clarity, comparison,
-                        and
-                        confidence.
-                    </p>
+                <div class="wa-panel-impact">
+                    <p class="wa-panel-label">Business Impact</p>
+                    <p>Shows how AI supports complex marketplace decisions where users need clarity, structured
+                        comparison, and confidence before committing.</p>
                 </div>
-            </section>
+            </div>
         </section>
 
-        <!-- PAGE 5 -->
-        <section class="page project-page project-orange">
-            <div class="project-accent"></div>
+        <!-- PAGE 5 — SALARY CALCULATOR: Dark charcoal × amber -->
+        <section class="page page-salary">
+            <div class="sc-top-bar"></div>
 
-            <header class="project-header">
+            <header class="sc-header">
                 <div>
-                    <p class="project-index">Project 04</p>
-                    <h2 class="project-title">Salary Calculator</h2>
-                    <p class="project-subtitle">Shift-based Pay Optimization Tool</p>
+                    <p class="sc-eyebrow">Project 04</p>
+                    <h2 class="sc-title">Salary<br>Calculator</h2>
+                    <p class="sc-subtitle">Shift-based Pay Optimization Tool</p>
                 </div>
-                <div class="project-meta">
-                    <p>Business Logic / Mobile / Productivity</p>
+                <div class="sc-meta">
+                    <p>Business Logic</p>
+                    <p>Mobile</p>
+                    <p>Productivity</p>
                 </div>
             </header>
 
-            <section class="project-hero">
-                <div class="project-opening">
-                    A mobile app built to simplify salary calculation for shift workers who deal with overtime, night
-                    pay,
-                    holiday pay, and organization-specific rules.
-                </div>
-                <div class="project-visual">
+            <div class="sc-hero">
+                <p class="sc-lead">
+                    A mobile app that simplifies salary calculation for shift workers dealing with overtime,
+                    night pay, holiday pay, and organization-specific rules — removing the need to manually
+                    reconstruct payroll logic every month.
+                </p>
+                <div class="sc-img-box">
                     <img src="./assets/salary-calculator.png" alt="Salary Calculator preview" />
                 </div>
-            </section>
+            </div>
 
-            <section class="project-main-grid">
-                <div class="project-block tint-strong">
-                    <div class="block-title">The Problem</div>
-                    <p>
-                        Shift-based salary structures are difficult to calculate manually because each workplace can
-                        apply
-                        different combinations of night shifts, overtime, and holiday rules.
-                    </p>
-                </div>
-
-                <div class="project-block tint-soft">
-                    <div class="block-title">The Solution</div>
-                    <p>
-                        The product provides customizable pay rules, shift pattern handling, and reporting features so
-                        workers
-                        can understand complex payroll logic without manually reconstructing formulas every month.
-                    </p>
-
-                    <ul class="highlight-list">
-                        <li>Rule-driven pay calculation for real working conditions</li>
-                        <li>Shift pattern handling and reporting features</li>
-                        <li>Premium feature structure with monetization logic</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="project-bottom-grid">
-                <div class="project-support">
-                    <div class="block-title">My Contribution</div>
-                    <ul class="bullet-list">
-                        <li>Designed the rule-based calculation system</li>
-                        <li>Defined premium feature structure and access gating</li>
-                        <li>Turned operational complexity into usable product logic</li>
-                    </ul>
-                </div>
-
-                <div class="project-support">
-                    <div class="block-title">Tech Stack</div>
-                    <div class="chip-wrap">
-                        <span class="chip">Flutter</span>
-                        <span class="chip">Dart</span>
-                        <span class="chip">In-app Purchase</span>
+            <div class="sc-body">
+                <div class="sc-col">
+                    <div class="sc-section">
+                        <p class="sc-section-label">The Problem</p>
+                        <p>Shift-based salary structures are hard to calculate manually — each workplace applies
+                            different combinations of night shifts, overtime, and holiday rules with no standard
+                            formula.</p>
+                    </div>
+                    <div class="sc-section">
+                        <p class="sc-section-label">The Solution</p>
+                        <p>Customizable pay rules, shift pattern handling, and reporting so workers understand their
+                            payroll without rebuilding calculations from scratch every cycle.</p>
+                        <ul class="sc-list">
+                            <li>Rule-driven pay calculation for real conditions</li>
+                            <li>Shift pattern handling and monthly reporting</li>
+                            <li>Premium feature structure with monetization logic</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="project-support tint-soft">
-                    <div class="block-title">Business Impact</div>
-                    <p>
-                        Shows the ability to translate complicated business rules into scalable, understandable product
-                        logic for
-                        real-world users.
-                    </p>
+                <div class="sc-col">
+                    <div class="sc-section">
+                        <p class="sc-section-label">My Contribution</p>
+                        <ul class="sc-list">
+                            <li>Designed the rule-based calculation system</li>
+                            <li>Defined premium feature structure and access gating</li>
+                            <li>Translated operational complexity into usable product logic</li>
+                        </ul>
+                    </div>
+                    <div class="sc-section">
+                        <p class="sc-section-label">Tech Stack</p>
+                        <div class="sc-chips">
+                            <span class="sc-chip">Flutter</span>
+                            <span class="sc-chip">Dart</span>
+                            <span class="sc-chip">In-app Purchase</span>
+                        </div>
+                    </div>
+                    <div class="sc-impact-block">
+                        <p class="sc-section-label">Business Impact</p>
+                        <p>Demonstrates the ability to translate complicated business rules into scalable,
+                            understandable product logic for real-world users across diverse employment types.</p>
+                    </div>
                 </div>
-            </section>
+            </div>
         </section>
     </main>
 </body>
