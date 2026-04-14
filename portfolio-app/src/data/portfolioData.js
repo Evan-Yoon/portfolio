@@ -1,48 +1,62 @@
 // portfolioData.js
 
 export const profile = {
-  name: "Jihyun Yoon",
+  name: "Ji Hyun Yoon",
   title: "Sales Engineer",
-  tagline:
-    "Bridging real-world problems and AI-driven solutions through practical, deployable systems.",
   email: "wlgus1805@gmail.com",
-  phone: "+82 010-4008-8197",
+  phone: "010-4008-8197",
   location: "Yongin-si, South Korea",
   linkedin: "https://www.linkedin.com/in/jihyun-yoon-a436101a3",
   github: "https://github.com/Evan-Yoon",
+  githubDisplay: "github.com/Evan-Yoon",
+  homepage: "https://evan-yoon.com/",
+  homepageDisplay: "evan-yoon.com",
 };
 
 export const about = {
-  intro: `I transitioned from HR into AI and software development, which allows me to understand both business problems and technical solutions. 
+  intro: `I transitioned from HR into AI and software development, which allows me to understand both business problems and technical solutions.
 
 I focus on building practical, real-world systems rather than isolated technical demos, and I approach every project with a clear question: "Does this actually solve a meaningful problem?"
 
 My strength lies in connecting technical implementation with real user needs, and translating complex systems into clear, actionable value.`,
 };
 
+export const summary =
+  "Problem-solving professional with 6+ years of experience across hospitality HR/GA operations and Blizzard Entertainment support, now expanding into applied AI and software prototyping through Intel AI for Future Workforce. Brings a strong blend of structured communication, issue triage, onboarding delivery, and hands-on product building across React, Capacitor, FastAPI, and Python. With a focus on customer-facing environments, I have a proven ability to simplify intricate user issues into effective workflows and practical solutions.";
+
 export const experience = [
   {
     id: "exp-1",
-    company: "Josun Palace Hotel",
-    role: "HR & General Affairs",
-    period: "2021 – 2025",
-    location: "Seoul, South Korea",
+    company: "Intel AI for Future Workforce Program",
+    role: "AI / Software Development Trainee",
+    period: "Nov 2025 – Present",
+    location: "South Korea",
     bullets: [
-      "Managed onboarding processes and employee lifecycle operations",
-      "Coordinated internal workflows across departments and handled administrative operations",
-      "Identified inefficiencies in onboarding experience, which later led to building an AI-based onboarding assistant",
+      "Built multiple end-to-end AI-driven applications using React, Capacitor, FastAPI, and Supabase",
+      "Focused on real-world problem-solving: accessibility navigation, HR automation, and AI recommendation systems",
     ],
   },
   {
     id: "exp-2",
-    company: "Intel AI for Future Workforce Program",
-    role: "AI / Software Development Trainee",
-    period: "2025 – Present",
-    location: "South Korea",
+    company: "Josun Hotels & Resorts",
+    role: "HR / GA Agent",
+    period: "Feb 2022 – Jul 2025",
+    location: "Seoul, South Korea",
     bullets: [
-      "Built multiple end-to-end AI-driven applications using React, FastAPI, and Supabase",
-      "Worked on real-world problem-solving projects instead of isolated technical exercises",
-      "Focused on integrating AI into practical systems with clear user impact",
+      "Managed end-to-end recruitment for ~600 hires/year, raising hiring target attainment from 60% to 98%",
+      "Reduced annual turnover from 50% to 15% through strengthened onboarding and follow-up processes",
+      "Supported foreign employee visa administration, GA operations, and cross-department coordination",
+    ],
+  },
+  {
+    id: "exp-3",
+    company: "Blizzard Entertainment",
+    role: "Game Master",
+    period: "May 2019 – Dec 2021",
+    location: "Seoul, South Korea",
+    bullets: [
+      "Resolved gameplay, account, refund, and bug-related cases; improved customer satisfaction from 74% to 83%",
+      "Recognized as Employee of the Month; authored 60+ Wowhead walkthroughs rated 5/5 by users",
     ],
   },
 ];
@@ -50,19 +64,34 @@ export const experience = [
 export const education = [
   {
     id: "edu-1",
+    institution: "Hankuk University of Foreign Studies",
+    degree: "B.A. in Public Administration",
+    period: "Mar 2013 – Aug 2019",
+  },
+  {
+    id: "edu-2",
     institution: "Intel AI for Future Workforce",
-    degree: "AI / Software Development Training Program",
-    period: "2025 – Present",
+    degree: "Applied AI Training Program",
+    period: "Nov 2025 – May 2026",
   },
 ];
 
 export const certifications = [
-  {
-    id: "cert-1",
-    name: "AWS Certified AI Practitioner (AIF-C01)",
-    year: "2026",
-  },
+  { id: "cert-1", name: "AWS Certified AI Practitioner",             year: "Mar 2026" },
+  { id: "cert-2", name: "AWS Certified Cloud Practitioner",          year: "Feb 2026" },
+  { id: "cert-3", name: "Computer Specialist in Spreadsheet & DB L1", year: "May 2019" },
 ];
+
+export const languages = [
+  { id: "lang-1", language: "Korean", level: "Native" },
+  { id: "lang-2", language: "English", level: "Business Fluent — TOEIC 980, OPIc AL" },
+];
+
+export const skills = {
+  technical:  "React, JavaScript / TypeScript, React Native, Capacitor, FastAPI, Python, Supabase, AWS S3, PostGIS, Git / GitHub",
+  solutions:  "Issue triage, onboarding facilitation, technical documentation, workflow design, stakeholder communication, incident support",
+  operations: "Recruitment operations, visa coordination, vendor management, process documentation, cross-functional follow-through",
+};
 
 export const strengths = [
   {

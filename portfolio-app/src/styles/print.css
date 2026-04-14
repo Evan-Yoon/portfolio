@@ -81,7 +81,7 @@
 
   /* ══════════════════════════════════════════════════════════
      SUMMARY PAGE (page 1)
-     The hero section fills a full A4 page.
+     The hero section fills exactly one A4 page.
      break-after pushes projects to page 2.
      ══════════════════════════════════════════════════════════ */
   .portfolio-hero {
@@ -97,22 +97,33 @@
     overflow: hidden !important;
   }
 
-  /* The main content flex container inside hero */
+  /* Inner content column must grow to fill the A4 height */
   .portfolio-hero > div:last-child {
     flex: 1 1 auto !important;
     display: flex !important;
     flex-direction: column !important;
+    /* Tighten padding so more content fits in print */
+    padding-top: 22px !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Summary + Strengths grid stretches to fill remaining space */
-  .portfolio-hero > div:last-child > div[style*="grid"] {
+  /* Experience zone grows to push the bottom strip to the page foot */
+  .portfolio-hero .exp-zone {
     flex: 1 1 auto !important;
   }
 
   /* ── Hero typography overrides ────────────────────────────── */
   .portfolio-hero h1 {
-    font-size: 28pt !important;
+    font-size: 24pt !important;
     line-height: 1.0 !important;
+  }
+
+  /* Bottom strip must bleed to the physical page margins */
+  .portfolio-hero .bottom-strip {
+    margin-left: -20mm !important;
+    margin-right: -20mm !important;
+    padding-left: 20mm !important;
+    padding-right: 20mm !important;
   }
 
   /* ══════════════════════════════════════════════════════════

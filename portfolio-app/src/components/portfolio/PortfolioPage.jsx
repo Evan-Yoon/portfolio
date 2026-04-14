@@ -1,8 +1,12 @@
 import React from 'react'
 import {
   profile,
-  about,
-  strengths,
+  summary,
+  experience,
+  education,
+  certifications,
+  languages,
+  skills,
   projects,
 } from '../../data/portfolioData.js'
 
@@ -12,14 +16,22 @@ import Projects   from './Projects.jsx'
 
 /**
  * PortfolioPage
- * A4-based hiring document layout:
- *   Page 1  –  Summary (Hero)
+ * A4-based hiring document:
+ *   Page 1  –  Summary (Hero): photo, resume content, full URLs
  *   Page 2+ –  One project per page (Projects → ProjectPage)
  */
 export default function PortfolioPage() {
   return (
     <PageWrapper>
-      <Hero profile={profile} about={about} strengths={strengths} />
+      <Hero
+        profile={profile}
+        summary={summary}
+        experience={experience}
+        education={education}
+        certifications={certifications}
+        languages={languages}
+        skills={skills}
+      />
       <Projects projects={projects} />
     </PageWrapper>
   )

@@ -1,153 +1,140 @@
 import React from 'react'
 
-/* ─── icons (inline SVG, no extra deps) ────────────────────── */
+/* ─── constants ─────────────────────────────────────────────── */
+const ACCENT = '#2b4fbe'   /* blue, print-safe */
 
-function MailIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="4" width="20" height="16" rx="2"/>
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-    </svg>
-  )
+/* ─── tiny helpers ───────────────────────────────────────────── */
+
+function hex2rgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return `rgba(${r},${g},${b},${alpha})`
 }
 
-function GithubIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
-        0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466
-        -.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832
-        .092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688
-        -.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0
-        0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028
-        1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012
-        2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
-    </svg>
-  )
-}
-
-function LinkedinIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-      <rect x="2" y="9" width="4" height="12"/>
-      <circle cx="4" cy="4" r="2"/>
-    </svg>
-  )
-}
-
-/* ─── contact item ──────────────────────────────────────────── */
-
-function ContactItem({ icon, label, href }) {
-  const inner = (
-    <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#64748b', fontSize: '0.75rem' }}>
-      <span style={{ opacity: 0.65, display: 'flex' }}>{icon}</span>
-      <span>{label}</span>
-    </span>
-  )
-
-  if (!href) return inner
-
-  return (
-    <a
-      href={href}
-      target={href.startsWith('http') ? '_blank' : undefined}
-      rel="noreferrer"
-      style={{ textDecoration: 'none', color: 'inherit' }}
-    >
-      {inner}
-    </a>
-  )
-}
-
-/* ─── strength bullet ───────────────────────────────────────── */
-
-function StrengthBullet({ category, detail }) {
-  return (
-    <div style={{
-      display: 'flex',
-      gap: '12px',
-      padding: '10px 0',
-      borderBottom: '1px solid #f1f5f9',
-    }}>
-      {/* Dot */}
-      <div style={{
-        width: '6px',
-        height: '6px',
-        borderRadius: '50%',
-        backgroundColor: '#3b82f6',
-        marginTop: '5px',
-        flexShrink: 0,
-      }} />
-      <div>
-        <p style={{
-          fontSize: '0.68rem',
-          fontWeight: 700,
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-          color: '#1e293b',
-          marginBottom: '3px',
-        }}>
-          {category}
-        </p>
-        <p style={{ fontSize: '0.76rem', color: '#64748b', lineHeight: 1.5 }}>
-          {detail}
-        </p>
-      </div>
-    </div>
-  )
-}
+const tintBg     = hex2rgba(ACCENT, 0.055)
+const tintBorder = hex2rgba(ACCENT, 0.30)
 
 /* ─── section label ─────────────────────────────────────────── */
-
-function SectionLabel({ children }) {
+function SectionLabel({ children, style = {} }) {
   return (
     <p style={{
-      fontSize: '0.58rem',
+      fontSize: '0.56rem',
       fontWeight: 700,
       letterSpacing: '0.16em',
       textTransform: 'uppercase',
-      color: '#3b82f6',
-      marginBottom: '14px',
+      color: ACCENT,
+      marginBottom: '7px',
+      ...style,
     }}>
       {children}
     </p>
   )
 }
 
+/* ─── hairline rule (full width) ────────────────────────────── */
+function Rule({ style = {} }) {
+  return (
+    <div style={{
+      borderTop: `1px solid ${tintBorder}`,
+      marginBottom: '14px',
+      ...style,
+    }} />
+  )
+}
+
+/* ─── experience block ──────────────────────────────────────── */
+function ExpBlock({ role, company, period, location, bullets }) {
+  return (
+    <div style={{ marginBottom: '13px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '8px' }}>
+        <div>
+          <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#0f172a' }}>{role}</span>
+          <span style={{ color: '#94a3b8', margin: '0 6px', fontSize: '0.68rem' }}>|</span>
+          <span style={{ fontSize: '0.73rem', fontWeight: 600, color: '#334155' }}>{company}</span>
+        </div>
+        <span style={{ fontSize: '0.68rem', color: '#94a3b8', whiteSpace: 'nowrap', flexShrink: 0 }}>
+          {period}{location ? `  ·  ${location}` : ''}
+        </span>
+      </div>
+      <ul style={{ margin: '5px 0 0 0', padding: '0 0 0 14px', listStyle: 'disc' }}>
+        {bullets.map((b, i) => (
+          <li key={i} style={{
+            fontSize: '0.73rem',
+            lineHeight: 1.6,
+            color: '#475569',
+            marginBottom: i < bullets.length - 1 ? '2px' : 0,
+          }}>
+            {b}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+/* ─── education item ────────────────────────────────────────── */
+function EduItem({ degree, institution, period }) {
+  return (
+    <div style={{ marginBottom: '10px' }}>
+      <p style={{ fontSize: '0.72rem', fontWeight: 700, color: '#1e293b', marginBottom: '1px' }}>{degree}</p>
+      <p style={{ fontSize: '0.68rem', color: '#475569' }}>{institution}</p>
+      <p style={{ fontSize: '0.65rem', color: '#94a3b8' }}>{period}</p>
+    </div>
+  )
+}
+
+/* ─── cert item ─────────────────────────────────────────────── */
+function CertItem({ name, year }) {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '6px', marginBottom: '6px', alignItems: 'baseline' }}>
+      <p style={{ fontSize: '0.68rem', color: '#334155', lineHeight: 1.45 }}>{name}</p>
+      <span style={{ fontSize: '0.63rem', color: '#94a3b8', whiteSpace: 'nowrap', flexShrink: 0 }}>{year}</span>
+    </div>
+  )
+}
+
+/* ─── contact row item ──────────────────────────────────────── */
+function ContactPiece({ value, href }) {
+  const inner = (
+    <span style={{ fontSize: '0.71rem', color: '#334155', lineHeight: 1 }}>
+      {value}
+    </span>
+  )
+  /* Always wrap in a span so every item shares identical display/alignment */
+  return (
+    <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+      {href
+        ? <a href={href} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'inline-flex', alignItems: 'center' }}>{inner}</a>
+        : inner
+      }
+    </span>
+  )
+}
+
 /* ─── main component ────────────────────────────────────────── */
 
 /**
- * Hero  –  Summary Page (Page 1)
+ * Hero  –  Summary Page (Page 1)  –  full A4 resume layout
  *
- * Layout zones:
- *   Accent bar (multi-color gradient)
- *   Name block  – eyebrow / name / role / tagline
- *   Hairline divider
- *   Middle      – Professional Summary (left 3fr) | Key Strengths (right 2fr)
- *   Hairline divider
- *   Contact row – email · github · linkedin
+ * Zones:
+ *   Gradient accent bar
+ *   Header   photo ║ name / role / contact URLs
+ *   Tagline  tinted block
+ *   Rule
+ *   Professional Summary
+ *   Rule
+ *   Professional Experience   (3 jobs, 2–3 bullets each)
+ *   Rule
+ *   Bottom strip [Education | Skills & Tools | Certifications + Languages]
  */
-export default function Hero({ profile, about, strengths }) {
-  const { name, title, email, linkedin, github } = profile
-
-  /* Strength bullets: one bullet per category */
-  const bullets = strengths
-    ? strengths.map((s) => ({
-        category: s.category,
-        detail: s.items.slice(0, 2).join(' · '),
-      }))
-    : []
-
-  /* Split the about intro into its paragraph blocks */
-  const summaryParas = about?.intro
-    ? about.intro
-        .trim()
-        .split(/\n\n+/)
-        .map((p) => p.trim())
-        .filter(Boolean)
-    : []
+export default function Hero({ profile, summary, experience, education, certifications, languages, skills }) {
+  const {
+    name, title, email, phone,
+    github, githubDisplay,
+    homepage, homepageDisplay,
+    location,
+  } = profile
 
   return (
     <header
@@ -160,146 +147,199 @@ export default function Hero({ profile, about, strengths }) {
         printColorAdjust: 'exact',
       }}
     >
-      {/* ── Multi-color accent bar ──────────────────────── */}
-      <div
-        style={{
-          height: '5px',
-          background:
-            'linear-gradient(90deg, #3b82f6 0%, #22c55e 33%, #a855f7 66%, #f97316 100%)',
-          flexShrink: 0,
-        }}
-      />
+      {/* ── Multi-colour accent bar ──────────────────── */}
+      <div style={{
+        height: '5px',
+        background: 'linear-gradient(90deg, #3b82f6 0%, #22c55e 33%, #a855f7 66%, #f97316 100%)',
+        flexShrink: 0,
+      }} />
 
-      {/* ── Main content ────────────────────────────────── */}
-      <div style={{ padding: '44px 56px 0', flex: 1, display: 'flex', flexDirection: 'column' }}>
+      {/* ── Page content ────────────────────────────── */}
+      <div style={{
+        padding: '30px 50px 0',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
 
-        {/* ── Name block ──────────────────────────────── */}
-        <div style={{ marginBottom: '28px' }}>
-
-          {/* Eyebrow */}
-          <p style={{
-            fontSize: '0.56rem',
-            fontWeight: 600,
-            letterSpacing: '0.24em',
-            textTransform: 'uppercase',
-            color: '#94a3b8',
-            marginBottom: '14px',
-          }}>
-            Portfolio · 2026
-          </p>
-
-          {/* Name — visually dominant */}
-          <h1 style={{
-            fontSize: '3rem',
-            fontWeight: 800,
-            letterSpacing: '-0.035em',
-            lineHeight: 1.0,
-            color: '#0f172a',
-            marginBottom: '8px',
-          }}>
-            {name}
-          </h1>
-
-          {/* Role */}
-          <p style={{
-            fontSize: '0.98rem',
-            fontWeight: 600,
-            color: '#3b82f6',
-            letterSpacing: '0.015em',
-            marginBottom: '20px',
-          }}>
-            {title}
-          </p>
-
-          {/* Tagline — exact, tinted block */}
-          <div style={{
-            backgroundColor: 'rgba(59,130,246,0.06)',
-            borderLeft: '3px solid rgba(59,130,246,0.45)',
-            padding: '12px 18px',
-            maxWidth: '600px',
-          }}>
-            <p style={{
-              fontSize: '0.85rem',
-              lineHeight: 1.7,
-              color: '#334155',
-              fontStyle: 'italic',
-              margin: 0,
-            }}>
-              "I design solutions that not only work technically,<br />
-              but solve real problems people actually face."
-            </p>
-          </div>
-        </div>
-
-        {/* ── Divider ─────────────────────────────────── */}
-        <div style={{ borderTop: '1px solid #e2e8f0', marginBottom: '28px' }} />
-
-        {/* ── Summary + Strengths ─────────────────────── */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '3fr 2fr',
-          gap: '52px',
-          flex: 1,
-        }}>
-
-          {/* Left: Professional Summary */}
-          <div>
-            <SectionLabel>Professional Summary</SectionLabel>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {summaryParas.map((para, i) => (
-                <p
-                  key={i}
-                  style={{
-                    fontSize: '0.82rem',
-                    lineHeight: 1.75,
-                    color: '#475569',
-                    margin: 0,
-                  }}
-                >
-                  {para}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Key Strengths */}
-          <div>
-            <SectionLabel>Key Strengths</SectionLabel>
-            <div>
-              {bullets.map((b) => (
-                <StrengthBullet
-                  key={b.category}
-                  category={b.category}
-                  detail={b.detail}
-                />
-              ))}
-            </div>
-          </div>
-
-        </div>
-
-        {/* ── Divider ─────────────────────────────────── */}
-        <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '28px' }} />
-
-        {/* ── Contact row ─────────────────────────────── */}
+        {/* ── HEADER: photo + name/contact ──────────── */}
         <div style={{
           display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          gap: '24px',
-          padding: '18px 0',
+          gap: '26px',
+          alignItems: 'flex-start',
+          marginBottom: '18px',
         }}>
-          {email && (
-            <ContactItem icon={<MailIcon />} label={email} href={`mailto:${email}`} />
-          )}
-          {github && (
-            <ContactItem icon={<GithubIcon />} label="GitHub" href={github} />
-          )}
-          {linkedin && (
-            <ContactItem icon={<LinkedinIcon />} label="LinkedIn" href={linkedin} />
-          )}
+          {/* Photo */}
+          <img
+            src="/profile.jpg"
+            alt={name}
+            style={{
+              width: '86px',
+              height: '108px',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              flexShrink: 0,
+              border: '1px solid #e2e8f0',
+              display: 'block',
+            }}
+          />
+
+          {/* Name / role / contact */}
+          <div style={{ flex: 1 }}>
+            {/* Eyebrow */}
+            <p style={{
+              fontSize: '0.54rem',
+              fontWeight: 600,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: '#94a3b8',
+              marginBottom: '6px',
+            }}>
+              Portfolio · 2026
+            </p>
+
+            {/* Name */}
+            <h1 style={{
+              fontSize: '2.3rem',
+              fontWeight: 800,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.0,
+              color: '#0f172a',
+              marginBottom: '5px',
+            }}>
+              {name}
+            </h1>
+
+            {/* Role */}
+            <p style={{
+              fontSize: '0.88rem',
+              fontWeight: 600,
+              color: ACCENT,
+              letterSpacing: '0.01em',
+              marginBottom: '11px',
+            }}>
+              {title}
+            </p>
+
+            {/* Contact info — all plain-text URLs for PDF legibility */}
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              columnGap: '18px',
+              rowGap: '4px',
+            }}>
+              {email && (
+                <ContactPiece value={email} href={`mailto:${email}`} />
+              )}
+              {phone && (
+                <ContactPiece value={phone} />
+              )}
+              {homepageDisplay && (
+                <ContactPiece value={homepageDisplay} href={homepage} />
+              )}
+              {githubDisplay && (
+                <ContactPiece value={githubDisplay} href={github} />
+              )}
+              {location && (
+                <ContactPiece value={location} />
+              )}
+            </div>
+          </div>
         </div>
 
+        {/* ── TAGLINE ───────────────────────────────── */}
+        <div style={{
+          backgroundColor: tintBg,
+          borderLeft: `3px solid ${hex2rgba(ACCENT, 0.45)}`,
+          padding: '10px 16px',
+          marginBottom: '16px',
+        }}>
+          <p style={{
+            fontSize: '0.82rem',
+            lineHeight: 1.65,
+            color: '#1e3a6e',
+            fontStyle: 'italic',
+            margin: 0,
+          }}>
+            "I design solutions that not only work technically,
+            but solve real problems people actually face."
+          </p>
+        </div>
+
+        {/* ── PROFESSIONAL SUMMARY ──────────────────── */}
+        <div style={{ marginBottom: '16px' }}>
+          <SectionLabel>Professional Summary</SectionLabel>
+          <Rule style={{ marginBottom: '10px' }} />
+          <p style={{
+            fontSize: '0.75rem',
+            lineHeight: 1.72,
+            color: '#475569',
+            margin: 0,
+          }}>
+            {summary}
+          </p>
+        </div>
+
+        {/* ── PROFESSIONAL EXPERIENCE ───────────────── */}
+        <div className="exp-zone" style={{ marginBottom: '14px', flex: 1 }}>
+          <SectionLabel>Professional Experience</SectionLabel>
+          <Rule style={{ marginBottom: '10px' }} />
+          {experience.map((exp) => (
+            <ExpBlock key={exp.id} {...exp} />
+          ))}
+        </div>
+
+        {/* ── BOTTOM STRIP: 3 columns ───────────────── */}
+        <div className="bottom-strip" style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.4fr 1.1fr',
+          borderTop: `1px solid ${tintBorder}`,
+          backgroundColor: '#f8fafc',
+          marginLeft: '-50px',
+          marginRight: '-50px',
+          paddingLeft: '50px',
+          paddingRight: '50px',
+        }}>
+
+          {/* Col 1: Education */}
+          <div style={{ padding: '14px 20px 16px 0', borderRight: `1px solid ${tintBorder}` }}>
+            <SectionLabel>Education</SectionLabel>
+            {education.map((edu) => (
+              <EduItem key={edu.id} {...edu} />
+            ))}
+          </div>
+
+          {/* Col 2: Skills & Tools */}
+          <div style={{ padding: '14px 20px 16px 20px', borderRight: `1px solid ${tintBorder}` }}>
+            <SectionLabel>Skills &amp; Tools</SectionLabel>
+            {Object.entries(skills).map(([key, val]) => (
+              <div key={key} style={{ marginBottom: '7px' }}>
+                <p style={{ fontSize: '0.63rem', fontWeight: 700, color: '#334155', textTransform: 'capitalize', marginBottom: '2px' }}>
+                  {key}
+                </p>
+                <p style={{ fontSize: '0.67rem', color: '#64748b', lineHeight: 1.5 }}>{val}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Col 3: Certifications + Languages */}
+          <div style={{ padding: '14px 0 16px 20px' }}>
+            <SectionLabel>Certifications</SectionLabel>
+            {certifications.map((c) => (
+              <CertItem key={c.id} name={c.name} year={c.year} />
+            ))}
+
+            <SectionLabel style={{ marginTop: '10px' }}>Languages</SectionLabel>
+            {languages.map((l) => (
+              <div key={l.id} style={{ marginBottom: '4px' }}>
+                <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#334155' }}>{l.language}: </span>
+                <span style={{ fontSize: '0.68rem', color: '#64748b' }}>{l.level}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </header>
   )
