@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ji Hyun Yoon — Wedding AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../print.css" media="print" />
+</head>
+<body>
+    <nav class="portfolio-nav">
+        <a class="nav-logo" href="./index.html">Ji Hyun Yoon</a>
+        <div class="nav-links">
+            <a href="./index.html" class="nav-link">Home</a>
+            <a href="./walkmate.html" class="nav-link">WalkMate</a>
+            <a href="./onboarding.html" class="nav-link">Onboarding</a>
+            <a href="./wedding-ai.html" class="nav-link active">Wedding AI</a>
+            <a href="./salary-calculator.html" class="nav-link">Salary Calc</a>
+        </div>
+        <div class="nav-lang">
+            <span class="nav-lang-btn active">EN</span>
+            <a href="../ko/wedding-ai.html" class="nav-lang-btn">KO</a>
+        </div>
+    </nav>
+
+    <main class="portfolio portfolio-with-nav">
+        <section class="page page-wedding">
+            <div class="wa-left">
+                <p class="wa-eyebrow">Project 03</p>
+                <h2 class="wa-title">Wedding<br>AI</h2>
+                <p class="wa-subtitle">Data-driven Vendor Recommendation</p>
+                <div class="wa-divider"></div>
+                <p class="wa-lead">
+                    A recommendation system that helps users make confident wedding planning decisions
+                    through structured data, smart filtering, and AI-assisted guidance.
+                </p>
+
+                <p class="wa-section-label">The Problem</p>
+                <p>Wedding planning is full of fragmented information, inconsistent pricing, and difficult comparisons —
+                    making vendor selection slow, stressful, and opaque.</p>
+
+                <p class="wa-section-label" style="margin-top: 18px;">The Solution</p>
+                <p>Uses Supabase, vector embeddings, and AI-powered filtering to turn vague user requests into
+                    structured recommendation flows by category, region, and budget.</p>
+                <ul class="wa-list">
+                    <li>RAG-based recommendation architecture</li>
+                    <li>Natural language → structured search conditions</li>
+                    <li>Designed for high-friction, high-choice decisions</li>
+                </ul>
+            </div>
+
+            <div class="wa-right">
+                <p class="wa-panel-label">Preview</p>
+                <div class="wa-img-frame">
+                    <img src="../assets/wedding-ai.png" alt="Wedding AI preview" />
+                </div>
+
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">My Contribution</p>
+                    <ul class="wa-panel-list">
+                        <li>Designed schema and embedding pipeline across vendor data</li>
+                        <li>Implemented filter extraction from natural language queries</li>
+                        <li>Positioned as an AI-assisted decision support tool</li>
+                    </ul>
+                </div>
+
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">Tech Stack</p>
+                    <div class="wa-panel-chips">
+                        <span class="wa-panel-chip">Supabase</span>
+                        <span class="wa-panel-chip">PostgreSQL</span>
+                        <span class="wa-panel-chip">pgvector</span>
+                        <span class="wa-panel-chip">Python</span>
+                        <span class="wa-panel-chip">OpenAI API</span>
+                    </div>
+                </div>
+
+                <div class="wa-panel-impact">
+                    <p class="wa-panel-label">Business Impact</p>
+                    <p>Shows how AI supports complex marketplace decisions where users need clarity, structured
+                        comparison, and confidence before committing.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ji Hyun Yoon — Wedding AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../print.css" media="print" />
+</head>
+<body>
+    <nav class="portfolio-nav">
+        <a class="nav-logo" href="./index.html">Ji Hyun Yoon</a>
+        <div class="nav-links">
+            <a href="./index.html" class="nav-link">홈</a>
+            <a href="./walkmate.html" class="nav-link">WalkMate</a>
+            <a href="./onboarding.html" class="nav-link">온보딩</a>
+            <a href="./wedding-ai.html" class="nav-link active">Wedding AI</a>
+            <a href="./salary-calculator.html" class="nav-link">급여 계산기</a>
+        </div>
+        <div class="nav-lang">
+            <a href="../en/wedding-ai.html" class="nav-lang-btn">EN</a>
+            <span class="nav-lang-btn active">KO</span>
+        </div>
+    </nav>
+
+    <main class="portfolio portfolio-with-nav">
+        <section class="page page-wedding">
+            <div class="wa-left">
+                <p class="wa-eyebrow">Project 03</p>
+                <h2 class="wa-title">Wedding<br>AI</h2>
+                <p class="wa-subtitle">데이터 기반 업체 추천</p>
+                <div class="wa-divider"></div>
+                <p class="wa-lead">
+                    구조화된 데이터, 스마트 필터링, AI 안내를 통해 웨딩 플래닝 결정을
+                    자신 있게 내릴 수 있도록 돕는 추천 시스템입니다.
+                </p>
+
+                <p class="wa-section-label">문제</p>
+                <p>웨딩 플래닝은 파편화된 정보, 들쭉날쭉한 가격, 어려운 비교로 가득 차 있어
+                    업체 선택이 느리고 스트레스적이며 불투명합니다.</p>
+
+                <p class="wa-section-label" style="margin-top: 18px;">솔루션</p>
+                <p>Supabase, 벡터 임베딩, AI 필터링으로 막연한 요청을 카테고리·지역·예산별
+                    구조화된 추천 흐름으로 변환합니다.</p>
+                <ul class="wa-list">
+                    <li>RAG 기반 추천 아키텍처</li>
+                    <li>자연어 → 구조화된 검색 조건</li>
+                    <li>높은 마찰과 많은 선택이 있는 의사결정을 위해 설계</li>
+                </ul>
+            </div>
+
+            <div class="wa-right">
+                <p class="wa-panel-label">미리보기</p>
+                <div class="wa-img-frame">
+                    <img src="../assets/wedding-ai.png" alt="Wedding AI preview" />
+                </div>
+
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">기여</p>
+                    <ul class="wa-panel-list">
+                        <li>업체 데이터 전반의 스키마 및 임베딩 파이프라인 설계</li>
+                        <li>자연어 쿼리에서 필터 추출 구현</li>
+                        <li>AI 지원 의사결정 도구로 포지셔닝</li>
+                    </ul>
+                </div>
+
+                <div class="wa-panel-section">
+                    <p class="wa-panel-label">기술 스택</p>
+                    <div class="wa-panel-chips">
+                        <span class="wa-panel-chip">Supabase</span>
+                        <span class="wa-panel-chip">PostgreSQL</span>
+                        <span class="wa-panel-chip">pgvector</span>
+                        <span class="wa-panel-chip">Python</span>
+                        <span class="wa-panel-chip">OpenAI API</span>
+                    </div>
+                </div>
+
+                <div class="wa-panel-impact">
+                    <p class="wa-panel-label">비즈니스 임팩트</p>
+                    <p>AI가 명확성, 구조화된 비교, 확신이 필요한 복잡한 마켓플레이스 결정을
+                        어떻게 지원하는지 보여줍니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

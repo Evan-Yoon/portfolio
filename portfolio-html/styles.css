@@ -103,6 +103,95 @@ img {
 }
 
 /* ============================================================
+   NAVIGATION
+   ============================================================ */
+.portfolio-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: rgba(10, 13, 20, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 200;
+}
+
+.nav-logo {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    margin-right: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2px;
+}
+
+.nav-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: rgba(59, 110, 248, 0.18);
+}
+
+.nav-lang {
+    display: flex;
+    gap: 2px;
+    margin-left: 24px;
+}
+
+.nav-lang-btn {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.07em;
+    transition: color 0.15s, background 0.15s;
+}
+
+.nav-lang-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-lang-btn.active {
+    color: #ffffff;
+    background: rgba(59, 110, 248, 0.3);
+    pointer-events: none;
+}
+
+.portfolio-with-nav {
+    padding-top: 80px;
+}
+
+@media print {
+    .portfolio-nav { display: none; }
+    .portfolio-with-nav { padding-top: 48px; }
+}
+
+/* ============================================================
    PAGE SHELL
    ============================================================ */
 .page {
@@ -556,8 +645,20 @@ img {
     font-weight: 400;
 }
 
-.wm-tags {
+.wm-sidebar-stack {
     margin-top: auto;
+}
+
+.wm-sidebar-stack-label {
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 8px;
+}
+
+.wm-tags {
     display: flex;
     flex-direction: column;
     gap: 5px;

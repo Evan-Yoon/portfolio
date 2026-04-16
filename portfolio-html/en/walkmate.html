@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ji Hyun Yoon — WalkMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../print.css" media="print" />
+</head>
+<body>
+    <nav class="portfolio-nav">
+        <a class="nav-logo" href="./index.html">Ji Hyun Yoon</a>
+        <div class="nav-links">
+            <a href="./index.html" class="nav-link">Home</a>
+            <a href="./walkmate.html" class="nav-link active">WalkMate</a>
+            <a href="./onboarding.html" class="nav-link">Onboarding</a>
+            <a href="./wedding-ai.html" class="nav-link">Wedding AI</a>
+            <a href="./salary-calculator.html" class="nav-link">Salary Calc</a>
+        </div>
+        <div class="nav-lang">
+            <span class="nav-lang-btn active">EN</span>
+            <a href="../ko/walkmate.html" class="nav-lang-btn">KO</a>
+        </div>
+    </nav>
+
+    <main class="portfolio portfolio-with-nav">
+        <section class="page page-walkmate">
+            <aside class="wm-sidebar">
+                <p class="wm-num">01</p>
+                <p class="wm-eyebrow">Project 01</p>
+                <h2 class="wm-title">Walk<br>Mate</h2>
+                <p class="wm-subtitle">AI Navigation<br>for Visually<br>Impaired</p>
+                <div class="wm-sidebar-stack">
+                    <p class="wm-sidebar-stack-label">Tech Stack</p>
+                    <div class="wm-tags">
+                        <span class="wm-tag">React Native</span>
+                        <span class="wm-tag">Python</span>
+                        <span class="wm-tag">YOLOv8</span>
+                        <span class="wm-tag">AWS S3</span>
+                        <span class="wm-tag">PostGIS</span>
+                        <span class="wm-tag">FastAPI</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="wm-main">
+                <div class="wm-img-band">
+                    <div class="wm-hero-copy">
+                        <p class="wm-hero-kicker">Pre-Sales Solution Case</p>
+                        <h3 class="wm-hero-title">AI-Based Pedestrian Safety Solution<br>Scalable to B2G / B2B</h3>
+                        <ul class="wm-hero-list">
+                            <li>Walking risk structured as a proposable solution, not just a service</li>
+                            <li>Pre-sales project linking PoC, demo, and real operational data</li>
+                        </ul>
+                    </div>
+                    <div class="wm-hero-brand">
+                        <img src="../assets/walkmate.png" alt="WalkMate preview" />
+                    </div>
+                </div>
+                <div class="wm-body">
+                    <div class="wm-row">
+                        <div class="wm-section wm-overview">
+                            <p class="wm-section-label">Problem</p>
+                            <p class="wm-keyline">The gap isn't navigation — it's real-time hazard response</p>
+                            <ul class="wm-list">
+                                <li>Visually impaired users cannot detect obstacles ahead</li>
+                                <li>Existing navigation guides routes only</li>
+                                <li>Hazards are not factored in</li>
+                                <li>No infrastructure for pedestrian environment data</li>
+                                <li>Result: safety risk and operational blind spots co-exist</li>
+                            </ul>
+                        </div>
+                        <div class="wm-section wm-solution">
+                            <p class="wm-section-label">Solution</p>
+                            <p class="wm-keyline">Hazard detection + voice guidance + operational data logging</p>
+                            <ul class="wm-list">
+                                <li>On-device AI for real-time obstacle detection</li>
+                                <li>Voice-first pedestrian guidance</li>
+                                <li>Fully hands-free UX</li>
+                                <li>Hazard data → DB → admin dashboard pipeline</li>
+                                <li>User experience and operational visibility, both secured</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="wm-row">
+                        <div class="wm-section">
+                            <p class="wm-section-label">How It Works</p>
+                            <p class="wm-keyline">End-to-end flow demonstrable in front of any client</p>
+                            <ul class="wm-list">
+                                <li>Camera → AI detection</li>
+                                <li>Image → S3 upload</li>
+                                <li>Metadata → PostGIS storage</li>
+                                <li>Admin dashboard → real-time visualization</li>
+                                <li>One demo covers everything: hazard detection to ops dashboard</li>
+                            </ul>
+                        </div>
+                        <div class="wm-section">
+                            <p class="wm-section-label">My Role</p>
+                            <p class="wm-keyline">Team Lead / Frontend / Demo Architect</p>
+                            <ul class="wm-list">
+                                <li>User UX design</li>
+                                <li>Demo flow architecture</li>
+                                <li>Mobile · AI · backend end-to-end integration</li>
+                                <li>Customer-perspective explanation points</li>
+                                <li>Translated technical specs into adoption rationale</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="wm-row">
+                        <div class="wm-section">
+                            <p class="wm-section-label">Technical Decisions</p>
+                            <p class="wm-keyline">Tech decisions driven by customer-perceived value</p>
+                            <ul class="wm-list">
+                                <li>TTS Priority Queue → prevents voice conflicts</li>
+                                <li>TTS Priority Queue → reduces cognitive load</li>
+                                <li>Sensor Fusion → GPS + compass combined</li>
+                                <li>Sensor Fusion → direction stabilized</li>
+                                <li>RESTful API improvement → stable frontend/backend sync</li>
+                                <li>On-device AI → real-time detection without network</li>
+                            </ul>
+                        </div>
+                        <div class="wm-section">
+                            <p class="wm-section-label">Business Value</p>
+                            <p class="wm-keyline">Reasons clients will pay</p>
+                            <ul class="wm-list">
+                                <li>Local government → hazard zone monitoring</li>
+                                <li>Local government → reduced administrative cost</li>
+                                <li>Micro-mobility → lower scooter tow costs</li>
+                                <li>Micro-mobility → improved operational efficiency</li>
+                                <li>ESG companies → social value creation</li>
+                                <li>ESG companies → data-driven impact measurement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="wm-impact">
+                        <p class="wm-section-label">Sales Point</p>
+                        <p class="wm-keyline">Designed, explained, and demoed as someone who sells technology</p>
+                        <ul class="wm-list">
+                            <li>Experience translating technical specs into customer value</li>
+                            <li>End-to-end demo and PoC design experience</li>
+                            <li>Understands both technical and business structure</li>
+                            <li>Can explain from user, institutional, and enterprise perspectives</li>
+                            <li>Proposal experience including B2G / B2B expansion logic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
