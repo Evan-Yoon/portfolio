@@ -8,17 +8,137 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="../print.css" media="print" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --accent:#2563EB; --accent-light:#EFF6FF; --accent-mid:#BFDBFE;
+            --text-primary:#0F172A; --text-secondary:#475569; --text-muted:#94A3B8;
+            --bg:#ffffff; --bg-subtle:#F8FAFC; --border:#E2E8F0; --border-strong:#CBD5E1;
+            --shadow-sm:0 1px 3px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md:0 4px 20px rgba(0,0,0,0.08),0 2px 6px rgba(0,0,0,0.04);
+            --radius:12px; --radius-sm:8px;
+        }
+        body { font-family:'Pretendard','Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:var(--bg); color:var(--text-primary); line-height:1.6; -webkit-font-smoothing:antialiased; word-break:keep-all; }
+        .nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); padding:0 40px; height:56px; display:flex; align-items:center; justify-content:space-between; }
+        .nav-logo { font-size:14px; font-weight:700; color:var(--text-primary); text-decoration:none; }
+        .nav-links { display:flex; align-items:center; gap:2px; }
+        .nav-link { font-size:13px; font-weight:500; color:var(--text-secondary); text-decoration:none; padding:5px 10px; border-radius:6px; transition:color 0.15s,background 0.15s; }
+        .nav-link:hover { color:var(--text-primary); background:var(--bg-subtle); }
+        .nav-link.active { color:var(--accent); background:var(--accent-light); }
+        .nav-lang { display:flex; align-items:center; gap:2px; }
+        .nav-lang-btn { font-size:12px; font-weight:600; color:var(--text-muted); text-decoration:none; padding:4px 8px; border-radius:5px; cursor:pointer; transition:color 0.15s; }
+        .nav-lang-btn.active { color:var(--accent); }
+        .nav-lang-btn:hover { color:var(--text-primary); }
+        .container { max-width:1100px; margin:0 auto; padding:0 40px; }
+        section { padding:96px 0; }
+        section + section { border-top:1px solid var(--border); }
+        .section-label { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+        .section-label::before { content:''; display:block; width:18px; height:2px; background:var(--accent); border-radius:2px; }
+        .section-title { font-size:clamp(26px,3vw,34px); font-weight:700; letter-spacing:-0.02em; margin-bottom:10px; color:var(--text-primary); }
+        .section-desc { font-size:16px; color:var(--text-secondary); max-width:480px; line-height:1.65; }
+        .hero { padding:88px 0 80px; background:linear-gradient(170deg,#F0F6FF 0%,#ffffff 55%); }
+        .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent); background:var(--accent-light); border:1px solid var(--accent-mid); padding:5px 14px; border-radius:100px; margin-bottom:28px; }
+        .hero-title { font-size:clamp(36px,5vw,60px); font-weight:800; line-height:1.1; letter-spacing:-0.03em; color:var(--text-primary); margin-bottom:20px; max-width:780px; }
+        .hero-title .accent { color:var(--accent); }
+        .hero-sub { font-size:18px; font-weight:400; color:var(--text-secondary); max-width:500px; line-height:1.65; margin-bottom:60px; }
+        .compare { display:grid; grid-template-columns:1fr 48px 1fr; align-items:stretch; max-width:880px; }
+        .compare-col { border:1px solid var(--border); padding:28px 32px; }
+        .compare-col.before { border-radius:var(--radius) 0 0 var(--radius); background:#FAFAFA; border-right:none; }
+        .compare-col.after { border-radius:0 var(--radius) var(--radius) 0; background:#F0F7FF; border-left:none; border-color:var(--accent-mid); }
+        .compare-divider { display:flex; align-items:center; justify-content:center; background:var(--bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); color:var(--text-muted); }
+        .compare-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:3px 9px; border-radius:4px; margin-bottom:14px; }
+        .before .compare-badge { background:#E2E8F0; color:#64748B; }
+        .after .compare-badge { background:var(--accent); color:#fff; }
+        .compare-heading { font-size:15px; font-weight:600; color:var(--text-primary); margin-bottom:14px; line-height:1.35; }
+        .compare-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+        .compare-list li { font-size:13px; color:var(--text-secondary); display:flex; align-items:flex-start; gap:9px; line-height:1.5; }
+        .compare-list li::before { content:''; display:block; width:6px; height:6px; min-width:6px; border-radius:50%; margin-top:5px; }
+        .before .compare-list li::before { background:#CBD5E1; }
+        .after .compare-list li::before { background:var(--accent); }
+        .stack-strip { padding:20px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--bg-subtle); }
+        .stack-inner { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+        .stack-label { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-right:6px; }
+        .stack-tag { font-size:12px; font-weight:500; color:var(--text-secondary); background:var(--bg); border:1px solid var(--border); padding:4px 10px; border-radius:6px; }
+        .flow-section { background:var(--bg-subtle); }
+        .flow-track { display:flex; align-items:flex-start; gap:0; overflow-x:auto; padding-bottom:4px; margin-top:52px; }
+        .flow-node { display:flex; flex-direction:column; align-items:center; flex:1; min-width:130px; }
+        .flow-icon-box { width:62px; height:62px; border-radius:16px; background:#fff; border:1.5px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:14px; box-shadow:var(--shadow-sm); }
+        .flow-node.hl .flow-icon-box { border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-light),var(--shadow-sm); }
+        .flow-node-name { font-size:13px; font-weight:600; color:var(--text-primary); text-align:center; line-height:1.3; margin-bottom:4px; }
+        .flow-node-sub { font-size:11px; color:var(--text-muted); text-align:center; line-height:1.3; }
+        .flow-arr { display:flex; align-items:center; padding:0 4px; margin-bottom:42px; color:var(--border-strong); flex-shrink:0; }
+        .flow-decisions { margin-top:40px; padding-top:36px; border-top:1.5px dashed var(--border-strong); display:flex; align-items:flex-start; gap:20px; flex-wrap:wrap; }
+        .flow-decisions-label { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); padding-top:10px; white-space:nowrap; min-width:88px; }
+        .flow-chips { display:flex; gap:10px; flex-wrap:wrap; }
+        .flow-chip { background:#fff; border:1px solid var(--border); border-radius:var(--radius-sm); padding:9px 14px; font-size:13px; font-weight:500; color:var(--text-secondary); display:flex; align-items:center; gap:8px; }
+        .flow-chip .dot { width:7px; height:7px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+        .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px; }
+        .why-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:32px; box-shadow:var(--shadow-sm); }
+        .why-card-eyebrow { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px; }
+        .why-card-title { font-size:18px; font-weight:700; line-height:1.35; letter-spacing:-0.01em; margin-bottom:12px; color:var(--text-primary); }
+        .why-card-body { font-size:14px; color:var(--text-secondary); line-height:1.7; }
+        .why-callout { grid-column:1/-1; background:var(--bg-subtle); border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:var(--radius); padding:26px 32px; display:flex; align-items:flex-start; gap:18px; }
+        .why-callout-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+        .why-callout-text { font-size:15px; font-weight:500; color:var(--text-primary); line-height:1.65; }
+        .why-callout-text strong { color:var(--accent); }
+        .demo-section { background:#0F172A; }
+        .demo-section .section-label { color:#60A5FA; }
+        .demo-section .section-label::before { background:#60A5FA; }
+        .demo-section .section-title { color:#F1F5F9; }
+        .demo-section .section-desc { color:#94A3B8; }
+        .demo-steps { margin-top:52px; display:flex; flex-direction:column; gap:0; position:relative; }
+        .demo-steps::before { content:''; position:absolute; left:23px; top:28px; bottom:28px; width:2px; background:linear-gradient(180deg,#3B82F6 0%,#1D4ED8 100%); opacity:0.3; }
+        .demo-step { display:flex; gap:28px; padding-bottom:40px; position:relative; }
+        .demo-step:last-child { padding-bottom:0; }
+        .demo-step-num { width:48px; height:48px; min-width:48px; border-radius:50%; background:#1E293B; border:2px solid #334155; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:#60A5FA; position:relative; z-index:1; flex-shrink:0; }
+        .demo-step.hl .demo-step-num { background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 0 0 4px rgba(37,99,235,0.28); }
+        .demo-step-body { padding-top:10px; flex:1; }
+        .demo-step-tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#60A5FA; background:rgba(37,99,235,0.18); padding:2px 8px; border-radius:4px; margin-bottom:8px; }
+        .demo-step-title { font-size:16px; font-weight:600; color:#F1F5F9; margin-bottom:6px; line-height:1.35; }
+        .demo-step-desc { font-size:14px; color:#94A3B8; line-height:1.65; }
+        .demo-step-desc strong { color:#CBD5E1; font-weight:500; }
+        .bv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; }
+        .bv-card { border:1px solid var(--border); border-radius:var(--radius); padding:32px; background:var(--bg); box-shadow:var(--shadow-sm); transition:box-shadow 0.2s,border-color 0.2s,transform 0.2s; }
+        .bv-card:hover { box-shadow:var(--shadow-md); border-color:var(--accent-mid); transform:translateY(-2px); }
+        .bv-icon { font-size:28px; margin-bottom:20px; }
+        .bv-stakeholder { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+        .bv-title { font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:18px; line-height:1.35; letter-spacing:-0.01em; }
+        .bv-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+        .bv-list li { font-size:13px; color:var(--text-secondary); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+        .bv-list li::before { content:'→'; font-size:11px; color:var(--accent); font-weight:700; flex-shrink:0; margin-top:2px; }
+        .role-section { background:var(--bg-subtle); }
+        .role-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; }
+        .role-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:28px 28px 32px; box-shadow:var(--shadow-sm); }
+        .role-card-icon { width:40px; height:40px; border-radius:10px; background:var(--accent-light); display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:20px; }
+        .role-card-title { font-size:15px; font-weight:700; color:var(--text-primary); margin-bottom:14px; letter-spacing:-0.01em; }
+        .role-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
+        .role-list li { font-size:13px; color:var(--text-secondary); display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+        .role-list li::before { content:'·'; font-size:18px; color:var(--accent); line-height:1.1; flex-shrink:0; }
+        .role-banner { margin-top:24px; background:var(--accent); border-radius:var(--radius); padding:32px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+        .role-banner-copy { font-size:17px; font-weight:600; color:#fff; line-height:1.55; }
+        .role-banner-copy span { display:block; margin-top:4px; font-weight:400; font-size:14px; color:rgba(255,255,255,0.72); }
+        .role-badge { background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.22); color:#fff; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:9px 16px; border-radius:6px; white-space:nowrap; }
+        .footer-nav { padding:22px 40px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--border); }
+        .fnav-link { font-size:13px; font-weight:500; color:var(--text-secondary); text-decoration:none; display:flex; align-items:center; gap:6px; transition:color 0.15s; }
+        .fnav-link:hover { color:var(--accent); }
+        .fnav-center { font-size:12px; color:var(--text-muted); }
+        @media (max-width:768px) {
+            .nav { padding:0 20px; } .nav-links { display:none; } .container { padding:0 20px; }
+            section { padding:64px 0; } .hero { padding:64px 0 56px; } .hero-title { font-size:34px; } .hero-sub { font-size:16px; }
+            .compare { grid-template-columns:1fr; } .compare-col.before { border-radius:var(--radius) var(--radius) 0 0; border-right:1px solid var(--border); border-bottom:none; } .compare-col.after { border-radius:0 0 var(--radius) var(--radius); border-left:1px solid var(--accent-mid); } .compare-divider { display:none; }
+            .why-grid { grid-template-columns:1fr; } .bv-grid { grid-template-columns:1fr; } .role-grid { grid-template-columns:1fr; } .role-banner { flex-direction:column; align-items:flex-start; } .footer-nav { flex-direction:column; gap:12px; text-align:center; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="portfolio-nav">
+
+    <nav class="nav">
         <a class="nav-logo" href="./index.html">Ji Hyun Yoon</a>
         <div class="nav-links">
-            <a href="./index.html" class="nav-link">홈</a>
-            <a href="./walkmate.html" class="nav-link">WalkMate</a>
-            <a href="./onboarding.html" class="nav-link active">온보딩</a>
-            <a href="./wedding-ai.html" class="nav-link">Wedding AI</a>
+            <a href="./index.html"            class="nav-link">홈</a>
+            <a href="./walkmate.html"          class="nav-link">WalkMate</a>
+            <a href="./onboarding.html"        class="nav-link active">온보딩</a>
+            <a href="./wedding-ai.html"        class="nav-link">Wedding AI</a>
             <a href="./salary-calculator.html" class="nav-link">급여 계산기</a>
         </div>
         <div class="nav-lang">
@@ -27,75 +147,262 @@
         </div>
     </nav>
 
-    <main class="portfolio portfolio-with-nav">
-        <section class="page page-onboarding">
-            <header class="ob-header">
-                <div>
-                    <p class="ob-eyebrow">Project 02</p>
-                    <h2 class="ob-title">Onboarding<br>Assistant</h2>
-                    <p class="ob-subtitle">HR 특화 AI 어시스턴트 · B2B SaaS / HR / AI</p>
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">B2B SaaS Solution Case · Project 02</p>
+            <h1 class="hero-title">신입사원의 모든 질문에<br>HR이 직접 답하기 <span class="accent">전에</span> 답합니다.</h1>
+            <p class="hero-sub">실제 HR 운영에서 설계된 온보딩 어시스턴트. 첫 주 마찰과 반복 수동 업무를 제거합니다.</p>
+            <div class="compare">
+                <div class="compare-col before">
+                    <span class="compare-badge">Before</span>
+                    <p class="compare-heading">기존 온보딩</p>
+                    <ul class="compare-list">
+                        <li>같은 20가지 질문을 매 기수마다 구두로 반복 답변</li>
+                        <li>문서가 이메일·슬랙·폴더에 흩어져 있음</li>
+                        <li>신입사원이 어디서 막히는지 파악 불가</li>
+                        <li>예방 가능한 질문이 HR 시간을 잠식</li>
+                    </ul>
                 </div>
-                <div class="ob-img-box">
-                    <img src="../assets/onboarding.png" alt="Onboarding Assistant preview" />
+                <div class="compare-divider">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
-            </header>
+                <div class="compare-col after">
+                    <span class="compare-badge">온보딩 어시스턴트</span>
+                    <p class="compare-heading">자동화·추적·신뢰 가능</p>
+                    <ul class="compare-list">
+                        <li>AI가 모든 질문을 즉시 정답으로 라우팅</li>
+                        <li>FAQ·체크리스트·챗봇이 하나의 흐름으로 통합</li>
+                        <li>HR 대시보드가 완료 현황을 실시간 추적</li>
+                        <li>AI 실패 시에도 폴백 로직이 신뢰성 보장</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="ob-body">
-                <p class="ob-lead">
-                    실제 HR 운영 기반으로 만든 모바일 온보딩 어시스턴트. 첫 주 정보 과부하를 없앱니다.
-                </p>
+    <div class="stack-strip">
+        <div class="container">
+            <div class="stack-inner">
+                <span class="stack-label">Stack</span>
+                <span class="stack-tag">React Native (Expo)</span>
+                <span class="stack-tag">Node.js</span>
+                <span class="stack-tag">Express</span>
+                <span class="stack-tag">OpenAI API</span>
+            </div>
+        </div>
+    </div>
 
-                <div class="ob-grid">
-                    <div class="ob-col">
-                        <div class="ob-section">
-                            <p class="ob-section-label">문제</p>
-                            <ul class="ob-list">
-                                <li>여러 문서에 흩어진 정보와 반복 구두 설명</li>
-                                <li>직원에게는 마찰, HR팀에게는 반복적인 수동 업무</li>
-                                <li>첫 주 질문에 대한 단일 정보 창구 부재</li>
-                            </ul>
-                        </div>
-                        <div class="ob-section">
-                            <p class="ob-section-label">솔루션</p>
-                            <ul class="ob-list">
-                                <li>FAQ, 체크리스트, 챗봇을 하나의 통합 흐름으로</li>
-                                <li>가상 사례가 아닌 실제 HR 운영 기반으로 설계</li>
-                                <li>AI 실패 시나리오를 위한 폴백 UX 설계</li>
-                            </ul>
-                        </div>
+    <section class="flow-section">
+        <div class="container">
+            <p class="section-label">시스템 아키텍처</p>
+            <h2 class="section-title">하나의 질문. 매번 올바른 답변.</h2>
+            <p class="section-desc">모든 질문은 분류·라우팅·응답까지 이어지고, AI 실패 시에도 설계된 폴백이 작동합니다.</p>
+            <div class="flow-track">
+                <div class="flow-node hl"><div class="flow-icon-box">👤</div><p class="flow-node-name">신입사원</p><p class="flow-node-sub">음성 또는<br>텍스트 입력</p></div>
+                <div class="flow-arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="flow-node"><div class="flow-icon-box">🧠</div><p class="flow-node-name">인텐트 분류기</p><p class="flow-node-sub">질문 유형<br>감지</p></div>
+                <div class="flow-arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="flow-node hl"><div class="flow-icon-box">🔀</div><p class="flow-node-name">라우터</p><p class="flow-node-sub">FAQ / 체크리스트<br>/ AI 챗</p></div>
+                <div class="flow-arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="flow-node"><div class="flow-icon-box">🛡️</div><p class="flow-node-name">폴백 핸들러</p><p class="flow-node-sub">AI 실패 시<br>안전 응답</p></div>
+                <div class="flow-arr"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                <div class="flow-node hl"><div class="flow-icon-box">📊</div><p class="flow-node-name">HR 대시보드</p><p class="flow-node-sub">완료 현황<br>추적</p></div>
+            </div>
+            <div class="flow-decisions">
+                <p class="flow-decisions-label">핵심 결정</p>
+                <div class="flow-chips">
+                    <div class="flow-chip"><span class="dot"></span>폴백 로직 — 좋은 모델이 아닌, 신뢰성 보장 장치</div>
+                    <div class="flow-chip"><span class="dot"></span>인텐트 분류기 — AI 전에 먼저 라우팅</div>
+                    <div class="flow-chip"><span class="dot"></span>체크리스트 흐름 — 오픈 챗보다 구조화된 완료</div>
+                    <div class="flow-chip"><span class="dot"></span>HR 대시보드 — 수동 추적 없는 운영 가시성</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p class="section-label">왜 중요한가</p>
+            <h2 class="section-title">문제는 정보가 없는 게 아니라 전달 방식</h2>
+            <p class="section-desc">모든 회사에 온보딩 콘텐츠는 있습니다. 신뢰할 수 있는 전달 방식이 없을 뿐입니다.</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <p class="why-card-eyebrow">01 — HR 부담</p>
+                    <h3 class="why-card-title">HR팀은 매 기수마다 같은 질문에 답합니다</h3>
+                    <p class="why-card-body">구두 안내는 확장되지 않고, 기록되지 않으며, 담당자가 자리를 비우면 무너집니다. 신입사원 경험은 기본적으로 불일치하고, 그 비용은 매 온보딩 사이클마다 조용히 쌓입니다.</p>
+                </div>
+                <div class="why-card">
+                    <p class="why-card-eyebrow">02 — AI 신뢰성 공백</p>
+                    <h3 class="why-card-title">대부분의 챗봇은 조용히 실패합니다 — 폴백을 설계하지 않기 때문</h3>
+                    <p class="why-card-body">모델이 잘못된 답변을 하거나 임계치를 넘으면, 신입사원은 혼란스러운 비답변을 받습니다. HR 맥락에서의 신뢰성은 뛰어난 모델이 아닌, 설계된 폴백 로직에서 나옵니다.</p>
+                </div>
+                <div class="why-callout">
+                    <p class="why-callout-icon">⚡</p>
+                    <p class="why-callout-text"><strong>핵심 기회:</strong> 첫 주 전체 정보 흐름을 하나의 신뢰할 수 있고 추적 가능한 시스템으로 대체 — 필요할 때만 사람이 개입하도록.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <div class="container">
+            <p class="section-label">데모 시나리오</p>
+            <h2 class="section-title">고객이 5분 안에 보는 것</h2>
+            <p class="section-desc">첫 질문부터 HR 대시보드 등록까지 — 라이브로 보여줄 수 있는 완전한 흐름.</p>
+            <div class="demo-steps">
+                <div class="demo-step hl">
+                    <div class="demo-step-num">1</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">입사 당일 트리거</span>
+                        <h3 class="demo-step-title">신입사원이 첫날 앱을 엽니다</h3>
+                        <p class="demo-step-desc">별도 교육 불필요. 앱이 <strong>안내형 웰컴 흐름</strong>으로 시작 — 체크리스트·FAQ 카드·채팅 인터페이스가 한 화면에.</p>
                     </div>
-
-                    <div class="ob-col">
-                        <div class="ob-section">
-                            <p class="ob-section-label">기여</p>
-                            <ul class="ob-list">
-                                <li>실제 온보딩 운영에서 전체 사용자 흐름 정의</li>
-                                <li>챗봇 연동 및 폴백 인터랙션 로직 구현</li>
-                                <li>명확한 B2B SaaS 활용 사례로 포지셔닝</li>
-                            </ul>
-                        </div>
-                        <div class="ob-section">
-                            <p class="ob-section-label">기술 스택</p>
-                            <div class="ob-chips">
-                                <span class="ob-chip">React Native (Expo)</span>
-                                <span class="ob-chip">Node.js</span>
-                                <span class="ob-chip">Express</span>
-                                <span class="ob-chip">OpenAI API</span>
-                            </div>
-                        </div>
-
-                        <div class="ob-impact-band">
-                            <p class="ob-section-label">비즈니스 임팩트</p>
-                            <ul class="ob-list">
-                                <li>HR 운영 마찰을 줄이는 AI 활용 사례</li>
-                                <li>기업 온보딩 워크플로우에서 측정 가능한 가치 창출</li>
-                                <li>명확한 B2B SaaS 포지셔닝</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-num">2</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">FAQ 라우트</span>
+                        <h3 class="demo-step-title">"급여 등록에 필요한 서류가 뭔가요?"</h3>
+                        <p class="demo-step-desc">인텐트 분류기가 구조화된 FAQ 쿼리로 인식. <strong>사전 구성된 FAQ 카드</strong>로 직접 라우팅 — AI 생성 없이 즉시, 신뢰 가능.</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-num">3</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">체크리스트 트리거</span>
+                        <h3 class="demo-step-title">완료 프롬프트가 안내형 체크리스트를 활성화합니다</h3>
+                        <p class="demo-step-desc">FAQ 응답 후 앱이 <strong>급여 등록 체크리스트</strong> 완료를 안내. 진행 추적이 있는 구조화된 작업 흐름 — 채팅 없이.</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-num">4</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">AI 챗 라우트</span>
+                        <h3 class="demo-step-title">"수습 기간 중 연차 정책이 어떻게 되나요?"</h3>
+                        <p class="demo-step-desc">엣지 케이스 질문이 <strong>AI 챗봇</strong>으로 라우팅. OpenAI API가 맥락에 맞는 답변 생성 — 모델 신뢰도 임계치 내에서 직접 전달.</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-num">5</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">폴백 로직</span>
+                        <h3 class="demo-step-title">낮은 신뢰도 쿼리 → 안전한 폴백 응답</h3>
+                        <p class="demo-step-desc">이례적인 질문이 임계치에 걸림. <strong>폴백 핸들러</strong>가 안전한 사전 구성 응답을 표시하고 HR 검토 플래그 추가 — 조용한 실패 없음.</p>
+                    </div>
+                </div>
+                <div class="demo-step hl">
+                    <div class="demo-step-num">6</div>
+                    <div class="demo-step-body">
+                        <span class="demo-step-tag">HR 운영 가시성</span>
+                        <h3 class="demo-step-title">HR 대시보드: 질문 4건, 체크리스트 2건, 공백 0건</h3>
+                        <p class="demo-step-desc">고객 화면에 신입사원 세션이 표시됩니다: 질문 목록, 체크리스트 완료 상태, 폴백 플래그. <strong>온보딩 1회가 구조화된 운영 데이터를 만들었습니다.</strong></p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p class="section-label">비즈니스 가치</p>
+            <h2 class="section-title">세 명의 구매자. 하나의 플랫폼.</h2>
+            <p class="section-desc">동일한 시스템이 다양한 기업 이해관계자에게 유료 가치를 창출합니다.</p>
+            <div class="bv-grid">
+                <div class="bv-card">
+                    <div class="bv-icon">👩‍💼</div>
+                    <p class="bv-stakeholder">HR 팀</p>
+                    <h3 class="bv-title">반복 수동 안내를 없앱니다</h3>
+                    <ul class="bv-list">
+                        <li>HR 개입 없이 첫 주 질문 자동 처리</li>
+                        <li>완료 추적이 수동 후속 조치를 대체</li>
+                        <li>모든 신입사원 기수에서 일관된 경험</li>
+                        <li>HR 인력 추가 없이 어떤 규모로도 확장</li>
+                    </ul>
+                </div>
+                <div class="bv-card">
+                    <div class="bv-icon">🏢</div>
+                    <p class="bv-stakeholder">기업 / B2B SaaS 구매자</p>
+                    <h3 class="bv-title">HRIS 플랫폼용 플러그인 인텔리전스 레이어</h3>
+                    <ul class="bv-list">
+                        <li>기존 온보딩 워크플로우에 임베드 가능</li>
+                        <li>신입사원의 생산성 도달 시간 단축</li>
+                        <li>폴백 설계가 엔터프라이즈 안전성 보장</li>
+                        <li>명확한 ROI: 채용 1건당 HR 시간 절감</li>
+                    </ul>
+                </div>
+                <div class="bv-card">
+                    <div class="bv-icon">⚙️</div>
+                    <p class="bv-stakeholder">IT / 운영</p>
+                    <h3 class="bv-title">모든 온보딩 상호작용에서 구조화된 데이터</h3>
+                    <ul class="bv-list">
+                        <li>모든 질문 로깅 → 지식 공백 발견</li>
+                        <li>폴백 플래그가 개선이 필요한 콘텐츠 식별</li>
+                        <li>대시보드 데이터가 HR 프로세스 최적화에 활용</li>
+                        <li>배포에 인프라 변경 불필요</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="role-section">
+        <div class="container">
+            <p class="section-label">내 역할</p>
+            <h2 class="section-title">출시가 아닌 판매를 위해 만들었습니다</h2>
+            <p class="section-desc">이 프로젝트의 모든 설계 결정은 프리세일즈 관점에서 이루어졌습니다.</p>
+            <div class="role-grid">
+                <div class="role-card">
+                    <div class="role-card-icon">🎯</div>
+                    <h3 class="role-card-title">프리세일즈 사고</h3>
+                    <ul class="role-list">
+                        <li>처음부터 B2B SaaS 제품으로 포지셔닝</li>
+                        <li>개발 전 기업 구매자 페르소나 정의</li>
+                        <li>HR 대시보드를 영업 데모 자산으로 설계</li>
+                        <li>HR 시간 절감 중심의 ROI 내러티브 구축</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-card-icon">🖥️</div>
+                    <h3 class="role-card-title">데모 아키텍처</h3>
+                    <ul class="role-list">
+                        <li>실제 온보딩 운영에서 전체 흐름 설계</li>
+                        <li>FAQ·체크리스트·챗 모든 레이어 라이브 노출</li>
+                        <li>폴백 시나리오를 기업 데모용으로 특별 설계</li>
+                        <li>단일 데모 세션 내에서 대시보드 항목 가시화</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <div class="role-card-icon">💬</div>
+                    <h3 class="role-card-title">기술 → 비즈니스 번역</h3>
+                    <ul class="role-list">
+                        <li>폴백 로직 → "HR 맥락의 신뢰성 보장"</li>
+                        <li>인텐트 분류기 → "추측이 아닌 라우팅"</li>
+                        <li>완료 추적 → "제로 비용 HR 운영 가시성"</li>
+                        <li>OpenAI 연동 → "도움이 될 때는 AI, 중요할 때는 규칙"</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="role-banner">
+                <div class="role-banner-copy">
+                    가상 사례가 아닌 실제 HR 운영에서 설계했습니다.
+                    <span>기업 HR 6년이 모든 제품·포지셔닝 결정의 근거입니다.</span>
+                </div>
+                <div class="role-badge">Sales Engineer Lens</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-nav">
+        <a href="./walkmate.html" class="fnav-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            WalkMate
+        </a>
+        <p class="fnav-center">온보딩 어시스턴트 · Project 02 of 04</p>
+        <a href="./wedding-ai.html" class="fnav-link">
+            Wedding AI
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+
 </body>
 </html>
