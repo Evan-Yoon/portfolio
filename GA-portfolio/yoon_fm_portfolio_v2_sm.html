@@ -189,7 +189,7 @@
     }
 
     .cover-main {
-      margin-top: 45mm;
+      margin-top: 36mm;
     }
 
     .eyebrow-row {
@@ -251,26 +251,77 @@
       font-weight: 400;
     }
 
-    .cover-chips {
+    .cover-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
       margin-top: 10mm;
-      max-width: 560px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .06);
     }
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(255, 255, 255, .08);
-      background: rgba(255, 255, 255, .045);
-      color: #d7dde5;
+    .cover-stat {
+      padding: 18px 16px;
+      background: var(--night);
+    }
+
+    .cover-stat-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 820;
+      color: #eef1f6;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .cover-stat-label {
       font-family: var(--font-ui);
-      border-radius: 0;
-      padding: 9px 11px;
-      font-size: 10.5px;
-      font-weight: 600;
+      font-size: 9.5px;
+      font-weight: 500;
+      color: #6a7484;
+      letter-spacing: .03em;
+    }
+
+    .cover-timeline {
+      margin-top: 4mm;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(255, 255, 255, .025);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .cover-tl-period {
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      color: #6a7484;
+      font-weight: 500;
       white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: .02em;
+    }
+
+    .cover-tl-sep {
+      width: 1px;
+      height: 30px;
+      background: rgba(255, 255, 255, .1);
+      flex-shrink: 0;
+    }
+
+    .cover-tl-company {
+      font-family: var(--font-ui);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #d0d6e0;
+      margin-bottom: 4px;
+    }
+
+    .cover-tl-role {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      color: #6a7484;
+      font-weight: 500;
     }
 
     .contact-strip {
@@ -1017,6 +1068,112 @@
       font-weight: 820;
     }
 
+    /* ── 6페이지 마무리 ── */
+    .closing-header {
+      margin-top: 20mm;
+      margin-bottom: 12mm;
+    }
+
+    .closing-headline {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 820;
+      line-height: 1.25;
+      margin-top: 4mm;
+      margin-bottom: 7mm;
+    }
+
+    .closing-sublead {
+      color: #3f4650;
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 440;
+      max-width: 640px;
+    }
+
+    .closing-rows {
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .closing-row {
+      display: flex;
+      align-items: center;
+      min-height: 106px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .closing-row:last-child {
+      border-bottom: none;
+    }
+
+    .closing-row-label {
+      flex-shrink: 0;
+      width: 160px;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      padding: 14px 18px;
+      border-right: 1px solid var(--line);
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.55;
+    }
+
+    .closing-row-text {
+      flex: 1;
+      padding: 22px 26px;
+      color: #1c1d22;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .closing-row-text strong {
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    .closing-dark-band {
+      margin-top: auto;
+      margin-left: -18mm;
+      margin-right: -18mm;
+      margin-bottom: -17mm;
+      padding: 12mm 18mm 11mm;
+      background: var(--night);
+    }
+
+    .closing-dark-message {
+      color: #e8ecf1;
+      font-family: var(--font-display);
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.65;
+      margin-bottom: 7mm;
+    }
+
+    .closing-dark-contact {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 6mm;
+      color: #9ca4b0;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 450;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .closing-dark-contact span:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, .18);
+      margin-left: 12px;
+    }
+
     .closing {
       margin: auto 0;
       max-width: 650px;
@@ -1086,11 +1243,23 @@
         <div class="cover-role">시설관리 및 오피스 운영</div>
         <h2 class="cover-tagline">구성원이 업무에 몰입할 수 있는<br>환경을 만드는 운영 담당자</h2>
         <p class="cover-summary">400명 규모 사업장에서 총무·오피스 운영 경험을 쌓았으며,<br>계약 관리, 협력사 운영, 복리후생 운영, 업무 효율화를 경험했습니다.</p>
-        <div class="cover-chips">
-          <span class="chip">인사·총무 경력 3년 6개월</span>
-          <span class="chip">400명 규모 사업장 운영 경험</span>
-          <span class="chip">계약·협력사 운영</span>
-          <span class="chip">업무 효율화 경험</span>
+        <div class="cover-stats">
+          <div class="cover-stat">
+            <div class="cover-stat-num">3.5년</div>
+            <div class="cover-stat-label">총무·시설 경력</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">400명</div>
+            <div class="cover-stat-label">사업장 규모</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">2회</div>
+            <div class="cover-stat-label">도급 입찰 진행</div>
+          </div>
+          <div class="cover-stat">
+            <div class="cover-stat-num">8억</div>
+            <div class="cover-stat-label">도급비 절감</div>
+          </div>
         </div>
       </main>
       <div class="contact-strip">
@@ -1388,16 +1557,32 @@
   <section class="page">
     <div class="content">
       <div class="topbar"><span>윤지현 · 시설관리 포트폴리오</span><span>06 / 06</span></div>
-      <main class="closing">
+      <div class="closing-header">
         <div class="section-label">마무리</div>
-        <h1>제가 만들고 싶은<br>오피스 운영 환경</h1>
-        <p>좋은 총무와 시설관리는 눈에 띄지 않을 때 가장 잘 작동한다고 생각합니다.</p>
-        <p class="sub">계약, 협력사, 공간, 비품, 복지, 공통 업무가 안정적으로 운영될 때 구성원은 본업에 더 깊게 몰입할 수 있습니다.</p>
-        <p class="sub">호텔 사업장에서 쌓은 운영 경험과 문제 해결 역량을 바탕으로, 에스엠엔터테인먼트 구성원들이 더 안정적이고 효율적인 환경에서 일할 수 있도록 기여하고 싶습니다.
-        </p>
-      </main>
-      <div class="contact-strip">
-        <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+        <div class="closing-headline">맥락을 읽고, 데이터로 판단하고,<br>직접 실행합니다.</div>
+        <p class="closing-sublead">총무·시설·협력사·구성원 경험을 통해 배운 것은, 문제의 원인을 먼저 찾고 구조로 해결하는 것이었습니다.</p>
+      </div>
+      <div class="closing-rows">
+        <div class="closing-row">
+          <div class="closing-row-label">맥락 이해 ·<br>주도적 실행</div>
+          <div class="closing-row-text">도급 입찰 전 과정과 레이아웃 프로젝트를<br>처음부터 끝까지 주도했습니다.<br><strong>해야 할 일을 먼저 정의하는</strong> 방식으로 일합니다.</div>
+        </div>
+        <div class="closing-row">
+          <div class="closing-row-label">데이터 ·<br>논리 기반 판단</div>
+          <div class="closing-row-text">퇴직 면담 데이터로 이탈 원인을 파악하고,<br>도급비 절감 근거를 수치화해 의사결정을 이끌었습니다.<br><strong>직관보다 근거를 먼저 챙깁니다.</strong></div>
+        </div>
+        <div class="closing-row">
+          <div class="closing-row-label">유연한 대응 ·<br>소통과 협업</div>
+          <div class="closing-row-text">공사 현장 변수 대응, 협력사·부서장·임직원 간<br>조율을 일상으로 해왔습니다.<br><strong>복잡한 이해관계 사이에서 연결하는 역할</strong>을 합니다.</div>
+        </div>
+      </div>
+      <div class="closing-dark-band">
+        <div class="closing-dark-message">
+          3.5년간의 총무·시설 경험을 바탕으로,<br>구성원이 본업에 집중할 수 있는 환경을 만드는 데 기여하겠습니다.
+        </div>
+        <div class="closing-dark-contact">
+          <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+        </div>
       </div>
     </div>
   </section>
