@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤지현 | 시설관리 및 오피스 운영 포트폴리오</title>
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+    @import url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap");
+
+    :root {
+      --font-body: "Pretendard", "SUIT", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "SUIT", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --font-serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", serif;
+      --font-ui: "SUIT", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --paper: #fbfaf7;
+      --ink: #111217;
+      --text: #1c1d22;
+      --muted: #73777f;
+      --dim: #a5a9b0;
+      --line: #e7e3dc;
+      --line-strong: #d9d4ca;
+      --panel: #ffffff;
+      --wash: #f3f7fa;
+      --blue: #7fa7bc;
+      --blue-soft: #eaf2f6;
+      --blue-ink: #59798b;
+      --night: #12131a;
+      --night-2: #171923;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #b9b6af;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 450;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 24px;
+      padding: 20mm 18mm 17mm;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .18);
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      left: 18mm;
+      right: 18mm;
+      top: 20mm;
+      height: 1px;
+      background: var(--line);
+      pointer-events: none;
+    }
+
+    .cover {
+      color: #f6f7f9;
+      background:
+        radial-gradient(circle at 80% 13%, rgba(127, 167, 188, .12), transparent 32%),
+        linear-gradient(180deg, var(--night-2) 0%, var(--night) 100%);
+    }
+
+    .cover::before {
+      left: 20mm;
+      right: 20mm;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar,
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #9a9da4;
+      font-family: var(--font-ui);
+      font-size: 8px;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding-top: 8mm;
+      border-top: 1px solid var(--line);
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 500;
+      color: #9a9da4;
+    }
+
+    .footer-line {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .section-label {
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 3mm;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 30px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    h2 {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.28;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      line-height: 1.38;
+      font-weight: 760;
+    }
+
+    p {
+      font-weight: 430;
+    }
+
+    .lead {
+      color: #3f4650;
+      font-family: var(--font-body);
+      font-size: 11.5px;
+      line-height: 1.68;
+      margin-top: 3mm;
+      max-width: 650px;
+      font-weight: 520;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .cover-main {
+      margin-top: 45mm;
+    }
+
+    .eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #9aa0aa;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      letter-spacing: .02em;
+      font-weight: 500;
+      margin-bottom: 9mm;
+    }
+
+    .eyebrow-row::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--blue);
+      opacity: .8;
+    }
+
+    .cover-name {
+      font-family: var(--font-serif);
+      font-size: 61px;
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: .1em;
+      color: #f7f8fb;
+      margin-bottom: 5mm;
+    }
+
+    .cover-role {
+      color: #8caec0;
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 12mm;
+    }
+
+    .cover-tagline {
+      color: #f7f8fb;
+      font-family: var(--font-display);
+      font-size: 22px;
+      line-height: 1.55;
+      font-weight: 700;
+      letter-spacing: 0;
+      max-width: 620px;
+    }
+
+    .cover-summary {
+      color: #aeb4bf;
+      font-size: 12px;
+      line-height: 1.78;
+      margin-top: 9mm;
+      max-width: 610px;
+      font-weight: 400;
+    }
+
+    .cover-chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      margin-top: 10mm;
+      max-width: 560px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .045);
+      color: #d7dde5;
+      font-family: var(--font-ui);
+      border-radius: 0;
+      padding: 9px 11px;
+      font-size: 10.5px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .contact-strip {
+      margin-top: auto;
+      padding-top: 10mm;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      color: #9ca4b0;
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      font-weight: 450;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-strip span:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, .18);
+      margin-left: 12px;
+    }
+
+    .page-title {
+      margin-top: 11mm;
+      margin-bottom: 8mm;
+      padding-bottom: 5mm;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page:not(.cover) .page-title h1 {
+      display: block;
+      color: var(--ink);
+      -webkit-text-fill-color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 3mm;
+    }
+
+    .page-main-title {
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 3mm;
+    }
+
+    .grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 15px 16px;
+      box-shadow: none;
+    }
+
+    .card .num {
+      color: #9fbdd0;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0;
+      margin-bottom: 7px;
+      font-family: var(--font-serif);
+    }
+
+    .card h3 {
+      margin-bottom: 7px;
+      color: var(--ink);
+    }
+
+    .card p,
+    .card li {
+      color: #242a33;
+      font-size: 11.4px;
+      line-height: 1.58;
+      font-weight: 500;
+    }
+
+    .card strong,
+    .lead strong {
+      color: var(--ink);
+      -webkit-text-fill-color: var(--ink);
+      font-weight: 850;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 8mm;
+      border-top: 1px solid var(--line);
+    }
+
+    .fit-card {
+      min-height: 0;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      padding: 14px 13px;
+      display: grid;
+      grid-template-columns: 35mm 1fr;
+      gap: 7mm;
+      align-items: start;
+    }
+
+    .fit-card.wide {
+      grid-column: auto;
+      display: grid;
+      grid-template-columns: 35mm 1fr;
+      align-items: start;
+      gap: 8mm;
+    }
+
+    .fit-card.wide .num {
+      font-size: 20px;
+      line-height: 1.05;
+      opacity: 1;
+    }
+
+    .fit-card h3,
+    .fit-card p {
+      grid-column: 2;
+    }
+
+    .fit-card .num {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+
+    .fit-card.wide>div:not(.num) {
+      grid-column: 2;
+    }
+
+    .fit-card.wide>div:not(.num) h3,
+    .fit-card.wide>div:not(.num) p {
+      grid-column: auto;
+    }
+
+    .job-fit-page .fit-card.wide>div:not(.num) h3 {
+      margin-bottom: 7mm;
+    }
+
+    .job-fit-page .page-title {
+      margin-top: 9mm;
+      margin-bottom: 7mm;
+      padding-bottom: 5mm;
+    }
+
+    .job-fit-page .section-label {
+      font-size: 9.5px;
+      margin-bottom: 4mm;
+      color: #4f7286;
+    }
+
+    .job-fit-page .page-title h1 {
+      display: block;
+      color: #101116;
+      -webkit-text-fill-color: #101116;
+      font-family: var(--font-body);
+      font-size: 34px;
+      font-weight: 820;
+      line-height: 1.16;
+      margin-bottom: 3.5mm;
+    }
+
+    .job-fit-page .lead {
+      font-size: 13px;
+      line-height: 1.62;
+      max-width: 680px;
+    }
+
+    .job-fit-page .fit-grid {
+      margin-top: 6mm;
+    }
+
+    .job-fit-page .fit-card {
+      grid-template-columns: 31mm 1fr;
+      gap: 7mm;
+      padding: 15px 13px;
+    }
+
+    .job-fit-page .fit-card.wide {
+      padding-bottom: 8px;
+    }
+
+    .job-fit-page .card .num {
+      font-size: 21px;
+      margin-bottom: 0;
+    }
+
+    .job-fit-page .fit-card h3 {
+      display: block;
+      color: #111217;
+      font-family: var(--font-body);
+      font-size: 16.4px;
+      font-weight: 820;
+      line-height: 1.25;
+      margin-bottom: 9px;
+    }
+
+    .job-fit-page .fit-card p {
+      font-size: 12.8px;
+      line-height: 1.52;
+      color: #4f555f;
+    }
+
+    .job-fit-summary-band {
+      margin-top: auto;
+      margin-bottom: 8mm;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 5mm 0;
+    }
+
+    .job-fit-summary-band .summary-title {
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 760;
+      letter-spacing: .12em;
+      margin-bottom: 4mm;
+    }
+
+    .summary-keywords {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border: 1px solid #dce9f0;
+      background: var(--blue-soft);
+    }
+
+    .summary-keyword {
+      min-height: 54px;
+      padding: 13px 14px;
+      border-right: 1px solid #dce9f0;
+    }
+
+    .summary-keyword:last-child {
+      border-right: 0;
+    }
+
+    .summary-keyword strong {
+      display: block;
+      color: var(--ink);
+      -webkit-text-fill-color: var(--ink);
+      font-size: 13.6px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      font-weight: 820;
+    }
+
+    .summary-keyword span {
+      display: block;
+      color: #3f4a55;
+      -webkit-text-fill-color: #3f4a55;
+      font-size: 11.4px;
+      line-height: 1.42;
+      font-weight: 520;
+    }
+
+    .experience-block {
+      display: grid;
+      grid-template-columns: 36mm 1fr;
+      gap: 7mm;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-block:last-child {
+      border-bottom: 0;
+    }
+
+    .meta {
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 10.5px;
+      line-height: 1.55;
+      font-weight: 760;
+    }
+
+    .company {
+      color: #f6f8fb;
+      font-size: 16px;
+      font-weight: 760;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      color: var(--blue-ink);
+      font-size: 12px;
+      font-weight: 720;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 15px;
+    }
+
+    li {
+      margin: 3px 0;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 7mm;
+      background: var(--blue-soft);
+      border: 1px solid #dce9f0;
+    }
+
+    .metric {
+      display: flex;
+      min-height: 76px;
+      flex-direction: column;
+      justify-content: center;
+      border: 0;
+      border-right: 1px solid #dce9f0;
+      background: transparent;
+      border-radius: 0;
+      padding: 11px 14px;
+    }
+
+    .metric:last-child {
+      border-right: 0;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--blue-ink);
+      font-size: 27px;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: 0;
+      font-weight: 500;
+      font-family: var(--font-serif);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--ink);
+      -webkit-text-fill-color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .metric p {
+      color: #3f4a55;
+      -webkit-text-fill-color: #3f4a55;
+      font-size: 10.3px;
+      line-height: 1.42;
+      font-weight: 520;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 8mm 0;
+    }
+
+    .achievement {
+      padding: 13px 12px;
+      min-height: 92px;
+    }
+
+    .achievement strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: 0;
+      color: var(--blue-ink);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-family: var(--font-serif);
+    }
+
+    .achievement .label {
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 10.5px;
+      font-weight: 720;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .achievement p {
+      font-size: 9.8px;
+      line-height: 1.5;
+      color: #6e747c;
+      font-weight: 420;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .case h3 {
+      font-size: 15px;
+      margin-bottom: 11px;
+    }
+
+    .case-row {
+      border-top: 1px solid var(--line);
+      padding-top: 9px;
+      margin-top: 9px;
+    }
+
+    .case-row b {
+      display: block;
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .case-row p {
+      font-size: 10.5px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 7mm;
+    }
+
+    .efficiency-box {
+      margin-top: 8mm;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .case-process-band {
+      margin-top: 6mm;
+      border: 1px solid #dce9f0;
+      background: var(--blue-soft);
+    }
+
+    .cpb-row {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
+    .cpb-row+.cpb-row {
+      border-top: 1px solid #dce9f0;
+    }
+
+    .cpb-row-label {
+      flex-shrink: 0;
+      width: 68px;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      padding: 10px 11px;
+      border-right: 1px solid #dce9f0;
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      line-height: 1.4;
+    }
+
+    .cpb-steps {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      flex: 1;
+    }
+
+    .cpb-step {
+      flex: 1;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #dce9f0;
+      padding: 8px 6px;
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 720;
+      white-space: nowrap;
+    }
+
+    .cpb-arrow {
+      color: #aec4d0;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .cpb-inline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      flex: 1;
+    }
+
+    .cpb-inline span {
+      color: #3f4a55;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .cpb-inline strong {
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    .cpb-dot {
+      color: #aec4d0 !important;
+      font-size: 14px !important;
+      font-weight: 300 !important;
+    }
+
+    /* ── 3·4페이지 전용 오버라이드 ── */
+    .facilities-page .section-label,
+    .office-page .section-label {
+      font-size: 10.5px;
+    }
+
+    .facilities-page .lead,
+    .office-page .lead {
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+
+    .facilities-page .card,
+    .office-page .card {
+      padding: 18px 20px;
+    }
+
+    .facilities-page .experience-block,
+    .office-page .experience-block {
+      padding: 18px 0;
+    }
+
+    .facilities-page .meta,
+    .office-page .meta {
+      font-size: 12.5px;
+    }
+
+    .facilities-page .card h3,
+    .office-page .card h3 {
+      font-size: 15px;
+      margin-bottom: 9px;
+    }
+
+    .facilities-page .card p,
+    .facilities-page .card li,
+    .office-page .card p,
+    .office-page .card li {
+      font-size: 13px;
+      line-height: 1.66;
+    }
+
+    .facilities-page .metric,
+    .office-page .metric {
+      min-height: 90px;
+      padding: 13px 16px;
+    }
+
+    .facilities-page .metric strong,
+    .office-page .metric strong {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .facilities-page .metric span,
+    .office-page .metric span {
+      font-size: 12.5px;
+      margin-bottom: 4px;
+    }
+
+    .facilities-page .metric p,
+    .office-page .metric p {
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+
+    .facilities-page .cpb-row-label,
+    .office-page .cpb-row-label,
+    .tech-page .cpb-row-label {
+      font-size: 10.5px;
+      width: 76px;
+    }
+
+    .facilities-page .cpb-step,
+    .office-page .cpb-step,
+    .tech-page .cpb-step {
+      font-size: 12.5px;
+      padding: 10px 6px;
+    }
+
+    .facilities-page .cpb-inline span,
+    .office-page .cpb-inline span,
+    .tech-page .cpb-inline span {
+      font-size: 12.5px;
+    }
+
+    .facilities-page .cpb-row,
+    .office-page .cpb-row,
+    .tech-page .cpb-row {
+      min-height: 50px;
+    }
+
+    .cpb-tag {
+      flex-shrink: 0;
+      background: var(--blue-ink);
+      color: #fff;
+      font-size: 8.5px;
+      font-weight: 700;
+      font-family: var(--font-ui);
+      letter-spacing: .08em;
+      padding: 2px 7px;
+      white-space: nowrap;
+      line-height: 1.8;
+    }
+
+    .cpb-ba-arrow {
+      color: var(--blue-ink);
+      font-size: 18px;
+      flex-shrink: 0;
+      opacity: 0.45;
+      line-height: 1;
+    }
+
+    /* ── 5페이지 기술·성장 페이지 ── */
+    .tech-page .section-label {
+      font-size: 10.5px;
+    }
+
+    .tech-page .lead {
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+
+    .tech-page .card {
+      padding: 18px 20px;
+    }
+
+    .tech-page .card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .tech-page .card p {
+      font-size: 13px;
+      line-height: 1.66;
+    }
+
+    .card-tech-tag {
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .project-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 7mm;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .project-item {
+      padding: 15px 17px;
+      border-right: 1px solid var(--line);
+    }
+
+    .project-item:last-child {
+      border-right: 0;
+    }
+
+    .project-item-name {
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .project-item-tech {
+      display: inline-block;
+      background: var(--blue-soft);
+      border: 1px solid #dce9f0;
+      color: var(--blue-ink);
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+
+    .project-item-result {
+      color: #3f4a55;
+      font-size: 11.5px;
+      line-height: 1.58;
+      font-weight: 500;
+    }
+
+    .project-item-result strong {
+      color: var(--ink);
+      font-weight: 820;
+    }
+
+    .closing {
+      margin: auto 0;
+      max-width: 650px;
+    }
+
+    .closing h1 {
+      font-family: var(--font-display);
+      font-size: 35px;
+      margin-bottom: 14mm;
+    }
+
+    .closing p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--ink);
+      margin-bottom: 8mm;
+      font-weight: 440;
+    }
+
+    .closing .sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cover .topbar,
+    .cover .footer {
+      color: #626a76;
+    }
+
+    .cover h1,
+    .cover h2,
+    .cover h3 {
+      color: #f6f7f9;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="page cover">
+    <div class="content">
+      <div class="topbar"><span>시설관리 포트폴리오 · 2026</span><span>01 / 06</span></div>
+      <main class="cover-main">
+        <div class="eyebrow-row">시설관리 · 오피스 운영</div>
+        <h1 class="cover-name">윤지현</h1>
+        <div class="cover-role">시설관리 및 오피스 운영</div>
+        <h2 class="cover-tagline">구성원이 업무에 몰입할 수 있는<br>환경을 만드는 운영 담당자</h2>
+        <p class="cover-summary">400명 규모 사업장에서 총무·오피스 운영 경험을 쌓았으며,<br>계약 관리, 협력사 운영, 복리후생 운영, 업무 효율화를 경험했습니다.</p>
+        <div class="cover-chips">
+          <span class="chip">인사·총무 경력 3년 6개월</span>
+          <span class="chip">400명 규모 사업장 운영 경험</span>
+          <span class="chip">계약·협력사 운영</span>
+          <span class="chip">업무 효율화 경험</span>
+        </div>
+      </main>
+      <div class="contact-strip">
+        <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="page job-fit-page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · 총무 포트폴리오</span><span>02 / 06</span></div>
+      <div class="page-title">
+        <div class="section-label">직무 적합 요약</div>
+        <div class="page-main-title">주요 경험</div>
+        <p class="lead"><strong>시설·계약·협력사·구성원 경험</strong>을 중심으로 정리했습니다.</p>
+      </div>
+      <div class="fit-grid">
+        <div class="card fit-card">
+          <div class="num">01</div>
+          <h3>총무/시설 운영</h3>
+          <p><strong>계약서·인감·법인차량·출입 권한</strong> 등 총무 운영 전반을 담당했습니다.</p>
+        </div>
+        <div class="card fit-card">
+          <div class="num">02</div>
+          <h3>구성원 경험 운영</h3>
+          <p><strong>온보딩·웰컴키트·복지 제도 개선</strong>으로 임직원 경험을 높였습니다.</p>
+        </div>
+        <div class="card fit-card">
+          <div class="num">03</div>
+          <h3>협력사 및 계약 관리</h3>
+          <p><strong>10개 도급사 입찰</strong>을 주도하고 협력사 리스크와 비용을 점검했습니다.</p>
+        </div>
+        <div class="card fit-card">
+          <div class="num">04</div>
+          <h3>업무 환경 개선</h3>
+          <p><strong>레이아웃 변경 프로젝트</strong>에서 공사 업체·부서장·임직원 요구사항을 조율했습니다.</p>
+        </div>
+        <div class="card fit-card wide">
+          <div class="num">05</div>
+          <div>
+            <h3>인공지능 기반 업무 효율화</h3>
+            <p><strong>비품 발주·채용 메일 자동화</strong>를 구현하며 반복 행정 업무를 줄였습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="job-fit-summary-band">
+        <div class="summary-title">핵심 연결 역량</div>
+        <div class="summary-keywords">
+          <div class="summary-keyword"><strong>운영 안정성</strong><span>시설·계약·권한 관리의 누락 없는 운영</span></div>
+          <div class="summary-keyword"><strong>조율 역량</strong><span>협력사·부서·임직원 사이 일정 정리</span></div>
+          <div class="summary-keyword"><strong>개선 관점</strong><span>반복 업무 줄이고 구성원 몰입 환경 강화</span></div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-line"><span>운영의 안정성</span><span>구성원 경험</span><span>업무 효율화</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page facilities-page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · 시설관리 포트폴리오</span><span>03 / 06</span></div>
+      <div class="page-title">
+        <div class="section-label">경험 01</div>
+        <div class="page-main-title">시설 · 계약 · 협력사 운영</div>
+        <p class="lead"><strong>400명 규모 사업장</strong>에서 시설·계약·협력사·비용 관리 업무를 수행했습니다.</p>
+      </div>
+      <div class="card">
+        <div class="experience-block">
+          <div class="meta">총무 시설 운영</div>
+          <div>
+            <h3>운영 자산과 공통 업무 관리</h3>
+            <ul>
+              <li><strong>계약서·인감·법인차량</strong> 및 사원증, 출입·식사 권한 관리</li>
+              <li><strong>임직원 요청 처리</strong>, 소모품 재고 관리, 비품 발주 프로세스 운영</li>
+              <li><strong>사내 공지와 운영 커뮤니케이션</strong> 체계 유지·관리</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-block">
+          <div class="meta">도급사 계약 · 협력사 관리</div>
+          <div>
+            <h3>협력사 운영과 리스크 점검</h3>
+            <ul>
+              <li><strong>10개 도급사</strong> 재입찰 및 신규 입찰 전 과정 주도</li>
+              <li><strong>위장도급·불법파견 리스크</strong> 점검 및 개선 조치</li>
+              <li><strong>도급비 1억 원 절감</strong>: 10억 원 → 9억 원 재협상</li>
+              <li><strong>정기 점검 체계</strong>를 수립해 계약 이행 품질 관리</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="case-process-band">
+        <div class="cpb-row">
+          <div class="cpb-row-label">입찰 진행 프로세스</div>
+          <div class="cpb-steps">
+            <div class="cpb-step">입찰 공문 발송</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">현장 설명 · PT</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">우선협상 대상자 선정</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">단가 협의</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">계약 체결</div>
+          </div>
+        </div>
+        <div class="cpb-row">
+          <div class="cpb-row-label">도급비 절감 방법</div>
+          <div class="cpb-inline">
+            <span>7개사 중 <strong>4개 업체 교체</strong></span>
+            <span class="cpb-dot">·</span>
+            <span>유사 부문 통합 → <strong>6개사로 축소</strong></span>
+            <span class="cpb-dot">·</span>
+            <span>입찰 경쟁 · 단가 재협상 → <strong>연간 1억 절감</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>400명</strong><span>운영 사업장 규모</span>
+          <p>호텔 사업장 총무 운영 전반 담당</p>
+        </div>
+        <div class="metric"><strong>10개사</strong><span>도급사 입찰 관리</span>
+          <p>재입찰 및 신규 입찰 주도</p>
+        </div>
+        <div class="metric"><strong>1억↓</strong><span>도급비 절감</span>
+          <p>10억 원 → 9억 원 비용 절감</p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-line"><span>시설 · 계약 · 협력사 운영</span><span>03 / 06</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page office-page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · 시설관리 포트폴리오</span><span>04 / 06</span></div>
+      <div class="page-title">
+        <div class="section-label">경험 02</div>
+        <div class="page-main-title">오피스 환경과 구성원 경험</div>
+        <p class="lead"><strong>공간 개선과 온보딩 개선</strong>을 통해 구성원이 업무에 집중할 수 있는 환경을 만들었습니다.</p>
+      </div>
+      <div class="card">
+        <div class="experience-block">
+          <div class="meta">오피스 레이아웃 개선</div>
+          <div>
+            <h3>공사·공간·일정 조율</h3>
+            <ul>
+              <li><strong>사무실 레이아웃 변경</strong> 프로젝트 기획 및 실행</li>
+              <li><strong>공사 업체·부서장·임직원</strong> 간 일정과 요구사항 조율</li>
+              <li><strong>현장 변수 대응</strong>: 설계도 차이, 공사 일정 변경 관리</li>
+              <li><strong>변경 사항 즉시 공유</strong>로 업무 혼선 최소화</li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-block">
+          <div class="meta">온보딩 · 복지 제도 개선</div>
+          <div>
+            <h3>조직 적응과 장기 근속 지원</h3>
+            <ul>
+              <li><strong>온보딩 프로세스 개선</strong> 및 웰컴키트 제작</li>
+              <li><strong>복지 불만족 요인 분석</strong> 후 개선안 도출·적용</li>
+              <li><strong>퇴직 면담 데이터</strong>로 이탈 원인 파악</li>
+              <li><strong>퇴사율 35% 감소</strong>: 50% → 15% 기여</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="case-process-band">
+        <div class="cpb-row">
+          <div class="cpb-row-label">온보딩 개선 프로세스</div>
+          <div class="cpb-steps">
+            <div class="cpb-step">퇴직 면담<br>데이터 분석</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">불만족<br>요인 도출</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">개선안<br>수립</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">온보딩<br>재설계</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">퇴사율<br>추적</div>
+          </div>
+        </div>
+        <div class="cpb-row">
+          <div class="cpb-row-label">개선 전·후</div>
+          <div class="cpb-inline">
+            <div class="cpb-tag">개선 전</div>
+            <span>온보딩 부재 · <strong>소속감 미흡</strong> · 퇴사율&nbsp;50%</span>
+            <div class="cpb-ba-arrow">→</div>
+            <div class="cpb-tag">개선 후</div>
+            <span>온보딩 재설계 · <strong>소속감 강화</strong> · 퇴사율&nbsp;15%</span>
+          </div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>50%</strong><span>개선 전 퇴사율</span>
+          <p>온보딩 개선 프로젝트 이전</p>
+        </div>
+        <div class="metric"><strong>15%</strong><span>개선 후 퇴사율</span>
+          <p>복지 제도·온보딩 개선 이후</p>
+        </div>
+        <div class="metric"><strong>35%↓</strong><span>퇴사율 감소</span>
+          <p>조직 안정화 기여</p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-line"><span>오피스 환경 · 구성원 경험</span><span>04 / 06</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page tech-page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · 시설관리 포트폴리오</span><span>05 / 06</span></div>
+      <div class="page-title">
+        <div class="section-label">경험 03</div>
+        <div class="page-main-title">업무 효율화와 성장</div>
+        <p class="lead"><strong>반복 행정 자동화</strong>와 <strong>데이터 기반 개선</strong>으로 운영 효율을 높이는 역량을 키우고 있습니다.</p>
+      </div>
+      <div class="strength-grid">
+        <div class="card">
+          <div class="card-tech-tag">Python · CSV · datetime</div>
+          <h3>비품 재고 자동 발주 시스템</h3>
+          <p><strong>최소 유지 수량 미달 품목</strong>을 자동 파악해 발주 리스트를 생성합니다. 수작업 30분+ → <strong>1초</strong>로 단축, 휴먼 에러 차단.</p>
+        </div>
+        <div class="card">
+          <div class="card-tech-tag">Python · SMTP · dotenv</div>
+          <h3>채용 결과 안내 메일 자동화</h3>
+          <p><strong>후보자 정보와 전형 결과</strong>를 연동해 합격·불합격 개인화 메일을 자동 발송합니다. 100건 기준 2시간 → <strong>1분</strong>.</p>
+        </div>
+        <div class="card">
+          <div class="card-tech-tag">React Native · OpenAI API</div>
+          <h3>온보딩 어시스턴트 모바일 앱</h3>
+          <p>신규 입사자 적응을 위한 <strong>AI 챗봇·FAQ 검색·체크리스트·진행률 대시보드</strong>를 모바일 앱으로 구현했습니다.</p>
+        </div>
+        <div class="card">
+          <h3>운영 개선 관점</h3>
+          <p><strong>반복 업무는 자동화하고</strong>, 담당자가 판단·조율·관계에 집중할 수 있는 환경이 목표입니다.</p>
+        </div>
+      </div>
+      <div class="case-process-band">
+        <div class="cpb-row">
+          <div class="cpb-row-label">비품 발주 자동화</div>
+          <div class="cpb-steps">
+            <div class="cpb-step">재고 CSV<br>읽기</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">미달 품목<br>판별</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">발주량·비용<br>계산</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">발주서<br>자동 생성</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">결과<br>출력</div>
+          </div>
+        </div>
+        <div class="cpb-row">
+          <div class="cpb-row-label">채용 메일 자동화</div>
+          <div class="cpb-steps">
+            <div class="cpb-step">지원자<br>CSV 로드</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">합·불합격<br>분기</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">개인화<br>메일 작성</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">SMTP<br>발송</div>
+            <div class="cpb-arrow">›</div>
+            <div class="cpb-step">완료<br>로그</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-strip">
+        <div class="project-item">
+          <div class="project-item-name">비품 발주 자동화</div>
+          <div class="project-item-tech">Python · CSV · datetime</div>
+          <p class="project-item-result">수작업 30분+ → <strong>1초</strong> 자동 완료<br>휴먼 에러 원천 차단</p>
+        </div>
+        <div class="project-item">
+          <div class="project-item-name">채용 메일 자동화</div>
+          <div class="project-item-tech">Python · SMTP · dotenv</div>
+          <p class="project-item-result">100건 기준 2시간 → <strong>1분</strong><br>개인화 발송 + 보안 처리</p>
+        </div>
+        <div class="project-item">
+          <div class="project-item-name">온보딩 어시스턴트 앱</div>
+          <div class="project-item-tech">React Native · OpenAI API</div>
+          <p class="project-item-result">AI 챗봇 · FAQ · 체크리스트 구현<br><strong>신규 입사자 소속감 강화</strong> 연결</p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-line"><span>업무 효율화와 성장</span><span>05 / 06</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · 시설관리 포트폴리오</span><span>06 / 06</span></div>
+      <main class="closing">
+        <div class="section-label">마무리</div>
+        <h1>제가 만들고 싶은<br>오피스 운영 환경</h1>
+        <p>좋은 총무와 시설관리는 눈에 띄지 않을 때 가장 잘 작동한다고 생각합니다.</p>
+        <p class="sub">계약, 협력사, 공간, 비품, 복지, 공통 업무가 안정적으로 운영될 때 구성원은 본업에 더 깊게 몰입할 수 있습니다.</p>
+        <p class="sub">호텔 사업장에서 쌓은 운영 경험과 문제 해결 역량을 바탕으로, 에스엠엔터테인먼트 구성원들이 더 안정적이고 효율적인 환경에서 일할 수 있도록 기여하고 싶습니다.
+        </p>
+      </main>
+      <div class="contact-strip">
+        <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
