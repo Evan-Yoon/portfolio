@@ -517,15 +517,15 @@
     .job-fit-page .fit-card {
       grid-template-columns: 31mm 1fr;
       gap: 7mm;
-      padding: 15px 13px;
+      padding: 18px 15px;
     }
 
     .job-fit-page .fit-card.wide {
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
 
     .job-fit-page .card .num {
-      font-size: 21px;
+      font-size: 26px;
       margin-bottom: 0;
     }
 
@@ -533,15 +533,15 @@
       display: block;
       color: #111217;
       font-family: var(--font-body);
-      font-size: 16.4px;
+      font-size: 20px;
       font-weight: 820;
       line-height: 1.25;
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
     .job-fit-page .fit-card p {
-      font-size: 12.8px;
-      line-height: 1.52;
+      font-size: 15px;
+      line-height: 1.6;
       color: #4f555f;
     }
 
@@ -556,7 +556,7 @@
     .job-fit-summary-band .summary-title {
       color: var(--blue-ink);
       font-family: var(--font-ui);
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 760;
       letter-spacing: .12em;
       margin-bottom: 4mm;
@@ -571,8 +571,8 @@
     }
 
     .summary-keyword {
-      min-height: 54px;
-      padding: 13px 14px;
+      min-height: 68px;
+      padding: 16px 18px;
       border-right: 1px solid #dce9f0;
     }
 
@@ -584,9 +584,9 @@
       display: block;
       color: var(--ink);
       -webkit-text-fill-color: var(--ink);
-      font-size: 13.6px;
+      font-size: 16px;
       line-height: 1.3;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       font-weight: 820;
     }
 
@@ -594,8 +594,8 @@
       display: block;
       color: #3f4a55;
       -webkit-text-fill-color: #3f4a55;
-      font-size: 11.4px;
-      line-height: 1.42;
+      font-size: 13px;
+      line-height: 1.45;
       font-weight: 520;
     }
 
@@ -875,6 +875,27 @@
       font-size: 10.5px;
     }
 
+    .facilities-page .page-title,
+    .office-page .page-title,
+    .tech-page .page-title {
+      margin-bottom: 3mm;
+    }
+
+    .facilities-page .metric-row,
+    .office-page .metric-row {
+      margin-top: 0;
+      margin-bottom: 6mm;
+    }
+
+    .tech-page .project-strip {
+      margin-top: 0;
+      margin-bottom: 3mm;
+    }
+
+    .tech-page .strength-grid {
+      margin-top: 3mm;
+    }
+
     .facilities-page .lead,
     .office-page .lead {
       font-size: 13.5px;
@@ -1025,7 +1046,7 @@
     }
 
     .project-item {
-      padding: 15px 17px;
+      padding: 18px 20px;
       border-right: 1px solid var(--line);
     }
 
@@ -1036,9 +1057,9 @@
     .project-item-name {
       color: var(--ink);
       font-family: var(--font-ui);
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       line-height: 1.3;
     }
 
@@ -1048,24 +1069,51 @@
       border: 1px solid #dce9f0;
       color: var(--blue-ink);
       font-family: var(--font-ui);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
-      padding: 2px 8px;
+      padding: 3px 9px;
       letter-spacing: .06em;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       white-space: nowrap;
     }
 
     .project-item-result {
       color: #3f4a55;
-      font-size: 11.5px;
-      line-height: 1.58;
+      font-size: 13px;
+      line-height: 1.62;
       font-weight: 500;
     }
 
     .project-item-result strong {
       color: var(--ink);
       font-weight: 820;
+    }
+
+    .project-item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      color: #8a9aaa;
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .03em;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+
+    .project-item-link::before {
+      content: "";
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238a9aaa'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: .6;
+      flex-shrink: 0;
     }
 
     /* ── 6페이지 마무리 ── */
@@ -1257,13 +1305,13 @@
             <div class="cover-stat-label">도급 입찰 진행</div>
           </div>
           <div class="cover-stat">
-            <div class="cover-stat-num">8억</div>
+            <div class="cover-stat-num">연 8억</div>
             <div class="cover-stat-label">도급비 절감</div>
           </div>
         </div>
       </main>
       <div class="contact-strip">
-        <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+        <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span><a href="https://evan-yoon.com/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);">evan-yoon.com</a></span><span>경기도 용인시 수지구</span>
       </div>
     </div>
   </section>
@@ -1327,6 +1375,17 @@
         <div class="page-main-title">시설 · 계약 · 협력사 운영</div>
         <p class="lead"><strong>400명 규모 사업장</strong>에서 시설·계약·협력사·비용 관리 업무를 수행했습니다.</p>
       </div>
+      <div class="metric-row">
+        <div class="metric"><strong>400명</strong><span>운영 사업장 규모</span>
+          <p>호텔 사업장 총무 운영 전반 담당</p>
+        </div>
+        <div class="metric"><strong>10개사</strong><span>도급사 입찰 관리</span>
+          <p>재입찰 및 신규 입찰 주도</p>
+        </div>
+        <div class="metric"><strong>연 8억 원↓</strong><span>도급비 절감</span>
+          <p>100억 원 → 92억 원 8억 비용 절감</p>
+        </div>
+      </div>
       <div class="card">
         <div class="experience-block">
           <div class="meta">총무 시설 운영</div>
@@ -1378,17 +1437,6 @@
           </div>
         </div>
       </div>
-      <div class="metric-row">
-        <div class="metric"><strong>400명</strong><span>운영 사업장 규모</span>
-          <p>호텔 사업장 총무 운영 전반 담당</p>
-        </div>
-        <div class="metric"><strong>10개사</strong><span>도급사 입찰 관리</span>
-          <p>재입찰 및 신규 입찰 주도</p>
-        </div>
-        <div class="metric"><strong>1억↓</strong><span>도급비 절감</span>
-          <p>10억 원 → 9억 원 비용 절감</p>
-        </div>
-      </div>
       <div class="footer">
         <div class="footer-line"><span>시설 · 계약 · 협력사 운영</span><span>03 / 06</span></div>
       </div>
@@ -1402,6 +1450,17 @@
         <div class="section-label">경험 02</div>
         <div class="page-main-title">오피스 환경과 구성원 경험</div>
         <p class="lead"><strong>공간 개선과 온보딩 개선</strong>을 통해 구성원이 업무에 집중할 수 있는 환경을 만들었습니다.</p>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>50%</strong><span>개선 전 퇴사율</span>
+          <p>온보딩 개선 프로젝트 이전</p>
+        </div>
+        <div class="metric"><strong>15%</strong><span>개선 후 퇴사율</span>
+          <p>복지 제도·온보딩 개선 이후</p>
+        </div>
+        <div class="metric"><strong>35%↓</strong><span>퇴사율 감소</span>
+          <p>조직 안정화 기여</p>
+        </div>
       </div>
       <div class="card">
         <div class="experience-block">
@@ -1455,17 +1514,6 @@
           </div>
         </div>
       </div>
-      <div class="metric-row">
-        <div class="metric"><strong>50%</strong><span>개선 전 퇴사율</span>
-          <p>온보딩 개선 프로젝트 이전</p>
-        </div>
-        <div class="metric"><strong>15%</strong><span>개선 후 퇴사율</span>
-          <p>복지 제도·온보딩 개선 이후</p>
-        </div>
-        <div class="metric"><strong>35%↓</strong><span>퇴사율 감소</span>
-          <p>조직 안정화 기여</p>
-        </div>
-      </div>
       <div class="footer">
         <div class="footer-line"><span>오피스 환경 · 구성원 경험</span><span>04 / 06</span></div>
       </div>
@@ -1479,6 +1527,26 @@
         <div class="section-label">경험 03</div>
         <div class="page-main-title">업무 효율화와 성장</div>
         <p class="lead"><strong>반복 행정 자동화</strong>와 <strong>데이터 기반 개선</strong>으로 운영 효율을 높이는 역량을 키우고 있습니다.</p>
+      </div>
+      <div class="project-strip">
+        <div class="project-item">
+          <div class="project-item-name">비품 발주 자동화</div>
+          <div class="project-item-tech">Python · CSV · datetime</div>
+          <p class="project-item-result">수작업 30분+ → <strong>1초</strong> 자동 완료<br>휴먼 에러 원천 차단</p>
+          <a class="project-item-link" href="https://github.com/Evan-Yoon/office-supply-manager">Evan-Yoon/office-supply-manager</a>
+        </div>
+        <div class="project-item">
+          <div class="project-item-name">채용 메일 자동화</div>
+          <div class="project-item-tech">Python · SMTP · dotenv</div>
+          <p class="project-item-result">100건 기준 2시간 → <strong>1분</strong><br>개인화 발송 + 보안 처리</p>
+          <a class="project-item-link" href="https://github.com/Evan-Yoon/hr-send-result">Evan-Yoon/hr-send-result</a>
+        </div>
+        <div class="project-item">
+          <div class="project-item-name">온보딩 어시스턴트 앱</div>
+          <div class="project-item-tech">React Native · OpenAI API</div>
+          <p class="project-item-result">AI 챗봇 · FAQ · 체크리스트 구현<br><strong>신규 입사자 소속감 강화</strong> 연결</p>
+          <a class="project-item-link" href="https://github.com/Evan-Yoon/Onboarding-Chatbot">Evan-Yoon/Onboarding-Chatbot</a>
+        </div>
       </div>
       <div class="strength-grid">
         <div class="card">
@@ -1531,23 +1599,6 @@
           </div>
         </div>
       </div>
-      <div class="project-strip">
-        <div class="project-item">
-          <div class="project-item-name">비품 발주 자동화</div>
-          <div class="project-item-tech">Python · CSV · datetime</div>
-          <p class="project-item-result">수작업 30분+ → <strong>1초</strong> 자동 완료<br>휴먼 에러 원천 차단</p>
-        </div>
-        <div class="project-item">
-          <div class="project-item-name">채용 메일 자동화</div>
-          <div class="project-item-tech">Python · SMTP · dotenv</div>
-          <p class="project-item-result">100건 기준 2시간 → <strong>1분</strong><br>개인화 발송 + 보안 처리</p>
-        </div>
-        <div class="project-item">
-          <div class="project-item-name">온보딩 어시스턴트 앱</div>
-          <div class="project-item-tech">React Native · OpenAI API</div>
-          <p class="project-item-result">AI 챗봇 · FAQ · 체크리스트 구현<br><strong>신규 입사자 소속감 강화</strong> 연결</p>
-        </div>
-      </div>
       <div class="footer">
         <div class="footer-line"><span>업무 효율화와 성장</span><span>05 / 06</span></div>
       </div>
@@ -1565,15 +1616,18 @@
       <div class="closing-rows">
         <div class="closing-row">
           <div class="closing-row-label">맥락 이해 ·<br>주도적 실행</div>
-          <div class="closing-row-text">도급 입찰 전 과정과 레이아웃 프로젝트를<br>처음부터 끝까지 주도했습니다.<br><strong>해야 할 일을 먼저 정의하는</strong> 방식으로 일합니다.</div>
+          <div class="closing-row-text">도급 입찰 전 과정과 레이아웃 프로젝트를<br>처음부터 끝까지 주도했습니다.<br><strong>해야 할 일을 먼저 정의하는</strong>
+            방식으로 일합니다.</div>
         </div>
         <div class="closing-row">
           <div class="closing-row-label">데이터 ·<br>논리 기반 판단</div>
-          <div class="closing-row-text">퇴직 면담 데이터로 이탈 원인을 파악하고,<br>도급비 절감 근거를 수치화해 의사결정을 이끌었습니다.<br><strong>직관보다 근거를 먼저 챙깁니다.</strong></div>
+          <div class="closing-row-text">퇴직 면담 데이터로 이탈 원인을 파악하고,<br>도급비 절감 근거를 수치화해 의사결정을 이끌었습니다.<br><strong>직관보다 근거를 먼저
+              챙깁니다.</strong></div>
         </div>
         <div class="closing-row">
           <div class="closing-row-label">유연한 대응 ·<br>소통과 협업</div>
-          <div class="closing-row-text">공사 현장 변수 대응, 협력사·부서장·임직원 간<br>조율을 일상으로 해왔습니다.<br><strong>복잡한 이해관계 사이에서 연결하는 역할</strong>을 합니다.</div>
+          <div class="closing-row-text">공사 현장 변수 대응, 협력사·부서장·임직원 간<br>조율을 일상으로 해왔습니다.<br><strong>복잡한 이해관계 사이에서 연결하는
+              역할</strong>을 합니다.</div>
         </div>
       </div>
       <div class="closing-dark-band">
@@ -1581,7 +1635,7 @@
           3.5년간의 총무·시설 경험을 바탕으로,<br>구성원이 본업에 집중할 수 있는 환경을 만드는 데 기여하겠습니다.
         </div>
         <div class="closing-dark-contact">
-          <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span>
+          <span>wlgus1805@naver.com</span><span>010-4008-8197</span><span><a href="https://evan-yoon.com/" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);">evan-yoon.com</a></span><span>경기도 용인시 수지구</span>
         </div>
       </div>
     </div>
