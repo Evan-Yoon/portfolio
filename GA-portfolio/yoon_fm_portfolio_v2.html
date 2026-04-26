@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤지현 | Facility Management & Office Operations Portfolio</title>
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+    :root {
+      --bg: #101119;
+      --page: #141620;
+      --panel: #191c28;
+      --panel-2: #161923;
+      --line: rgba(255,255,255,.12);
+      --line-soft: rgba(255,255,255,.075);
+      --text: #f2f4f8;
+      --muted: #aeb7c5;
+      --dim: #727d8f;
+      --accent: #75a9c8;
+      --accent-2: #d8eef8;
+      --accent-strong: #9fd3ed;
+      --chip: rgba(117,169,200,.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #0b0c11;
+      color: var(--text);
+      font-family: "Pretendard", "SUIT", "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 24px;
+      padding: 18mm 17mm 15mm;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(117,169,200,.08), transparent 30%),
+        linear-gradient(180deg, #151722 0%, #11131c 100%);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+      background-size: 18mm 18mm;
+      pointer-events: none;
+      opacity: .35;
+    }
+
+    .content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; }
+
+    .topbar, .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--dim);
+      font-size: 8.5px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding-top: 10mm;
+      border-top: 1px solid var(--line-soft);
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 500;
+      color: #8792a2;
+    }
+
+    .footer-line { width: 100%; display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 4mm;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: 33px; line-height: 1.18; letter-spacing: 0; font-weight: 760; }
+    h2 { font-size: 22px; line-height: 1.28; font-weight: 740; letter-spacing: 0; }
+    h3 { font-size: 14px; line-height: 1.35; font-weight: 720; }
+    .lead { color: var(--muted); font-size: 13px; line-height: 1.65; margin-top: 3mm; max-width: 650px; }
+    .muted { color: var(--muted); }
+
+    .cover-main { margin-top: 47mm; }
+    .eyebrow-row { display: flex; align-items: center; gap: 10px; color: var(--dim); font-size: 10.5px; letter-spacing: 0; margin-bottom: 10mm; }
+    .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: var(--accent); opacity: .7; }
+    .cover-name { font-size: 73px; line-height: .98; font-weight: 360; letter-spacing: 0; color: #f7f8fb; margin-bottom: 6mm; }
+    .cover-role { color: var(--accent-2); font-size: 14px; font-weight: 720; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12mm; }
+    .cover-tagline { font-size: 29px; line-height: 1.4; font-weight: 680; letter-spacing: 0; max-width: 620px; }
+    .cover-summary { color: var(--muted); font-size: 14px; line-height: 1.72; margin-top: 10mm; max-width: 640px; }
+    .cover-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10mm; max-width: 660px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(117,169,200,.28);
+      background: var(--chip);
+      color: #d6e9f3;
+      border-radius: 999px;
+      padding: 6px 11px 7px;
+      font-size: 11.5px;
+      font-weight: 680;
+      white-space: nowrap;
+    }
+    .contact-strip { margin-top: auto; padding-top: 14mm; border-top: 1px solid var(--line-soft); color: #a7b2c1; font-size: 11.5px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-strip span:not(:last-child)::after { content: "|"; color: rgba(255,255,255,.18); margin-left: 12px; }
+
+    .page-title { margin-top: 12mm; margin-bottom: 7mm; }
+    .grid { display: grid; gap: 10px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.032));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 14px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.14);
+    }
+    .card .num { color: var(--accent-strong); font-size: 12px; font-weight: 820; letter-spacing: .04em; margin-bottom: 6px; }
+    .card h3 { margin-bottom: 7px; color: #f7f9fc; }
+    .card p, .card li { color: #c0c8d5; font-size: 11.5px; line-height: 1.58; }
+
+    .fit-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 10px; margin-top: 9mm; }
+    .fit-card { min-height: 94px; }
+    .fit-card.wide { grid-column: span 2; display: grid; grid-template-columns: 64px 1fr; align-items: start; gap: 10px; }
+    .fit-card.wide .num { font-size: 28px; line-height: 1; opacity: .9; }
+
+    .experience-block { display: grid; grid-template-columns: 32mm 1fr; gap: 8mm; padding: 11px 0; border-bottom: 1px solid var(--line-soft); }
+    .experience-block:last-child { border-bottom: 0; }
+    .meta { color: #8d98aa; font-size: 10.3px; line-height: 1.55; font-weight: 680; }
+    .company { color: #f6f8fb; font-size: 16px; font-weight: 760; margin-bottom: 4px; }
+    .role { color: var(--accent-2); font-size: 12px; font-weight: 720; margin-bottom: 10px; }
+    ul { margin: 0; padding-left: 17px; }
+    li { margin: 2px 0; }
+
+    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8mm; }
+    .metric {
+      display: flex;
+      min-height: 78px;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(159,211,237,.32);
+      background:
+        linear-gradient(180deg, rgba(117,169,200,.16), rgba(117,169,200,.07)),
+        rgba(255,255,255,.018);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .metric strong { display: block; color: #ffffff; font-size: 29px; line-height: 1; margin-bottom: 7px; letter-spacing: 0; font-weight: 840; }
+    .metric span { display: block; color: var(--accent-strong); font-size: 11px; font-weight: 820; margin-bottom: 4px; }
+    .metric p { color: #c4ccd7; font-size: 10.6px; line-height: 1.42; }
+
+    .achievement-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 9mm 0 8mm; }
+    .achievement { padding: 12px 11px; min-height: 108px; }
+    .achievement strong { display: block; font-size: 26px; letter-spacing: 0; color: #ffffff; line-height: 1; margin-bottom: 8px; font-weight: 840; }
+    .achievement .label { color: var(--accent-strong); font-size: 11px; font-weight: 820; line-height: 1.3; margin-bottom: 6px; }
+    .achievement p { font-size: 10.4px; line-height: 1.48; color: #c4ccd7; }
+
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .case h3 { font-size: 15px; margin-bottom: 11px; }
+    .case-row { border-top: 1px solid var(--line-soft); padding-top: 9px; margin-top: 9px; }
+    .case-row b { display: block; color: var(--accent); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+    .case-row p { font-size: 11.2px; line-height: 1.6; color: var(--muted); }
+
+    .strength-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 8mm; }
+    .efficiency-box { margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .closing { margin: auto 0; max-width: 650px; }
+    .closing h1 { font-size: 35px; margin-bottom: 14mm; }
+    .closing p { font-size: 18px; line-height: 1.9; color: #dce4ef; margin-bottom: 8mm; }
+    .closing .sub { color: var(--muted); font-size: 15px; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; }
+      @page { size: A4; margin: 0; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div class="content">
+      <div class="topbar"><span>Facility Management Portfolio · 2026</span><span>01 / 06</span></div>
+      <main class="cover-main">
+        <div class="eyebrow-row">시설관리 · 오피스 운영</div>
+        <h1 class="cover-name">윤지현</h1>
+        <div class="cover-role">Facility Management & Office Operations</div>
+        <h2 class="cover-tagline">구성원이 업무에 몰입할 수 있는<br>환경을 만드는 운영 담당자</h2>
+        <p class="cover-summary">400명 규모 사업장에서 총무·오피스 운영 경험을 쌓았으며,<br>계약 관리, 협력사 운영, 복리후생 운영, 업무 효율화를 경험했습니다.</p>
+        <div class="cover-chips">
+          <span class="chip">HR/GA 경력 3년 6개월</span>
+          <span class="chip">400명 규모 사업장 운영 경험</span>
+          <span class="chip">계약·협력사 운영</span>
+          <span class="chip">업무 효율화 경험</span>
+        </div>
+      </main>
+      <div class="contact-strip"><span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · Facility Management Portfolio</span><span>02 / 06</span></div>
+      <div class="page-title">
+        <div class="section-label">Job Fit Summary</div>
+        <h1>SM Entertainment Facility Management<br>직무와의 연결점</h1>
+        <p class="lead">공고에서 요구하는 시설·계약·복리후생·오피스 환경 운영 역량을 실제 수행 경험과 연결해 정리했습니다.</p>
+      </div>
+      <div class="fit-grid">
+        <div class="card fit-card"><div class="num">01</div><h3>Facility Management</h3><p>계약서, 인감, 법인차량, 출입 권한, 사무실 레이아웃 등 총무 운영 전반을 담당한 경험을 보유하고 있습니다.</p></div>
+        <div class="card fit-card"><div class="num">02</div><h3>Office Experience</h3><p>신규 입사자 온보딩, 웰컴키트 제작, 복지 제도 개선 등 임직원 경험 향상 업무를 수행했습니다.</p></div>
+        <div class="card fit-card"><div class="num">03</div><h3>Vendor & Contract Management</h3><p>10개 도급사 입찰 및 재입찰을 주도하고, 협력사 리스크 점검 및 비용 효율화 경험을 쌓았습니다.</p></div>
+        <div class="card fit-card"><div class="num">04</div><h3>Workplace Improvement</h3><p>오피스 레이아웃 변경 프로젝트에서 공사 업체, 부서장, 임직원 간 일정과 요구사항을 조율했습니다.</p></div>
+        <div class="card fit-card wide"><div class="num">05</div><div><h3>AI-based Efficiency</h3><p>Python 기반 비품 재고 자동 발주 시스템과 채용 메일 자동화 스크립트를 구현하며 반복 행정 업무를 줄이는 방식을 고민했습니다.</p></div></div>
+      </div>
+      <div class="footer"><div class="footer-line"><span>운영의 안정성</span><span>구성원 경험</span><span>업무 효율화</span></div></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · Facility Management Portfolio</span><span>03 / 06</span></div>
+      <div class="page-title"><div class="section-label">Experience 01</div><h1>Facility · Contract · Vendor Operations</h1><p class="lead">400명 규모 호텔 사업장에서 총무 운영 전반을 담당하며 계약, 협력사, 비용 관리 역량을 쌓았습니다.</p></div>
+      <div class="card">
+        <div class="experience-block">
+          <div class="meta">총무 시설 운영</div>
+          <div><h3>운영 자산과 공통 업무 관리</h3><ul><li>계약서, 인감, 법인차량, 사원증, 출입·식사 권한 관리 등 총무 운영 전반 담당</li><li>임직원 물품 요청 처리, 소모품 재고 관리, 비품 발주 프로세스 운영</li><li>사내 공지 및 운영 관련 커뮤니케이션 체계 유지·관리</li></ul></div>
+        </div>
+        <div class="experience-block">
+          <div class="meta">도급사 계약 · 벤더 관리</div>
+          <div><h3>협력사 운영과 리스크 점검</h3><ul><li>10개 도급사 재입찰 및 신규 입찰 전 과정 주도</li><li>위장도급·불법파견 리스크 점검 및 개선 조치 수행</li><li>협력사 계약 조건 재협상을 통해 도급비 10억 원 → 9억 원 절감</li><li>정기 협력사 점검 체계 수립으로 계약 이행 품질 관리</li></ul></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>400명</strong><span>운영 사업장 규모</span><p>호텔 사업장 총무 운영 전반 담당</p></div>
+        <div class="metric"><strong>10개사</strong><span>도급사 입찰 관리</span><p>재입찰 및 신규 입찰 주도</p></div>
+        <div class="metric"><strong>1억↓</strong><span>도급비 절감</span><p>10억 원 → 9억 원 비용 절감</p></div>
+      </div>
+      <div class="footer"><div class="footer-line"><span>Facility · Contract · Vendor Operations</span><span>03 / 06</span></div></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · Facility Management Portfolio</span><span>04 / 06</span></div>
+      <div class="page-title"><div class="section-label">Experience 02</div><h1>Office Environment & Employee Focus</h1><p class="lead">공간 개선과 온보딩 경험 향상을 통해 구성원이 업무에 집중할 수 있는 환경을 만들었습니다.</p></div>
+      <div class="card">
+        <div class="experience-block">
+          <div class="meta">오피스 레이아웃 개선</div>
+          <div><h3>공사·공간·일정 조율</h3><ul><li>사무실 레이아웃 변경 프로젝트 기획 및 실행</li><li>공사 업체, 부서장, 임직원 간 일정 및 요구사항 조율</li><li>설계도와 실제 현장 차이, 공사 일정 변경 등 현장 변수 대응</li><li>변경 사항을 관계자에게 즉시 공유하여 업무 혼선 최소화</li></ul></div>
+        </div>
+        <div class="experience-block">
+          <div class="meta">온보딩 · 복지 제도 개선</div>
+          <div><h3>조직 적응과 장기 근속 지원</h3><ul><li>신규 입사자 온보딩 프로세스 개선 및 웰컴키트 제작</li><li>복지 제도 불만족 요인 분석 후 제도 개선안 도출·적용</li><li>퇴직 면담을 통해 이탈 원인 분석</li><li>퇴사율 50% → 15%로 감소하는 데 기여</li></ul></div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>50%</strong><span>개선 전 퇴사율</span><p>온보딩 개선 프로젝트 이전</p></div>
+        <div class="metric"><strong>15%</strong><span>개선 후 퇴사율</span><p>복지 제도·온보딩 개선 이후</p></div>
+        <div class="metric"><strong>↓35%p</strong><span>퇴사율 감소</span><p>조직 안정화 기여</p></div>
+      </div>
+      <div class="footer"><div class="footer-line"><span>Office Environment · Employee Focus</span><span>04 / 06</span></div></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · Facility Management Portfolio</span><span>05 / 06</span></div>
+      <div class="page-title"><div class="section-label">Experience 03</div><h1>AI-based Work Efficiency & Growth</h1><p class="lead">반복 행정 업무를 자동화하고, 데이터와 논리 기반으로 운영을 개선하는 역량을 지속적으로 키워가고 있습니다.</p></div>
+      <div class="strength-grid">
+        <div class="card"><h3>비품 재고 자동 발주 시스템</h3><p>CSV 재고 데이터를 기반으로 최소 유지 수량 미달 품목을 파악하고 발주 리스트를 생성하는 Python 스크립트를 구현했습니다.</p></div>
+        <div class="card"><h3>채용 결과 안내 메일 자동화</h3><p>후보자 정보와 전형 결과를 연동해 개인화된 결과 안내 메일을 자동 생성하는 방식을 구현했습니다.</p></div>
+        <div class="card"><h3>AI 역량 개발</h3><p>Intel AI for Future Workforce 과정을 통해 데이터 분석, 자동화, LLM 활용 워크플로우를 학습 중입니다.</p></div>
+        <div class="card"><h3>운영 개선 관점</h3><p>기술 도입 자체보다 담당자가 더 중요한 판단과 조율 업무에 집중할 수 있는 환경을 만드는 데 초점을 둡니다.</p></div>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>Python</strong><span>업무 자동화</span><p>반복 행정 업무 개선</p></div>
+        <div class="metric"><strong>AI</strong><span>학습 확장</span><p>운영 업무 적용 가능성 탐색</p></div>
+        <div class="metric"><strong>Data</strong><span>기반 운영</span><p>정량적 판단과 개선 지향</p></div>
+      </div>
+      <div class="footer"><div class="footer-line"><span>AI-based Work Efficiency & Growth</span><span>05 / 06</span></div></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="content">
+      <div class="topbar"><span>윤지현 · Facility Management Portfolio</span><span>06 / 06</span></div>
+      <main class="closing">
+        <div class="section-label">Closing</div>
+        <h1>제가 만들고 싶은<br>오피스 운영 환경</h1>
+        <p>좋은 총무와 Facility Management는 눈에 띄지 않을 때 가장 잘 작동한다고 생각합니다.</p>
+        <p class="sub">계약, 협력사, 공간, 비품, 복지, 공통 업무가 안정적으로 운영될 때 구성원은 본업에 더 깊게 몰입할 수 있습니다.</p>
+        <p class="sub">호텔 사업장에서 쌓은 운영 경험과 문제 해결 역량을 바탕으로, SM Entertainment 구성원들이 더 안정적이고 효율적인 환경에서 일할 수 있도록 기여하고 싶습니다.</p>
+      </main>
+      <div class="contact-strip"><span>wlgus1805@naver.com</span><span>010-4008-8197</span><span>evan-yoon.com</span><span>경기도 용인시 수지구</span></div>
+    </div>
+  </section>
+</body>
+</html>
