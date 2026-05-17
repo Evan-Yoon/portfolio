@@ -480,12 +480,13 @@ strong {
 
 .tech-box span {
   display: block;
-  padding: 7px 8px;
+  padding: 8px 10px;
   border-radius: 999px;
   background: #fff;
   color: #151515;
-  font-size: 13px;
-  line-height: 1.25;
+  font-size: 13.5px;
+  line-height: 1.3;
+  font-weight: 500;
 }
 
 .architecture-box {
@@ -551,6 +552,139 @@ strong {
   font-size: 13.2px;
   word-break: keep-all;
   overflow-wrap: anywhere;
+}
+
+.clova-page .project-top h2 span {
+  color: #1cb090;
+}
+
+.clova-page .star-block {
+  margin-bottom: 20px;
+}
+
+.clova-page .star-block > div {
+  padding-top: 14px;
+}
+
+.clova-page .star-block p,
+.clova-page .star-block li {
+  font-size: 13.8px;
+  line-height: 1.54;
+  margin-bottom: 1px;
+}
+
+.clova-page .star-block h4 {
+  margin: 10px 0 4px;
+  font-size: 13.8px;
+}
+
+.kpi-box {
+  padding: 0;
+}
+
+.kpi-box > h3 {
+  padding: 0 0 8px;
+  margin-bottom: 0;
+}
+
+.kpi-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.kpi-row:last-child {
+  border-bottom: none;
+}
+
+.kpi-num {
+  flex-shrink: 0;
+  min-width: 88px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 900;
+  color: #151515;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.kpi-label {
+  flex: 1;
+  font-size: 12.5px;
+  color: #444;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.kpi-accent .kpi-num {
+  color: #1cb090;
+}
+
+.priority-map {
+  padding-bottom: 2px;
+}
+
+.priority-map h3 {
+  margin-bottom: 10px;
+}
+
+.pzone {
+  padding: 9px 11px;
+  margin-bottom: 7px;
+}
+
+.pzone:last-child {
+  margin-bottom: 0;
+}
+
+.pzone-qa {
+  background: #fff2f2;
+  border-left: 3px solid #c53030;
+}
+
+.pzone-auto {
+  background: #f0faf4;
+  border-left: 3px solid #2d8a50;
+}
+
+.pzone b {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.pzone ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pzone li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+.pzone li span {
+  font-weight: 600;
+}
+
+.pzone li em {
+  font-style: normal;
+  color: #555;
+  font-size: 12px;
 }
 
 .mongle-page .project-top h2 {
