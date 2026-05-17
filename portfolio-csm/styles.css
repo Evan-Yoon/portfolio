@@ -238,8 +238,8 @@ strong {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: 128px 1fr;
-  gap: 9px 30px;
+  grid-template-columns: 150px 1fr;
+  gap: 9px 16px;
   padding-top: 17px;
 }
 
@@ -261,34 +261,29 @@ strong {
   line-height: 1.45;
 }
 
-.credential-grid {
+.job-map-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 34px;
+  grid-template-columns: 150px 1fr;
+  gap: 9px 16px;
   padding-top: 17px;
 }
 
-.credential-grid div {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: baseline;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #d8d8d8;
+.job-map-grid div {
+  display: contents;
 }
 
-.credential-grid b {
+.job-map-grid b {
   color: #3b3b3b;
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.45;
   font-weight: 900;
 }
 
-.credential-grid span {
-  color: #575757;
-  font-size: 12.1px;
-  line-height: 1.35;
-  white-space: nowrap;
+.job-map-grid p {
+  margin: 0;
+  color: #3f3f3f;
+  font-size: 13.6px;
+  line-height: 1.45;
 }
 
 .project-top {
