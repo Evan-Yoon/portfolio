@@ -6,7 +6,7 @@
   --soft: #eeeeee;
   --rule: #8a8a8a;
   --dark: #2d2b2b;
-  --naver: #03c75a;
+  --accent: #f2c230;
 }
 
 *,
@@ -135,19 +135,20 @@ img {
 }
 
 .about-content {
-  padding: 25px 47px 0 43px;
+  padding: 36px 47px 0 43px;
 }
 
 .line-section {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 22px;
-  margin-bottom: 19px;
+  grid-template-columns: 105px 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
   align-items: start;
 }
 
 .line-section h2 {
-  margin: -16px 0 0;
+  margin: -13px 0 0;
+  transform: translateX(-14px);
   color: #333;
   font-size: 25px;
   line-height: 1.1;
@@ -158,19 +159,20 @@ img {
 
 .section-body {
   border-top: 1.5px solid var(--rule);
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .about-text .section-body {
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .section-body p {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: #3e3e3e;
-  font-size: 14.6px;
-  line-height: 1.58;
+  font-size: 13.8px;
+  line-height: 1.48;
   font-weight: 400;
+  word-break: keep-all;
 }
 
 .section-body p:last-child {
@@ -185,7 +187,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 11px;
-  padding-top: 20px;
+  padding-top: 18px;
 }
 
 .rows div {
@@ -226,15 +228,19 @@ strong {
   white-space: nowrap;
 }
 
-.skills-section {
+.credentials-section {
   margin-bottom: 0;
+}
+
+.skills-section {
+  margin-bottom: 20px;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: 128px 1fr;
   gap: 9px 30px;
-  padding-top: 19px;
+  padding-top: 17px;
 }
 
 .skills-grid div {
@@ -255,15 +261,45 @@ strong {
   line-height: 1.45;
 }
 
+.credential-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 34px;
+  padding-top: 17px;
+}
+
+.credential-grid div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.credential-grid b {
+  color: #3b3b3b;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.credential-grid span {
+  color: #575757;
+  font-size: 12.1px;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
 .project-top {
   height: 255px;
   background: var(--dark);
   color: #fff;
   padding: 52px 56px 0;
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 315px;
   grid-template-rows: auto auto;
-  gap: 0 42px;
+  gap: 0 36px;
 }
 
 .project-top h2 {
@@ -276,7 +312,7 @@ strong {
 }
 
 .project-top h2 span {
-  color: var(--naver);
+  color: var(--accent);
 }
 
 .project-top>div>p {
@@ -292,37 +328,45 @@ strong {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 19px;
-  padding-top: 5px;
+  gap: 17px;
+  padding-top: 2px;
 }
 
 .project-meta div {
   display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 12px;
+  grid-template-columns: 31px 1fr;
+  gap: 14px;
   align-items: center;
 }
 
 .project-meta dt {
   width: 25px;
   height: 25px;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  color: transparent;
+  color: #fff;
 }
 
-.project-meta div:nth-child(2) dt {
-  border-radius: 50%;
+.project-meta dt svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.project-meta div:nth-child(3) dt {
-  border-radius: 3px;
+.project-meta dt span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .project-meta dd {
   margin: 0;
   color: #f5f5f5;
-  font-size: 21px;
+  font-size: 18.5px;
   line-height: 1.3;
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -331,34 +375,35 @@ strong {
 .project-title-line {
   grid-column: 1 / -1;
   align-self: start;
-  margin: 34px 0 0;
+  margin: 22px 0 0;
   color: #fff;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 25px;
+  line-height: 1.28;
   letter-spacing: -0.035em;
   font-weight: 900;
+  word-break: keep-all;
 }
 
 .project-body {
   height: calc(var(--page-h) - 255px);
   display: grid;
-  grid-template-columns: 68% 32%;
+  grid-template-columns: 69% 31%;
 }
 
 .star-column {
   background: #eeeeee;
-  padding: 16px 31px 0;
+  padding: 34px 25px 0 31px;
 }
 
 .star-block {
   display: grid;
   grid-template-columns: 92px 1fr;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: 26px;
+  margin-bottom: 13px;
 }
 
 .star-block h3 {
-  margin: 0;
+  margin: -15px 0 0;
   color: #575454;
   font-size: 27px;
   line-height: 1.1;
@@ -368,18 +413,19 @@ strong {
 
 .star-block>div {
   border-top: 1.5px solid #666;
-  padding-top: 12px;
+  padding-top: 11px;
 }
 
 .star-block p,
 .star-block li {
-  color: #555;
-  font-size: 13.4px;
-  line-height: 1.46;
+  color: #4f4f4f;
+  font-size: 13.6px;
+  line-height: 1.48;
+  word-break: keep-all;
 }
 
 .star-block p {
-  margin: 0 0 5px;
+  margin: 0 0 8px;
 }
 
 .star-block ul {
@@ -387,9 +433,18 @@ strong {
   padding-left: 16px;
 }
 
+.star-block li {
+  margin: 1px 0;
+}
+
+.star-block strong {
+  color: #303030;
+  font-weight: 900;
+}
+
 .star-block h4 {
-  margin: 8px 0 4px;
-  color: #555;
+  margin: 9px 0 3px;
+  color: #444;
   font-size: 13.8px;
   line-height: 1.35;
   font-weight: 900;
@@ -397,7 +452,7 @@ strong {
 
 .project-side {
   background: #fff;
-  padding: 24px 20px 0;
+  padding: 28px 18px 0;
 }
 
 .side-box {
@@ -421,6 +476,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  margin-top: 13px;
 }
 
 .tech-box h3 {
@@ -438,7 +494,7 @@ strong {
 }
 
 .architecture-box {
-  margin-top: 14px;
+  margin-top: 0;
   padding: 15px 13px;
   min-height: 158px;
   border: 1.5px solid #111;
@@ -497,6 +553,49 @@ strong {
 .side-section p {
   margin: 8px 0 0;
   text-decoration: underline;
+  font-size: 13.2px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.mongle-page .project-top h2 {
+  color: #f472b6;
+}
+
+.mongle-page .star-block {
+  margin-bottom: 14px;
+}
+
+.mongle-page .star-block > div {
+  padding-top: 11px;
+}
+
+.mongle-page .star-block h4 {
+  margin-top: 9px;
+}
+
+.mongle-page .star-block li {
+  margin: 1px 0;
+}
+
+.detoks-page .project-top h2 span {
+  color: #a3e635;
+}
+
+.detoks-page .star-block {
+  margin-bottom: 18px;
+}
+
+.detoks-page .star-block > div {
+  padding-top: 13px;
+}
+
+.detoks-page .star-block h4 {
+  margin-top: 11px;
+}
+
+.detoks-page .star-block li {
+  margin: 2px 0;
 }
 
 @media (max-width: 900px) {
