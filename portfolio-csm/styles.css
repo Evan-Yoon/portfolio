@@ -558,8 +558,16 @@ strong {
   color: #1cb090;
 }
 
+.clova-page .star-column {
+  padding-top: 30px;
+}
+
+.clova-page .project-side {
+  padding-top: 18px;
+}
+
 .clova-page .star-block {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .clova-page .star-block > div {
@@ -625,6 +633,14 @@ strong {
 
 .kpi-accent .kpi-num {
   color: #1cb090;
+}
+
+.kpi-note {
+  margin: 10px 0 0;
+  font-size: 10px;
+  color: #888;
+  line-height: 1.45;
+  word-break: keep-all;
 }
 
 .priority-map {

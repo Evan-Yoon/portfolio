@@ -9,7 +9,13 @@
       "Bash(C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -m pip install python-pptx -q)",
       "Bash(C:UsersuserAppDataLocalProgramsPythonPython314python.exe -c ' *)",
       "PowerShell(pip install python-pptx -q 2>$null)",
-      "PowerShell(python -m pip install python-pptx 2>&1)"
+      "PowerShell(python -m pip install python-pptx 2>&1)",
+      "Bash(npm --version)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
+      "Bash(node \"c:/dev/project/portfolio/portfolio-csm/export-pdf.js\")"
     ]
   }
 }
