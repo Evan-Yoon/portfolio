@@ -370,13 +370,14 @@ strong {
 .project-title-line {
   grid-column: 1 / -1;
   align-self: start;
-  margin: 22px 0 0;
+  margin: 20px 0 0;
   color: #fff;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1.28;
   letter-spacing: -0.035em;
   font-weight: 900;
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .project-body {
@@ -387,14 +388,14 @@ strong {
 
 .star-column {
   background: #eeeeee;
-  padding: 34px 25px 0 31px;
+  padding: 36px 22px 0 31px;
 }
 
 .star-block {
   display: grid;
   grid-template-columns: 92px 1fr;
-  gap: 26px;
-  margin-bottom: 13px;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
 .star-block h3 {
@@ -408,14 +409,14 @@ strong {
 
 .star-block>div {
   border-top: 1.5px solid #666;
-  padding-top: 11px;
+  padding-top: 13px;
 }
 
 .star-block p,
 .star-block li {
   color: #4f4f4f;
-  font-size: 13.6px;
-  line-height: 1.48;
+  font-size: 15.8px;
+  line-height: 1.56;
   word-break: keep-all;
 }
 
@@ -425,11 +426,11 @@ strong {
 
 .star-block ul {
   margin: 0;
-  padding-left: 16px;
+  padding-left: 18px;
 }
 
 .star-block li {
-  margin: 1px 0;
+  margin: 3px 0;
 }
 
 .star-block strong {
@@ -438,9 +439,9 @@ strong {
 }
 
 .star-block h4 {
-  margin: 9px 0 3px;
+  margin: 10px 0 5px;
   color: #444;
-  font-size: 13.8px;
+  font-size: 15.8px;
   line-height: 1.35;
   font-weight: 900;
 }
@@ -559,7 +560,7 @@ strong {
 }
 
 .clova-page .star-column {
-  padding-top: 30px;
+  padding-top: 32px;
 }
 
 .clova-page .project-side {
@@ -567,23 +568,23 @@ strong {
 }
 
 .clova-page .star-block {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .clova-page .star-block > div {
-  padding-top: 14px;
+  padding-top: 12px;
 }
 
 .clova-page .star-block p,
 .clova-page .star-block li {
-  font-size: 13.8px;
+  font-size: 15.2px;
   line-height: 1.54;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .clova-page .star-block h4 {
-  margin: 10px 0 4px;
-  font-size: 13.8px;
+  margin: 9px 0 4px;
+  font-size: 15.2px;
 }
 
 .kpi-box {
@@ -708,7 +709,7 @@ strong {
 }
 
 .mongle-page .star-block {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .mongle-page .star-block > div {
@@ -716,11 +717,11 @@ strong {
 }
 
 .mongle-page .star-block h4 {
-  margin-top: 9px;
+  margin-top: 10px;
 }
 
 .mongle-page .star-block li {
-  margin: 1px 0;
+  margin: 3px 0;
 }
 
 .detoks-page .project-top h2 span {
@@ -736,11 +737,11 @@ strong {
 }
 
 .detoks-page .star-block h4 {
-  margin-top: 11px;
+  margin-top: 10px;
 }
 
 .detoks-page .star-block li {
-  margin: 2px 0;
+  margin: 3px 0;
 }
 
 @media (max-width: 900px) {
