@@ -224,11 +224,15 @@ html {
 
 .blizzard-page .project-top h2 {
   font-size: 68px;
+  color: #fff;
+}
+
+.blizzard-page .project-top h2 span {
   color: #7dd3fc;
 }
 
 .josun-page .project-top h2 {
-  font-size: 58px;
+  font-size: 76px;
 }
 
 .josun-page .project-top h2 span {
