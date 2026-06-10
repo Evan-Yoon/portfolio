@@ -117,6 +117,10 @@ html {
   line-height: 1.25;
 }
 
+.skill-group b {
+  white-space: nowrap;
+}
+
 .skill-rating-grid span,
 .skill-group span,
 .certificate-grid p {
