@@ -50,15 +50,31 @@ html {
 }
 
 .rows div {
-  grid-template-columns: 150px 1fr 160px;
-  gap: 14px;
+  grid-template-columns: 128px minmax(0, 1fr) 178px;
+  gap: 10px;
 }
 
 .rows span,
 .rows p,
 .rows em {
-  font-size: 13.2px;
+  font-size: 12.4px;
   line-height: 1.25;
+  min-width: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.two-col .rows p,
+.two-col .rows em {
+  white-space: normal;
+}
+
+.two-col .rows div {
+  grid-template-columns: 128px minmax(0, 1fr) 178px;
+}
+
+.exp-rows div {
+  grid-template-columns: 128px minmax(0, 1fr) 172px;
 }
 
 .skill-rating-grid,
@@ -67,15 +83,51 @@ html {
   padding-top: 13px;
 }
 
+.skill-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  padding-top: 12px;
+}
+
+.skill-group h3 {
+  margin: 0 0 7px;
+  color: #333;
+  font-size: 13.2px;
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.skill-group div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.skill-group div:last-child {
+  margin-bottom: 0;
+}
+
 .skill-rating-grid b,
+.skill-group b,
 .certificate-grid b {
   font-size: 13.4px;
   line-height: 1.25;
 }
 
 .skill-rating-grid span,
+.skill-group span,
 .certificate-grid p {
   font-size: 12.8px;
+}
+
+.skill-group span {
+  color: #333;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .certificate-grid div {
