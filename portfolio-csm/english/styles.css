@@ -92,8 +92,8 @@ html {
 }
 
 .project-title-line {
-  margin-top: 16px;
-  font-size: 20px;
+  margin-top: 12px;
+  font-size: 19px;
   line-height: 1.22;
   min-width: 0;
   width: calc(var(--page-w) - 112px);
@@ -149,6 +149,76 @@ html {
 
 .clova-page .project-title-line {
   margin-top: 10px;
+}
+
+.unity-page .project-top h2 span,
+.aicc-page .project-top h2 span {
+  color: #1cb090;
+}
+
+.blizzard-page .project-top h2 {
+  font-size: 68px;
+  color: #7dd3fc;
+}
+
+.josun-page .project-top h2 {
+  font-size: 58px;
+}
+
+.josun-page .project-top h2 span {
+  color: #f2c230;
+}
+
+.walkmate-page .project-top h2 span {
+  color: #f2c230;
+}
+
+.aicc-page .project-top h2 {
+  font-size: 70px;
+}
+
+.unity-page .project-top h2,
+.aicc-page .project-top h2,
+.walkmate-page .project-top h2 {
+  letter-spacing: 0;
+}
+
+.unity-page .project-title-line,
+.josun-page .project-title-line,
+.aicc-page .project-title-line {
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.evidence-card {
+  margin-bottom: 13px;
+  border: 1.5px solid #111;
+  background: #111;
+  overflow: hidden;
+}
+
+.evidence-card img {
+  display: block;
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+}
+
+.evidence-card-text {
+  background: #fff;
+}
+
+.evidence-card-text img {
+  height: 108px;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.josun-page .architecture-box,
+.walkmate-page .architecture-box,
+.mongle-page .architecture-box,
+.detoks-page .architecture-box {
+  margin-top: 13px;
 }
 
 .project-side {
