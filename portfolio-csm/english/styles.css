@@ -1,0 +1,173 @@
+@import url("../styles.css");
+
+html {
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  overflow-wrap: break-word;
+}
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.hero-copy h1,
+.line-section h2,
+.project-top h2,
+.project-top>div>p,
+.project-title-line,
+.star-block h3,
+.side-box h3,
+.architecture-box h3,
+.side-section h3 {
+  letter-spacing: 0;
+}
+
+.about-content {
+  padding-top: 30px;
+}
+
+.line-section {
+  margin-bottom: 24px;
+}
+
+.line-section h2 {
+  font-size: 24px;
+}
+
+.section-body {
+  padding-top: 13px;
+}
+
+.section-body p {
+  font-size: 12.8px;
+  line-height: 1.38;
+}
+
+.rows {
+  gap: 8px;
+  padding-top: 14px;
+}
+
+.rows div {
+  grid-template-columns: 150px 1fr 160px;
+  gap: 14px;
+}
+
+.rows span,
+.rows p,
+.rows em {
+  font-size: 13.2px;
+  line-height: 1.25;
+}
+
+.skill-rating-grid,
+.certificate-grid {
+  gap: 7px 30px;
+  padding-top: 13px;
+}
+
+.skill-rating-grid b,
+.certificate-grid b {
+  font-size: 13.4px;
+  line-height: 1.25;
+}
+
+.skill-rating-grid span,
+.certificate-grid p {
+  font-size: 12.8px;
+}
+
+.certificate-grid div {
+  gap: 12px;
+}
+
+.project-top {
+  padding-top: 48px;
+}
+
+.project-top>div>p {
+  font-size: 25px;
+  line-height: 1.12;
+}
+
+.project-title-line {
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.22;
+  min-width: 0;
+  width: calc(var(--page-w) - 112px);
+  max-width: calc(var(--page-w) - 112px);
+  justify-self: stretch;
+  overflow-wrap: anywhere;
+}
+
+.star-column {
+  padding-top: 30px;
+}
+
+.star-block {
+  margin-bottom: 13px;
+}
+
+.star-block h3 {
+  font-size: 19px;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.star-block>div {
+  padding-top: 10px;
+}
+
+.star-block p,
+.star-block li {
+  font-size: 12.9px;
+  line-height: 1.34;
+}
+
+.star-block li {
+  margin: 2px 0;
+}
+
+.star-block h4 {
+  margin: 7px 0 3px;
+  font-size: 13px;
+  line-height: 1.22;
+}
+
+.clova-page .star-block p,
+.clova-page .star-block li {
+  font-size: 12.2px;
+  line-height: 1.28;
+}
+
+.clova-page .star-block {
+  margin-bottom: 11px;
+}
+
+.clova-page .project-title-line {
+  margin-top: 10px;
+}
+
+.project-side {
+  padding-top: 24px;
+}
+
+.side-box h3,
+.architecture-box h3,
+.side-section h3 {
+  font-size: 21px;
+}
+
+.tech-box span {
+  font-size: 12.5px;
+  line-height: 1.22;
+}
+
+.side-section li,
+.side-section p {
+  font-size: 12.8px;
+  line-height: 1.38;
+}
