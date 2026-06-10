@@ -24,11 +24,11 @@ html {
 }
 
 .about-content {
-  padding-top: 30px;
+  padding-top: 38px;
 }
 
 .line-section {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .line-section h2 {
@@ -41,12 +41,13 @@ html {
 
 .section-body p {
   font-size: 12.8px;
-  line-height: 1.38;
+  line-height: 1.48;
+  margin-bottom: 13px;
 }
 
 .rows {
-  gap: 8px;
-  padding-top: 14px;
+  gap: 12px;
+  padding-top: 16px;
 }
 
 .rows div {
@@ -87,11 +88,11 @@ html {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
-  padding-top: 12px;
+  padding-top: 16px;
 }
 
 .skill-group h3 {
-  margin: 0 0 7px;
+  margin: 0 0 10px;
   color: #333;
   font-size: 13.2px;
   line-height: 1.15;
@@ -103,7 +104,7 @@ html {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .skill-group div:last-child {
@@ -136,6 +137,15 @@ html {
 
 .certificate-grid div {
   gap: 12px;
+}
+
+.credentials-section .certificate-grid {
+  gap: 12px 30px;
+  padding-top: 16px;
+}
+
+.credentials-section {
+  margin-bottom: 0;
 }
 
 .project-top {
