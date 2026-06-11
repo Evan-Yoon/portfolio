@@ -221,6 +221,118 @@ html {
   overflow-wrap: anywhere;
 }
 
+.role-chip {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  transform: translateY(-2px);
+  color: #fff;
+  font-size: 11.5px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.unity-page .role-chip {
+  background: #1cb090;
+}
+
+.unity-page .star-block h4 {
+  margin: 0 0 6px;
+  color: #6b6b6b;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.unity-page .star-column {
+  padding-top: 50px;
+}
+
+.unity-page .star-block {
+  margin-bottom: 46px;
+}
+
+.unity-page .star-block > div {
+  position: relative;
+}
+
+.unity-page .star-block > div::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 34px;
+  height: 3.5px;
+  background: #1cb090;
+}
+
+.unity-page .star-block p,
+.unity-page .star-block li {
+  font-size: 14.2px;
+  line-height: 1.5;
+}
+
+.unity-page .star-block li {
+  margin: 5px 0;
+}
+
+.before-after-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.ba-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.ba-item img {
+  display: block;
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ba-item:last-child img {
+  height: 148px;
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #e0e0e0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ba-label--after {
+  background: rgba(28, 176, 144, 0.8);
+  color: #fff;
+}
+
+.unity-page .kpi-row {
+  padding: 10px 0;
+}
+
+.unity-page .tech-box {
+  margin-top: 16px;
+  padding: 18px 14px;
+  gap: 10px;
+}
+
 .star-column {
   padding-top: 30px;
 }
