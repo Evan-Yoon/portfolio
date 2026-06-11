@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jihyun Yoon | BDR CV</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #646464;
+      --line: #cfcfcf;
+      --soft: #f4f6f8;
+      --accent: #265a7f;
+      --accent-2: #2f7d65;
+      --gold: #9b6b1f;
+      --page: #ffffff;
+      --bg: #e9edf1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.38;
+    }
+
+    body {
+      margin: 0;
+      padding: 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      background: var(--page);
+      box-shadow: 0 18px 50px rgba(23, 23, 23, 0.12);
+      padding: 48px 58px 52px;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: start;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 35px;
+      line-height: 0.95;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .role {
+      margin: 7px 0 0;
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .contact {
+      display: grid;
+      gap: 3px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.2px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .summary {
+      margin: 18px 0 16px;
+      color: #262626;
+      font-size: 13.4px;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .metric {
+      border-top: 3px solid var(--accent);
+      background: var(--soft);
+      padding: 10px 11px 11px;
+      min-height: 90px;
+    }
+
+    .metric:nth-child(2) {
+      border-color: var(--accent-2);
+    }
+
+    .metric:nth-child(3) {
+      border-color: var(--gold);
+    }
+
+    .metric:nth-child(4) {
+      border-color: #555;
+    }
+
+    .metric b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+      line-height: 1.05;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 11.4px;
+      line-height: 1.32;
+    }
+
+    .section {
+      margin-top: 19px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 9px;
+      color: #5f5f5f;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .item {
+      margin: 0 0 13px;
+      break-inside: avoid;
+    }
+
+    .item-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .item h3 span {
+      color: #3d3d3d;
+      font-weight: 700;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 11.8px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 5px 0 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 0 0 4px;
+      padding-left: 2px;
+      font-size: 12.7px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px 22px;
+    }
+
+    .project h3 {
+      margin-bottom: 2px;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11.8px;
+      font-weight: 700;
+    }
+
+    .compact-columns {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .line-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 2px;
+      font-size: 12.7px;
+    }
+
+    .line-list div {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    .line-list b {
+      color: #333;
+    }
+
+    .line-list span {
+      color: #303030;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 3px;
+    }
+
+    .skill-cloud span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      border: 1px solid #d8d8d8;
+      padding: 4px 8px;
+      color: #282828;
+      font-size: 11.8px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        width: 100%;
+        padding: 32px 22px 36px;
+        box-shadow: none;
+      }
+
+      .top,
+      .item-head,
+      .compact-columns,
+      .project-grid,
+      .metric-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        text-align: left;
+        white-space: normal;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .metric {
+        min-height: auto;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 13mm;
+    }
+
+    @media print {
+      html,
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .cv {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .metric,
+      .item,
+      .project {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv">
+    <header class="top">
+      <div>
+        <h1>Jihyun Yoon</h1>
+        <p class="role">Business Development Representative | Industry Accounts</p>
+      </div>
+      <address class="contact">
+        <a href="mailto:wlgus1805@naver.com">wlgus1805@naver.com</a>
+        <a href="tel:+821040088197">+82 10-4008-8197</a>
+        <a href="https://evan-yoon.com">evan-yoon.com</a>
+        <a href="https://www.linkedin.com/in/jihyun-yoon-a436101a3">linkedin.com/in/jihyun-yoon-a436101a3</a>
+        <a href="https://github.com/Evan-Yoon">github.com/Evan-Yoon</a>
+      </address>
+    </header>
+
+    <p class="summary">
+      BDR candidate with 6+ years in customer-facing support and operations, combining issue triage,
+      objection handling, partner cadence, and KPI-based negotiation with hands-on AI and real-time 3D
+      demo work. Strong at turning messy customer signals into account research, value messaging,
+      discovery questions, and AE-ready handoff context across Korean and English stakeholders.
+    </p>
+
+    <section class="metric-strip" aria-label="Selected BDR signals">
+      <div class="metric"><b>29,872</b><span>Public support inquiries classified into 8 issue categories for AICC value-message research.</span></div>
+      <div class="metric"><b>5x</b><span>Applicant inflow growth after expanding outreach channels and partner relationships.</span></div>
+      <div class="metric"><b>74% -> 83%</b><span>Customer satisfaction lift through policy-aware support, documentation, and escalation judgment.</span></div>
+      <div class="metric"><b>50 -> 15%</b><span>Annual turnover reduction after redesigning onboarding, follow-up interviews, and feedback loops.</span></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+      <article class="item">
+        <div class="item-head">
+          <h3>HR/GA Agent, Sales Support <span>| Josun Hotels &amp; Resorts</span></h3>
+          <div class="date">Feb 2022 - Jul 2025 | Seoul</div>
+        </div>
+        <ul>
+          <li>Built a multi-channel hiring and partner pipeline across LinkedIn, Jasoseol, SNS, job boards, and roughly 50 university partners, increasing applicant inflow by over 5x and improving opening fulfillment from 60% to 98%.</li>
+          <li>Managed high-volume recruiting operations for approximately 600 hires per year while coordinating department heads, faculty partners, vendors, and solution providers through clear follow-up cadences.</li>
+          <li>Negotiated a vendor fee increase request with call-volume, answer-rate, and abandonment data, holding fees flat unless a 90% response-rate target was sustained for 3 months, with a 2.5% raise only after proof.</li>
+          <li>Redesigned onboarding touchpoints, welcome kits, benefits walkthroughs, training coordination, and 1:1 follow-up interviews, contributing to annual turnover reduction from 50% to 15%.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h3>Game Master / Customer Support <span>| Blizzard Entertainment</span></h3>
+          <div class="date">May 2019 - Dec 2021 | Seoul</div>
+        </div>
+        <ul>
+          <li>Resolved gameplay, account, refund, bug, event, and incident cases using internal tools, English logs, and policy references; improved CSAT from 74% to 83% and earned Employee of the Month recognition.</li>
+          <li>Converted repeated refund-policy objections into an evidence-backed exception criterion for wrong-account payments with no login history; secured team and US HQ approval for standard procedure adoption.</li>
+          <li>Handled hard-no conversations by separating the policy limit from the customer's real concern, explaining the reason, apologizing for the unresolved request, and routing UX feedback to the product side.</li>
+          <li>Authored 60+ Korean player guides on Wowhead as a player, turning repeated points of confusion into scalable self-service content while protecting internal support information.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">BDR-Targeted Projects</h2>
+      <div class="project-grid">
+        <article class="item project">
+          <h3>Industrial Robot Arm Demo</h3>
+          <p>Real-time 3D use case framing | RT3D engine, cloud asset workflow, MCP</p>
+          <ul>
+            <li>Built an interactive robot arm with Base, Shoulder, Elbow, Wrist, and Gripper controls, then staged the demo for customer-facing manufacturing, robotics, equipment training, and PoC conversations.</li>
+            <li>Converted the RobotArm object into a reusable Prefab, uploaded it to a cloud asset workflow, and tested an AI-assisted scene workflow with Claude Code.</li>
+          </ul>
+        </article>
+
+        <article class="item project">
+          <h3>AICC Market Signal Lab</h3>
+          <p>Public-data research and value-message framework</p>
+          <ul>
+            <li>Classified 29,872 public support inquiries into 8 categories and benchmarked 5 AICC vendors across product pages, consultation flows, adoption content, and metric disclosure.</li>
+            <li>Mapped automation-fit versus QA-routing-fit issue clusters and drafted discovery prompts for channel mix, inquiry volume, escalation ownership, and AE/AM handoff notes.</li>
+          </ul>
+        </article>
+
+        <article class="item project">
+          <h3>WalkMate</h3>
+          <p>AI hazard intelligence | User journey reframing</p>
+          <ul>
+            <li>Reframed obstacle detection into a voice-first walking guidance and operator-review value story for visually impaired users and support operators.</li>
+          </ul>
+        </article>
+
+        <article class="item project">
+          <h3>Mongle / DeToks</h3>
+          <p>AI product value selling and cost narrative</p>
+          <ul>
+            <li>Positioned an AI wedding planning app around planner control, budget/vendor workflow, RAG answers, and service trust instead of chatbot features alone.</li>
+            <li>Reframed LLM token optimization as safe reuse, cost governance, latency reduction, and quality-risk control for AI adoption buyers.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section compact-columns">
+      <div>
+        <h2 class="section-title">Skills</h2>
+        <div class="skill-cloud">
+          <span>Account Research</span>
+          <span>Outbound Messaging</span>
+          <span>Discovery Prep</span>
+          <span>Objection Handling</span>
+          <span>Value Selling</span>
+          <span>AE Handoff Notes</span>
+          <span>Customer Triage</span>
+          <span>KPI Negotiation</span>
+          <span>Partner Cadence</span>
+          <span>AI Prototyping</span>
+          <span>RAG / LLM Workflow</span>
+          <span>Real-time 3D Use Cases</span>
+          <span>Python</span>
+          <span>React</span>
+          <span>FastAPI</span>
+          <span>Supabase</span>
+          <span>AWS</span>
+          <span>GitHub</span>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-title">Education</h2>
+        <div class="line-list">
+          <div><b>2013 - 2019</b><span>B.A. in Public Administration, Hankuk University of Foreign Studies</span></div>
+          <div><b>2025 - 2026</b><span>Intel AI for Future Workforce, Applied AI Program</span></div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 18px;">Credentials</h2>
+        <div class="line-list">
+          <div><b>English</b><span>TOEIC 980, OPIc AL</span></div>
+          <div><b>Cloud / AI</b><span>AWS Certified AI Practitioner, AWS Certified Cloud Practitioner</span></div>
+          <div><b>Language</b><span>Korean native, English business fluent</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
