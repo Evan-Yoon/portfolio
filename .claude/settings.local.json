@@ -22,7 +22,9 @@
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=/tmp/cv-check.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check2.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check3.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
-      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check4.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")"
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check4.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-final.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-final2.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")"
     ]
   }
 }
