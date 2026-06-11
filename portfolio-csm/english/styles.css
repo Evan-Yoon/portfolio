@@ -249,12 +249,17 @@ html {
   color: #0284c7;
 }
 
-.unity-page .star-block h4 {
+.unity-page .star-block h4,
+.blizzard-page .star-block h4 {
   margin: 0 0 6px;
   color: #6b6b6b;
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.blizzard-page .architecture-box {
+  margin-top: 13px;
 }
 
 .unity-page .project-top {
@@ -269,9 +274,12 @@ html {
   margin-top: 6px;
 }
 
-.unity-page .star-column,
-.blizzard-page .star-column {
+.unity-page .star-column {
   padding-top: 44px;
+}
+
+.blizzard-page .star-column {
+  padding-top: 36px;
 }
 
 .unity-page .star-block {
@@ -279,7 +287,7 @@ html {
 }
 
 .blizzard-page .star-block {
-  margin-bottom: 38px;
+  margin-bottom: 18px;
 }
 
 
@@ -359,29 +367,7 @@ html {
 }
 
 .blizzard-page .project-side {
-  padding-top: 34px;
-}
-
-.blizzard-page .evidence-card-text img {
-  height: 128px;
-}
-
-.blizzard-page .evidence-card {
-  margin-bottom: 18px;
-}
-
-.blizzard-page .kpi-row {
-  padding: 14px 0;
-}
-
-.blizzard-page .tech-box {
-  margin-top: 20px;
-  padding: 24px 14px;
-  gap: 14px;
-}
-
-.blizzard-page .tech-box span {
-  padding: 11px 10px;
+  padding-top: 30px;
 }
 
 .star-column {
@@ -538,4 +524,31 @@ html {
 .side-section p {
   font-size: 12.8px;
   line-height: 1.38;
+}
+
+.blizzard-deep-page .star-column {
+  padding-top: 40px;
+}
+
+.blizzard-deep-page .star-block {
+  margin-bottom: 28px;
+}
+
+.blizzard-deep-page .star-block p,
+.blizzard-deep-page .star-block li {
+  font-size: 14.8px;
+  line-height: 1.56;
+}
+
+.blizzard-deep-page .star-block li {
+  margin: 7px 0;
+}
+
+.unity-page .star-block:last-child,
+.blizzard-page .star-block:last-child {
+  margin-bottom: 0;
+}
+
+.blizzard-deep-page .star-block h4 {
+  margin-bottom: 8px;
 }
