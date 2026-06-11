@@ -16,7 +16,13 @@
       "Read(//c/Program Files/Google/Chrome/Application/**)",
       "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
       "Bash(node \"c:/dev/project/portfolio/portfolio-csm/export-pdf.js\")",
-      "Bash(git -C /Users/evan-yoon/dev/personal/portfolio ls-files)"
+      "Bash(git -C /Users/evan-yoon/dev/personal/portfolio ls-files)",
+      "Bash(unzip -p \"RESUME_JiHyun_Yoon_updated.docx\" word/document.xml)",
+      "Read(//private/tmp/**)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=/tmp/cv-check.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check2.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check3.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-check4.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")"
     ]
   }
 }

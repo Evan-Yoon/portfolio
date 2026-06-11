@@ -601,6 +601,41 @@ html {
   color: #3a3000;
 }
 
+.aicc-page .role-chip {
+  background: #1cb090;
+}
+
+.walkmate-page .role-chip {
+  background: #f2c230;
+  color: #3a3000;
+}
+
+.mongle-page .role-chip {
+  background: #f472b6;
+}
+
+.detoks-page .role-chip {
+  background: #a3e635;
+  color: #2a3a06;
+}
+
+.mongle-page.case-page .project-top h2 {
+  color: #fff;
+}
+
+.mongle-page.case-page .project-top h2 span {
+  color: #f472b6;
+}
+
+.aicc-page.case-page .kpi-row {
+  padding: 8px 0;
+}
+
+.aicc-page.case-page .side-section {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
 .josun-page .kpi-accent .kpi-num {
   color: #c9930a;
 }
