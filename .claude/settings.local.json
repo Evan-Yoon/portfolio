@@ -15,7 +15,8 @@
       "Bash(npm install *)",
       "Read(//c/Program Files/Google/Chrome/Application/**)",
       "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
-      "Bash(node \"c:/dev/project/portfolio/portfolio-csm/export-pdf.js\")"
+      "Bash(node \"c:/dev/project/portfolio/portfolio-csm/export-pdf.js\")",
+      "Bash(git -C /Users/evan-yoon/dev/personal/portfolio ls-files)"
     ]
   }
 }
