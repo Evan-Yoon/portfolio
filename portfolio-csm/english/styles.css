@@ -240,6 +240,15 @@ html {
   background: #1cb090;
 }
 
+.blizzard-page .role-chip {
+  background: #7dd3fc;
+  color: #122a38;
+}
+
+.blizzard-page .kpi-accent .kpi-num {
+  color: #0284c7;
+}
+
 .unity-page .star-block h4 {
   margin: 0 0 6px;
   color: #6b6b6b;
@@ -260,7 +269,8 @@ html {
   margin-top: 6px;
 }
 
-.unity-page .star-column {
+.unity-page .star-column,
+.blizzard-page .star-column {
   padding-top: 44px;
 }
 
@@ -268,22 +278,31 @@ html {
   margin-bottom: 30px;
 }
 
+.blizzard-page .star-block {
+  margin-bottom: 38px;
+}
+
 
 .unity-page .star-block p,
-.unity-page .star-block li {
+.unity-page .star-block li,
+.blizzard-page .star-block p,
+.blizzard-page .star-block li {
   font-size: 14.4px;
   line-height: 1.52;
 }
 
-.unity-page .star-block li {
+.unity-page .star-block li,
+.blizzard-page .star-block li {
   margin: 7px 0;
 }
 
-.unity-page .star-block h3 {
+.unity-page .star-block h3,
+.blizzard-page .star-block h3 {
   color: #3a3a3a;
 }
 
-.unity-page .star-block strong {
+.unity-page .star-block strong,
+.blizzard-page .star-block strong {
   color: #161616;
 }
 
@@ -327,14 +346,42 @@ html {
   color: #fff;
 }
 
-.unity-page .kpi-row {
+.unity-page .kpi-row,
+.blizzard-page .kpi-row {
   padding: 10px 0;
 }
 
-.unity-page .tech-box {
+.unity-page .tech-box,
+.blizzard-page .tech-box {
   margin-top: 16px;
   padding: 18px 14px;
   gap: 10px;
+}
+
+.blizzard-page .project-side {
+  padding-top: 34px;
+}
+
+.blizzard-page .evidence-card-text img {
+  height: 128px;
+}
+
+.blizzard-page .evidence-card {
+  margin-bottom: 18px;
+}
+
+.blizzard-page .kpi-row {
+  padding: 14px 0;
+}
+
+.blizzard-page .tech-box {
+  margin-top: 20px;
+  padding: 24px 14px;
+  gap: 14px;
+}
+
+.blizzard-page .tech-box span {
+  padding: 11px 10px;
 }
 
 .star-column {
@@ -392,8 +439,16 @@ html {
 }
 
 .blizzard-page .project-top h2 {
-  font-size: 68px;
+  font-size: 64px;
   color: #fff;
+}
+
+.blizzard-page .project-top {
+  padding-top: 44px;
+}
+
+.blizzard-page .project-top>div>p {
+  margin-top: 6px;
 }
 
 .blizzard-page .project-top h2 span {
