@@ -526,29 +526,81 @@ html {
   line-height: 1.38;
 }
 
-.blizzard-deep-page .star-column {
+.case-page .project-top {
+  padding-top: 44px;
+}
+
+.case-page .project-top h2 {
+  font-size: 64px;
+}
+
+.case-page .project-top>div>p {
+  margin-top: 6px;
+}
+
+.case-page .project-title-line {
+  margin-top: 12px;
+  font-size: 19px;
+}
+
+.case-page .star-column {
   padding-top: 40px;
 }
 
-.blizzard-deep-page .star-block {
+.case-page .star-block {
   margin-bottom: 28px;
 }
 
-.blizzard-deep-page .star-block p,
-.blizzard-deep-page .star-block li {
+.case-page .star-block p,
+.case-page .star-block li {
   font-size: 14.8px;
   line-height: 1.56;
 }
 
-.blizzard-deep-page .star-block li {
+.case-page .star-block li {
   margin: 7px 0;
 }
 
 .unity-page .star-block:last-child,
-.blizzard-page .star-block:last-child {
+.case-page .star-block:last-child {
   margin-bottom: 0;
 }
 
-.blizzard-deep-page .star-block h4 {
-  margin-bottom: 8px;
+.case-page .star-block h3 {
+  color: #3a3a3a;
+}
+
+.case-page .star-block strong {
+  color: #161616;
+}
+
+.case-page .star-block h4 {
+  margin: 0 0 8px;
+  color: #6b6b6b;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-page .kpi-row {
+  padding: 10px 0;
+}
+
+.case-page .tech-box {
+  margin-top: 16px;
+  padding: 18px 14px;
+  gap: 10px;
+}
+
+.case-page .architecture-box {
+  margin-top: 13px;
+}
+
+.josun-page .role-chip {
+  background: #f2c230;
+  color: #3a3000;
+}
+
+.josun-page .kpi-accent .kpi-num {
+  color: #c9930a;
 }
