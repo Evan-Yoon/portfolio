@@ -277,7 +277,7 @@
     @media print {
       html {
         background: #fff;
-        line-height: 1.36;
+        line-height: 1.31;
       }
 
       h1 {
@@ -339,20 +339,20 @@
       }
 
       section {
-        margin-top: 10px;
+        margin-top: 8px;
       }
 
       h2 {
-        margin-bottom: 8px;
-        padding-bottom: 4px;
+        margin-bottom: 6px;
+        padding-bottom: 3px;
       }
 
       .item {
-        margin-bottom: 11px;
+        margin-bottom: 9px;
       }
 
       ul {
-        margin-top: 5px;
+        margin-top: 4px;
       }
 
       li {
@@ -364,7 +364,7 @@
       }
 
       .rows {
-        gap: 7px;
+        gap: 6px;
       }
 
       .item,
@@ -379,6 +379,32 @@
 
       a {
         color: inherit;
+      }
+
+      /* Page 2 (projects after Robot Arm, skills, education): looser spacing
+         so the second page fills to the bottom. Page-1 spacing must stay tight
+         or the Robot Arm item no longer fits on page 1. */
+      section:nth-of-type(4) .item:nth-of-type(n+2) li,
+      section:nth-of-type(5) .row,
+      section:nth-of-type(6) .row {
+        line-height: 1.5;
+      }
+
+      section:nth-of-type(4) .item:nth-of-type(n+2) {
+        margin-bottom: 18px;
+      }
+
+      section:nth-of-type(4) .item:nth-of-type(n+2) ul {
+        margin-top: 7px;
+      }
+
+      section:nth-of-type(5),
+      section:nth-of-type(6) {
+        margin-top: 20px;
+      }
+
+      .rows {
+        gap: 12px;
       }
     }
   </style>
@@ -433,10 +459,10 @@
           <div class="meta">Feb 2022 – Jul 2025<br />Seoul, South Korea</div>
         </div>
         <ul>
-          <li>Built a multi-channel hiring and partner pipeline across LinkedIn, job boards, social media, and about 50 university partners, growing applicant inflow <b>more than 5x</b> and raising opening fulfillment from <b>60% to 98%</b>.</li>
-          <li>Ran recruiting operations for <b>about 600 hires a year</b>, keeping department heads, faculty partners, vendors, and solution providers aligned through consistent follow-up.</li>
-          <li>Pushed back on a vendor fee increase using call-volume, answer-rate, and abandonment data: fees stayed flat until the vendor sustained a <b>90% response rate</b> for 3 months, and rose 2.5% only after that proof.</li>
-          <li>Redesigned onboarding, from welcome kits and benefits walkthroughs to training coordination and 1:1 <span class="nb">follow-up interviews</span>, helping cut annual turnover from <b>50% to 15%</b>.</li>
+          <li>Raised the share of open positions filled from <b>60% to 98%</b> by building a multi-channel talent pipeline — LinkedIn, job boards, social media, and about 50 university partnerships — growing applicant inflow <b>more than 5x</b> for about <span class="nb">600 hires a year</span>.</li>
+          <li>Won university partners by leading with their goals — student internships and career outcomes, not our vacancy list — and stayed in contact even when no positions were open, so joint programs and referrals repeated every year.</li>
+          <li>Turned a vendor's fee-increase demand into a performance deal built on call data both sides trusted: fees stayed flat until the vendor kept a <b>90% call-answer rate</b> for 3 months, and rose 2.5% only after that proof.</li>
+          <li>Cut annual staff turnover from <b>50% to 15%</b> by redesigning onboarding and holding 1:1 <span class="nb">follow-up interviews</span> with new hires, then taking each issue to the responsible department head and telling the new hire what changed.</li>
         </ul>
       </article>
 
@@ -449,10 +475,10 @@
           <div class="meta">May 2019 – Dec 2021<br />Seoul, South Korea</div>
         </div>
         <ul>
-          <li>Resolved gameplay, account, refund, bug, and incident cases using internal tools, English logs, and policy&nbsp;references, helping raise team CSAT from <b>74% to 83%</b> and earning Employee of the Month.</li>
-          <li>Turned a recurring refund-policy objection into an evidence-backed exception rule for wrong-account payments, and won team and <b>US HQ approval</b> to adopt it as standard procedure.</li>
-          <li>Handled firm policy refusals by separating the rule itself from what the customer actually needed, then passed the underlying UX feedback to the product team.</li>
-          <li>Wrote <b>60+ Korean player guides</b> on Wowhead as a player, turning common points of confusion into <span class="nb">self-service content</span> without exposing internal support information.</li>
+          <li>Resolved a high volume of player cases — gameplay, accounts, refunds, bugs, and incidents — helping raise team customer satisfaction (CSAT) from <b>74% to 83%</b> and earning Employee of the Month.</li>
+          <li>Spotted a complaint that kept recurring — players who paid on the wrong account and missed the 7-day refund window — proved these were honest mistakes (zero logins on the charged account), and won team and <b>US HQ approval</b> to make the exception an official rule.</li>
+          <li>When policy required a "no," answered the customer's real question — "why wasn't I warned?" — apologized for the refusal itself, and proposed to the product team that refund terms be shown before purchase.</li>
+          <li>Wrote <b>60+ Korean player guides</b> on Wowhead as a player, sharing only tips tested in-game and nothing internal; several were picked as featured posts.</li>
         </ul>
       </article>
     </section>
@@ -487,7 +513,7 @@
         <ul>
           <li>Reframed an obstacle-detection app into an AI walking-guidance solution for visually impaired users, shifting the focus from detection alerts to reaching the destination and <span class="nb">recovering the route</span>.</li>
           <li>Designed a voice-first flow for risk alerts, guidance, and route recovery, plus an operator view that stores risk images, locations, and detection types for quality review.</li>
-          <li>Defined guidance delay, route deviation, and duplicate TTS as quality-check criteria, and completed a PoC connecting the app, AI detection, backend, storage, and admin view <span class="nb">(React, FastAPI, Supabase, AWS&nbsp;S3)</span>.</li>
+          <li>Defined quality checks — late guidance, route drift, repeated voice prompts — and completed a working prototype connecting the app, AI detection, backend, and an operator dashboard <span class="nb">(React, FastAPI, Supabase, AWS&nbsp;S3)</span>.</li>
         </ul>
       </article>
 
@@ -501,7 +527,7 @@
         </div>
         <ul>
           <li>Positioned the product as one workflow for schedules, budgets, vendors, and AI answers rather than a wedding chatbot, using the chatbot as proof of the workflow instead of the product itself.</li>
-          <li>Built the <span class="nb">RAG-based chatbot</span> with SSE-streamed responses and designed error-handling UX for answer delays and failures, treating AI trust as a design problem at the failure points.</li>
+          <li>Built the AI chatbot that answers from the service's own data <span class="nb">(RAG)</span> and streams replies in real time, and designed the error handling for slow or failed answers — the moments that decide whether users trust an AI product.</li>
           <li>Coordinated scope and schedule across the team and split dashboards by role, so couples and planners each see their own actions on the same data.</li>
         </ul>
       </article>
@@ -515,8 +541,8 @@
           <div class="meta">2026<br /><a href="https://youtu.be/Mi2axv3vAbw">youtu.be/Mi2axv3vAbw</a></div>
         </div>
         <ul>
-          <li>Designed the core logic that decomposes requests into task units and reuses prior results, cutting repeated LLM calls instead of only compressing input.</li>
-          <li>Defined cache-reuse criteria — task similarity, input change, result stability — and collected edge cases to prevent unsafe reuse from degrading output quality.</li>
+          <li>Designed the core logic that breaks each request into smaller tasks and reuses earlier results, cutting the number of paid AI calls instead of just shortening prompts.</li>
+          <li>Set the rules for when a saved result can safely be reused — how similar the task is and how stable the result — and collected the edge cases where reuse would return wrong answers.</li>
           <li>Tested two positionings for the same tool, prompt compression vs. safe reuse, and chose the cost-and-quality framing that budget owners responded to.</li>
         </ul>
       </article>
@@ -552,7 +578,7 @@
       <div class="rows">
         <div class="row"><b>2025 – 2026</b><span>Intel AI for Future Workforce, Applied AI Program — <span class="nb">Outstanding Graduate Award</span></span></div>
         <div class="row"><b>2013 – 2019</b><span>B.A. in Public Administration, Hankuk University of Foreign Studies</span></div>
-        <div class="row"><b>Certifications</b><span class="cert-list"><span>AWS Certified AI Practitioner</span><span>AWS Certified Cloud Practitioner</span><span>Computer Specialist in Spreadsheet &amp; Database Level 1</span></span></div>
+        <div class="row"><b>Certifications</b><span>AWS Certified AI Practitioner · AWS Certified Cloud Practitioner · Computer Specialist in Spreadsheet &amp; Database Level 1</span></div>
       </div>
     </section>
   </main>
