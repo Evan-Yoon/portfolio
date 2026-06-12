@@ -6,7 +6,8 @@ html {
 }
 
 .about-hero {
-  padding-top: 42px;
+  height: 295px;
+  padding-top: 38px;
 }
 
 .hero-sub {
@@ -55,11 +56,11 @@ html {
 }
 
 .about-content {
-  padding-top: 38px;
+  padding-top: 30px;
 }
 
 .line-section {
-  margin-bottom: 36px;
+  margin-bottom: 29px;
 }
 
 .line-section h2 {
@@ -638,4 +639,28 @@ html {
 
 .josun-page .kpi-accent .kpi-num {
   color: #c9930a;
+}
+
+.shot-card {
+  margin-top: 13px;
+}
+
+.shot-card.shot-top img {
+  object-position: center top;
+}
+
+.mongle-page .shot-card img {
+  object-position: center 12%;
+}
+
+.walkmate-page .shot-card img {
+  height: 210px;
+}
+
+.mongle-page .shot-card img {
+  height: 200px;
+}
+
+.detoks-page .shot-card img {
+  height: 230px;
 }
