@@ -260,13 +260,13 @@
 
     @page {
       size: A4;
-      margin: 12mm 14mm;
+      margin: 9mm 11mm;
     }
 
     @media print {
       html {
         background: #fff;
-        line-height: 1.35;
+        line-height: 1.37;
       }
 
       h1 {
@@ -324,35 +324,62 @@
         margin-bottom: 8px;
       }
 
+      /* Page 1 (summary / key results / experience): airy to fill the page */
       section {
-        margin-top: 14px;
+        margin-top: 30px;
       }
 
       h2 {
-        margin-bottom: 9px;
-        padding-bottom: 4px;
+        margin-bottom: 11px;
+        padding-bottom: 5px;
       }
 
+      .summary p {
+        line-height: 1.62;
+      }
+
+      .item {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        margin-top: 6px;
+      }
+
+      li {
+        margin-bottom: 7px;
+      }
+
+      .highlights {
+        gap: 16px;
+      }
+
+      /* Page 2 (projects / skills / education): tighter so it fits one page */
       .break-page {
         break-before: page;
         page-break-before: always;
         margin-top: 0;
       }
 
-      .item {
+      .break-page,
+      .break-page ~ section {
+        margin-top: 13px;
+      }
+
+      .break-page .item {
         margin-bottom: 7px;
       }
 
-      ul {
+      .break-page ul {
         margin-top: 5px;
       }
 
-      li {
+      .break-page li {
         margin-bottom: 3px;
       }
 
-      .highlights {
-        gap: 7px;
+      .break-page ~ section {
+        margin-top: 11px;
       }
 
       .rows {
@@ -398,7 +425,7 @@
         고객 문의를 처리했고, 조선호텔앤리조트에서 3년 반 동안 HR·총무·영업지원을 맡았습니다. 여러
         채널로 먼저 연락해 <b>잠재 고객을 발굴하고</b>, 들어온 문의를 1차로 확인해 담당자와의 미팅으로 연결하는 일을 해 왔습니다.
         <b>AWS 자격증 2종(AI·Cloud Practitioner)</b>을 취득했고, 직접 만든 AI 프로젝트에서
-        <b>AWS S3</b>와 클라우드 기반 백엔드를 다뤄 봤습니다. <b>공개 데이터 29,872건</b>을 분석해 어떤 고객에게 무엇을 강조해 제안할지
+        <b>AWS S3·SES</b>와 클라우드 기반 백엔드를 다뤄 봤습니다. <b>공개 데이터 29,872건</b>을 분석해 어떤 고객에게 무엇을 강조해 제안할지
         정리한 경험이 있으며, 한국어와 <b>영어</b>로 모두 업무를 진행할 수 있습니다.
       </p>
     </section>
@@ -489,6 +516,7 @@
         </div>
         <ul>
           <li>서비스 자체 데이터를 바탕으로 답하는 <b>AI 챗봇(RAG)</b>을 만들고, 클라우드 데이터베이스(<b>Supabase</b>)와 FastAPI 백엔드로 실시간 응답·오류 안내 화면을 구성했습니다.</li>
+          <li>Supabase 기본 메일의 하루 6건 발송 제한을 <b>AWS SES</b>로 전환해 <b>하루 5만 건</b>까지 발송할 수 있도록 개선했습니다.</li>
           <li>일정·예산·업체·AI 답변을 <b>하나의 흐름</b>으로 묶고, 커플과 플래너가 같은 데이터에서 각자 필요한 작업만 보도록 화면을 나눴습니다.</li>
         </ul>
       </article>
@@ -512,7 +540,7 @@
       <h2>보유 역량</h2>
       <div class="rows">
         <div class="row"><b>세일즈 · 비즈니스 개발</b><span>시장·경쟁사 조사, 잠재 고객 발굴, 문의 응대 및 미팅 일정 조율, 아웃바운드 영업, 후속 관리, 제안 메시지 작성</span></div>
-        <div class="row"><b>클라우드 · 테크</b><span>AWS 활용 경험(S3·클라우드 백엔드), AWS AI·Cloud Practitioner, 클라우드 인프라·IaaS·SaaS 이해, RAG·LLM 활용, Python·React·FastAPI·Supabase, GitHub</span></div>
+        <div class="row"><b>클라우드 · 테크</b><span>AWS 활용 경험(S3·SES·클라우드 백엔드), AWS AI·Cloud Practitioner, 클라우드 인프라·IaaS·SaaS 이해, RAG·LLM 활용, Python·React·FastAPI·Supabase, GitHub</span></div>
         <div class="row"><b>고객 · 운영</b><span>문의 1차 응대와 분류, 상위 보고 판단, 데이터 기반 협상, 계약 행정 지원, 문서화</span></div>
         <div class="row"><b>언어</b><span>한국어(모국어), 영어(비즈니스 능통 · TOEIC 980 · OPIc AL)</span></div>
       </div>

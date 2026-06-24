@@ -662,6 +662,84 @@ strong {
   --accent: #2a9bc9;
 }
 
+.walkmate-page {
+  --accent: #c98a06;
+}
+
+.mongle-page {
+  --accent: #d6488f;
+}
+
+/* Project pages with a full right column (KPI + diagram + tags + links) and a
+   dense left column: tighten both so content fits one page without clipping. */
+.robot-page .architecture-box,
+.walkmate-page .architecture-box,
+.mongle-page .architecture-box {
+  min-height: 122px;
+  margin-top: 11px;
+}
+
+.walkmate-page .architecture-box,
+.mongle-page .architecture-box {
+  min-height: 108px;
+}
+
+.robot-page .tech-box,
+.walkmate-page .tech-box,
+.mongle-page .tech-box {
+  margin-top: 11px;
+  padding: 12px 14px;
+  gap: 7px;
+}
+
+.walkmate-page .tech-box,
+.mongle-page .tech-box {
+  padding: 10px 14px;
+  gap: 6px;
+}
+
+.robot-page .side-section,
+.walkmate-page .side-section,
+.mongle-page .side-section {
+  margin-top: 11px;
+  padding-top: 11px;
+}
+
+.walkmate-page .star-column,
+.mongle-page .star-column {
+  padding-top: 30px;
+}
+
+.walkmate-page .star-block,
+.mongle-page .star-block {
+  margin-bottom: 13px;
+}
+
+.walkmate-page .star-block {
+  margin-bottom: 11px;
+}
+
+.walkmate-page .star-block li,
+.mongle-page .star-block li {
+  margin: 3px 0;
+}
+
+.walkmate-page .project-side,
+.mongle-page .project-side {
+  padding-top: 22px;
+}
+
+.walkmate-page .kpi-row,
+.mongle-page .kpi-row {
+  padding: 6px 0;
+}
+
+.walkmate-page .side-section,
+.mongle-page .side-section {
+  margin-top: 9px;
+  padding-top: 9px;
+}
+
 @media (max-width: 900px) {
   .portfolio {
     padding: 0;
