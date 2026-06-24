@@ -60,6 +60,7 @@ html {
 }
 
 .line-section {
+  grid-template-columns: 130px 1fr;
   margin-bottom: 29px;
 }
 
@@ -78,12 +79,12 @@ html {
 }
 
 .rows {
-  gap: 12px;
+  gap: 6px;
   padding-top: 16px;
 }
 
 .rows div {
-  grid-template-columns: 128px minmax(0, 1fr) 178px;
+  grid-template-columns: 105px minmax(0, 1fr) 160px;
   gap: 10px;
 }
 
@@ -114,11 +115,11 @@ html {
 }
 
 .two-col .rows div {
-  grid-template-columns: 128px minmax(0, 1fr) 178px;
+  grid-template-columns: 105px minmax(0, 1fr) 160px;
 }
 
 .exp-rows div {
-  grid-template-columns: 128px minmax(0, 1fr) 172px;
+  grid-template-columns: 105px minmax(0, 1fr) 140px;
 }
 
 .skill-rating-grid,

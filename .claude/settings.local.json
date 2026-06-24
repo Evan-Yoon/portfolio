@@ -27,7 +27,8 @@
       "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=/tmp/cv-final2.pdf \"file:///Users/evan-yoon/dev/personal/portfolio/cv/index.html\")",
       "Bash(node check-overflow.js)",
       "Bash(cp /tmp/shot.js /Users/evan-yoon/dev/personal/portfolio/portfolio-csm/shot.js)",
-      "Bash(node shot.js)"
+      "Bash(node shot.js)",
+      "Bash(node measure-issues.js)"
     ]
   }
 }
