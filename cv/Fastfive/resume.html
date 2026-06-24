@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤지현 | 클라우드 세일즈 담당자</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --body: #2c2c2e;
+      --muted: #6e6e73;
+      --accent: #1f5fae;
+      --rule: #1d1d1f;
+      --rule-soft: #d8d8dc;
+      --bg: #eceef0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--body);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv {
+      width: min(100%, 820px);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(29, 29, 31, 0.1);
+      padding: 64px 68px 72px;
+    }
+
+    /* ---------- Header ---------- */
+
+    header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: var(--ink);
+    }
+
+    .role {
+      margin: 12px 0 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .contact {
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .contact span {
+      white-space: nowrap;
+    }
+
+    .contact .sep {
+      margin: 0 7px;
+      color: var(--rule-soft);
+    }
+
+    /* ---------- Sections ---------- */
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--rule);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--ink);
+    }
+
+    .summary p {
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    /* ---------- Highlights ---------- */
+
+    .highlights {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .highlights li {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 16px;
+      align-items: baseline;
+      font-size: 14px;
+    }
+
+    .highlights b {
+      color: var(--accent);
+      font-size: 15px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ---------- Experience / Projects ---------- */
+
+    .item {
+      margin-bottom: 22px;
+      break-inside: avoid;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .item .org {
+      margin: 2px 0 0;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      padding-left: 3px;
+      font-size: 14px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li b {
+      color: var(--ink);
+    }
+
+    /* ---------- Definition rows (skills, education) ---------- */
+
+    .rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 168px minmax(0, 1fr);
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .row b {
+      color: var(--ink);
+    }
+
+    .row .meta {
+      text-align: left;
+      white-space: normal;
+    }
+
+    .nb {
+      white-space: nowrap;
+    }
+
+    /* ---------- Screen: small ---------- */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        padding: 44px 26px 52px;
+        box-shadow: none;
+      }
+
+      h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+      }
+
+      .item-head {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .meta {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .highlights li {
+        grid-template-columns: 86px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    /* ---------- Print ---------- */
+
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    @media print {
+      html {
+        background: #fff;
+        line-height: 1.35;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .role {
+        font-size: 13px;
+      }
+
+      .contact {
+        margin-top: 8px;
+        font-size: 11.5px;
+      }
+
+      .summary p,
+      li,
+      .highlights li,
+      .row {
+        font-size: 12.5px;
+      }
+
+      .highlights b {
+        font-size: 13.5px;
+      }
+
+      h2 {
+        font-size: 12px;
+        margin-bottom: 9px;
+      }
+
+      .item h3 {
+        font-size: 13.5px;
+      }
+
+      .item .org {
+        font-size: 12px;
+      }
+
+      .meta {
+        font-size: 11.5px;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      header {
+        margin-bottom: 8px;
+      }
+
+      section {
+        margin-top: 14px;
+      }
+
+      h2 {
+        margin-bottom: 9px;
+        padding-bottom: 4px;
+      }
+
+      .break-page {
+        break-before: page;
+        page-break-before: always;
+        margin-top: 0;
+      }
+
+      .item {
+        margin-bottom: 7px;
+      }
+
+      ul {
+        margin-top: 5px;
+      }
+
+      li {
+        margin-bottom: 3px;
+      }
+
+      .highlights {
+        gap: 7px;
+      }
+
+      .rows {
+        gap: 6px;
+      }
+
+      .item,
+      .highlights li,
+      .row {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv">
+    <header>
+      <h1>윤 지 현</h1>
+      <p class="role">클라우드 세일즈 담당자</p>
+      <address class="contact">
+        <span>서울특별시</span><span class="sep">|</span>
+        <span><a href="mailto:wlgus1805@naver.com">wlgus1805@naver.com</a></span><span class="sep">|</span>
+        <span><a href="tel:+821040088197">010-4008-8197</a></span><br />
+        <span><a href="https://evan-yoon.com">evan-yoon.com</a></span><span class="sep">|</span>
+        <span><a href="https://www.linkedin.com/in/jihyun-yoon-a436101a3">linkedin.com/in/jihyun-yoon-a436101a3</a></span><span class="sep">|</span>
+        <span><a href="https://github.com/Evan-Yoon">github.com/Evan-Yoon</a></span>
+      </address>
+    </header>
+
+    <section class="summary">
+      <h2>요약</h2>
+      <p>
+        고객을 직접 응대하고 영업을 지원하며 <b>6년 넘게</b> 일했습니다. 블리자드에서 약 3년간 글로벌
+        고객 문의를 처리했고, 조선호텔앤리조트에서 3년 반 동안 HR·총무·영업지원을 맡았습니다. 여러
+        채널로 먼저 연락해 <b>잠재 고객을 발굴하고</b>, 들어온 문의를 1차로 확인해 담당자와의 미팅으로 연결하는 일을 해 왔습니다.
+        <b>AWS 자격증 2종(AI·Cloud Practitioner)</b>을 취득했고, 직접 만든 AI 프로젝트에서
+        <b>AWS S3</b>와 클라우드 기반 백엔드를 다뤄 봤습니다. <b>공개 데이터 29,872건</b>을 분석해 어떤 고객에게 무엇을 강조해 제안할지
+        정리한 경험이 있으며, 한국어와 <b>영어</b>로 모두 업무를 진행할 수 있습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2>핵심 성과</h2>
+      <ul class="highlights">
+        <li><b>5배</b><span>링크드인 등 다양한 채용 플랫폼과 SNS, 50개 대학을 활용해 지원자를 5배로 늘리고, 충원율을 <b>60%에서 98%</b>까지 끌어올렸습니다.</span></li>
+        <li><b>29,872건</b><span>공개된 고객 문의를 8개 유형으로 분류하고 AICC 업체 5곳을 비교해, <span class="nb">어떤 고객에게</span> 무엇을 제안하고 무엇을 물어볼지 정리했습니다.</span></li>
+        <li><b>74% → 83%</b><span>블리자드에서 매일 수많은 고객 문의를 직접 응대하며 팀 고객만족도(CSAT)를 끌어올렸습니다.</span></li>
+        <li><b>AWS · AI</b><span>AWS AI·Cloud Practitioner 자격증과 Intel 응용 AI 과정 최우수 수료로 <span class="nb">클라우드 등</span> 새로운 기술을 빠르게 익혔습니다.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>경력</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>영업지원팀 · HR/총무</h3>
+            <p class="org">조선호텔앤리조트</p>
+          </div>
+          <div class="meta">2022.02 – 2025.07<br />서울</div>
+        </div>
+        <ul>
+          <li>링크드인 등 다양한 채용 플랫폼과 SNS, 약 50개 대학을 활용해 연 약 600명 채용에서 지원자를 <b>5배</b>로 늘리고 충원율을 <b>60%에서 98%</b>로 높였습니다.</li>
+          <li>공석이 없을 때도 학교가 원하는 것(학생 인턴십·취업)을 먼저 살피며 꾸준히 연락했고, 그 덕분에 공동 프로그램과 추천 채용이 <span class="nb">매년 이어졌습니다.</span></li>
+          <li>협력사가 콜센터 수수료 인상을 요구했을 때, 양쪽 모두 신뢰하는 통화 데이터를 기준으로 성과 연동 계약을 제안했습니다. <b>응대율 90%</b>를 3개월간 유지하면 2.5% 인상하기로 합의해, 성과가 확인된 뒤에만 인상이 적용되도록 했습니다.</li>
+          <li>입사 초기 교육 과정을 다시 설계하고 신규 입사자와 1:1 <span class="nb">면담</span>을 정기적으로 진행해, 연 이직률을 <b>50%에서 15%</b>로 낮췄습니다.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>고객지원 게임마스터(GM)</h3>
+            <p class="org">Blizzard Entertainment</p>
+          </div>
+          <div class="meta">2019.05 – 2021.12<br />서울</div>
+        </div>
+        <ul>
+          <li>게임플레이·계정·환불·버그·장애 등 다양한 고객 문의를 직접 응대해 팀 고객만족도(CSAT)를 <b>74%에서 83%</b>로 높였고, 이달의 사원에 뽑혔습니다.</li>
+          <li>같은 환불 문의가 반복되는 이유를 로그 데이터로 밝혀냈습니다(결제된 계정에 로그인 기록 0건). 단순 실수임을 증명해 팀과 <b>미국 본사의 승인</b>을 받았고, 이 예외 처리를 공식 규정으로 만들었습니다.</li>
+          <li>플레이어로서 Wowhead에 한국어 공략 글을 <b>60건 넘게</b> 작성해, 반복되는 질문을 줄이는 고객 셀프서비스 콘텐츠를 만들었습니다(일부 추천 글 선정).</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="break-page">
+      <h2>프로젝트</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>WalkMate — AI 보행 안내 솔루션</h3>
+            <p class="org">3인 팀 프로젝트 · 팀 리드</p>
+          </div>
+          <div class="meta">2026<br /><a href="https://youtu.be/whSMlrArFEI">youtu.be/whSMlrArFEI</a></div>
+        </div>
+        <ul>
+          <li>위험 감지 이미지·위치·종류를 <b>AWS S3</b>와 클라우드 데이터베이스에 저장하는 백엔드를 구성하고, 관리자가 이를 확인할 수 있는 화면까지 연결했습니다.</li>
+          <li>장애물 감지 앱을 <b>'AI 보행 안내 솔루션'</b>으로 다시 정의하고, 보행 중 조작 부담을 줄인 음성 안내 중심으로 시제품(PoC)을 완성했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>산업용 로봇 팔 데모</h3>
+            <p class="org">Unity 6 제작 · 클라우드 에셋 관리 · <span class="nb">개인 프로젝트</span></p>
+          </div>
+          <div class="meta">2026<br /><a href="https://youtu.be/fu3Vwh4Jz1U">youtu.be/fu3Vwh4Jz1U</a></div>
+        </div>
+        <ul>
+          <li>Unity 6로 로봇 팔을 처음부터 만들고(관절 구조·마우스/키보드 조작·프리팹), 모델을 재사용 가능한 자산으로 만들어 <b>Unity 클라우드 에셋 매니저</b>에 올린 뒤 보관·공유 과정을 직접 검증했습니다.</li>
+          <li>Unity와 Claude Code를 <b>MCP</b>로 연결해 AI로 장면과 에셋을 만드는 흐름을 시험했고, 시제품을 고객에게 보여줄 시연용 화면으로 다듬었습니다.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Mongle — AI 웨딩 플래닝 플랫폼</h3>
+            <p class="org">4인 팀 프로젝트 · 팀 리드</p>
+          </div>
+          <div class="meta">2026<br /><a href="https://youtu.be/TuzLj1hHfy4">youtu.be/TuzLj1hHfy4</a></div>
+        </div>
+        <ul>
+          <li>서비스 자체 데이터를 바탕으로 답하는 <b>AI 챗봇(RAG)</b>을 만들고, 클라우드 데이터베이스(<b>Supabase</b>)와 FastAPI 백엔드로 실시간 응답·오류 안내 화면을 구성했습니다.</li>
+          <li>일정·예산·업체·AI 답변을 <b>하나의 흐름</b>으로 묶고, 커플과 플래너가 같은 데이터에서 각자 필요한 작업만 보도록 화면을 나눴습니다.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>AICC 시장 리서치</h3>
+            <p class="org">AI 컨택센터(클라우드 기반) 시장 리서치 · <span class="nb">개인 프로젝트</span></p>
+          </div>
+          <div class="meta">2026<br /><a href="https://github.com/Evan-Yoon/aicc-ops-insight">github.com/Evan-Yoon/aicc-ops-insight</a></div>
+        </div>
+        <ul>
+          <li><b>공개된 고객 문의 29,872건</b>을 8개 유형으로 나누고 문의량·위험도로 점수화했으며, 클라우드 기반 AICC 업체 5곳의 제품 페이지·상담 과정·공개 지표를 비교했습니다.</li>
+          <li>문의 유형을 자동화 대상과 전문 상담 대상으로 나눠 <b>'효율'과 '위험 관리'</b> 두 가지 제안 방향을 잡고, 고객을 처음 만났을 때 물어볼 질문까지 공개 데이터만으로 준비했습니다.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>보유 역량</h2>
+      <div class="rows">
+        <div class="row"><b>세일즈 · 비즈니스 개발</b><span>시장·경쟁사 조사, 잠재 고객 발굴, 문의 응대 및 미팅 일정 조율, 아웃바운드 영업, 후속 관리, 제안 메시지 작성</span></div>
+        <div class="row"><b>클라우드 · 테크</b><span>AWS 활용 경험(S3·클라우드 백엔드), AWS AI·Cloud Practitioner, 클라우드 인프라·IaaS·SaaS 이해, RAG·LLM 활용, Python·React·FastAPI·Supabase, GitHub</span></div>
+        <div class="row"><b>고객 · 운영</b><span>문의 1차 응대와 분류, 상위 보고 판단, 데이터 기반 협상, 계약 행정 지원, 문서화</span></div>
+        <div class="row"><b>언어</b><span>한국어(모국어), 영어(비즈니스 능통 · TOEIC 980 · OPIc AL)</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>학력 · 자격증</h2>
+      <div class="rows">
+        <div class="row"><b>2025 – 2026</b><span>Intel AI for Future Workforce 응용 AI 과정 — <span class="nb">최우수 수료</span></span></div>
+        <div class="row"><b>2013 – 2019</b><span>한국외국어대학교 행정학 학사</span></div>
+        <div class="row"><b>자격증</b><span>AWS Certified AI Practitioner · AWS Certified Cloud Practitioner · 컴퓨터활용능력 1급</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

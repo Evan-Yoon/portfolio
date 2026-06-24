@@ -33,7 +33,8 @@
       "Bash(cp portfolio-csm/styles.css Logistics-portfolio/styles.css)",
       "Bash(cp portfolio-csm/print.css Logistics-portfolio/print.css)",
       "Bash(cp portfolio-csm/english/styles.css Logistics-portfolio/english/styles.css)",
-      "Bash(cp portfolio-csm/assets/profile.png Logistics-portfolio/assets/profile.png)"
+      "Bash(cp portfolio-csm/assets/profile.png Logistics-portfolio/assets/profile.png)",
+      "PowerShell(node \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--dev-project-portfolio\\\\67d07063-9212-410c-abe6-010445a29a73\\\\scratchpad\\\\check.js\")"
     ]
   }
 }
