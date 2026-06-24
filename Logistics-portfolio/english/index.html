@@ -277,7 +277,7 @@
     @media print {
       html {
         background: #fff;
-        line-height: 1.31;
+        line-height: 1.4;
       }
 
       h1 {
@@ -339,32 +339,32 @@
       }
 
       section {
-        margin-top: 8px;
+        margin-top: 15px;
       }
 
       h2 {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         padding-bottom: 3px;
       }
 
       .item {
-        margin-bottom: 9px;
+        margin-bottom: 13px;
       }
 
       ul {
-        margin-top: 4px;
+        margin-top: 5px;
       }
 
       li {
-        margin-bottom: 2px;
+        margin-bottom: 3px;
       }
 
       .highlights {
-        gap: 4px;
+        gap: 6px;
       }
 
       .rows {
-        gap: 6px;
+        gap: 8px;
       }
 
       .item,
@@ -377,29 +377,37 @@
         break-after: avoid;
       }
 
-      /* Page 2 (projects, skills, education): looser spacing so the second
-         page fills toward the bottom without crowding page 1. */
-      section:nth-of-type(4) .item li,
-      section:nth-of-type(5) .row,
-      section:nth-of-type(6) .row {
-        line-height: 1.5;
+      /* Force the split: page 1 = summary + achievements + experience,
+         page 2 = projects + skills + education. */
+      .page-break {
+        break-before: page;
       }
 
-      section:nth-of-type(4) .item {
-        margin-bottom: 16px;
+      /* Page 2 sections: looser spacing so the second page fills out. */
+      .page-break,
+      .page-break ~ section {
+        margin-top: 26px;
       }
 
-      section:nth-of-type(4) .item ul {
-        margin-top: 7px;
+      .page-break .item li,
+      .page-break ~ section .row {
+        line-height: 1.6;
       }
 
-      section:nth-of-type(5),
-      section:nth-of-type(6) {
-        margin-top: 20px;
+      .page-break .item {
+        margin-bottom: 20px;
       }
 
-      .rows {
-        gap: 12px;
+      .page-break .item ul {
+        margin-top: 9px;
+      }
+
+      .page-break .item li {
+        margin-bottom: 5px;
+      }
+
+      .page-break ~ section .rows {
+        gap: 16px;
       }
 
       a {
@@ -464,6 +472,7 @@
           <li>Acted as the link between internal departments and external suppliers: coordinated supplies, rental devices, facilities, and outsourced services, verified vendor billing and delivery against orders and contracts, and supported contract documentation and <span class="nb">internal approval procedures</span>.</li>
           <li>Turned a vendor's fee-increase demand into a performance-based agreement built on call data both sides trusted: fees stayed flat until the vendor sustained a <b>90% response rate</b> for 3 months, then rose 2.5% only after that proof.</li>
           <li>Created and updated operational <b>checklists and SOPs</b> to standardize recurring tasks, improving handover accuracy and following up on open requests until completion.</li>
+          <li>Compiled and presented operational <b>metrics</b> — stock levels, request turnaround, and vendor performance — to support internal reviews and <span class="nb">reorder decisions</span>.</li>
           <li>Handled confidential employee, vendor, and administrative information with accuracy and discretion under strict confidentiality requirements.</li>
         </ul>
       </article>
@@ -484,7 +493,7 @@
       </article>
     </section>
 
-    <section>
+    <section class="page-break">
       <h2>Selected Projects</h2>
 
       <article class="item">
