@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jihyun Yoon | Data Center Logistics Specialist</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --body: #2c2c2e;
+      --muted: #6e6e73;
+      --accent: #1f4e6e;
+      --rule: #1d1d1f;
+      --rule-soft: #d8d8dc;
+      --bg: #eceef0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--body);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv {
+      width: min(100%, 820px);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(29, 29, 31, 0.1);
+      padding: 64px 68px 72px;
+    }
+
+    /* ---------- Header ---------- */
+
+    header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    h1 strong {
+      font-weight: 700;
+    }
+
+    .role {
+      margin: 10px 0 0;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .contact {
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .contact span {
+      white-space: nowrap;
+    }
+
+    .contact .sep {
+      margin: 0 7px;
+      color: var(--rule-soft);
+    }
+
+    /* ---------- Sections ---------- */
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--rule);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .summary p {
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    /* ---------- Highlights ---------- */
+
+    .highlights {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .highlights li {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 16px;
+      align-items: baseline;
+      font-size: 14px;
+    }
+
+    .highlights b {
+      color: var(--accent);
+      font-size: 15px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ---------- Experience / Projects ---------- */
+
+    .item {
+      margin-bottom: 22px;
+      break-inside: avoid;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .item .org {
+      margin: 1px 0 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      padding-left: 3px;
+      font-size: 14px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li b {
+      color: var(--ink);
+    }
+
+    /* ---------- Definition rows (skills, education) ---------- */
+
+    .rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .row b {
+      color: var(--ink);
+    }
+
+    .row .meta {
+      text-align: left;
+      white-space: normal;
+    }
+
+    .cert-list {
+      display: grid;
+      gap: 4px;
+    }
+
+    .nb {
+      white-space: nowrap;
+    }
+
+    /* ---------- Screen: small ---------- */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        padding: 44px 26px 52px;
+        box-shadow: none;
+      }
+
+      h1 {
+        font-size: 26px;
+        letter-spacing: 3px;
+      }
+
+      .item-head {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .meta {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .highlights li {
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    /* ---------- Print ---------- */
+
+    @page {
+      size: A4;
+      margin: 10mm 14mm;
+    }
+
+    @media print {
+      html {
+        background: #fff;
+        line-height: 1.31;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .contact {
+        margin-top: 8px;
+      }
+
+      .role {
+        font-size: 13px;
+      }
+
+      .contact {
+        font-size: 11.5px;
+      }
+
+      .summary p,
+      li,
+      .highlights li,
+      .row {
+        font-size: 12px;
+      }
+
+      .highlights b {
+        font-size: 13px;
+      }
+
+      h2 {
+        font-size: 12px;
+        margin-bottom: 9px;
+      }
+
+      .item h3 {
+        font-size: 13.5px;
+      }
+
+      .item .org {
+        font-size: 12px;
+      }
+
+      .meta {
+        font-size: 11.5px;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      header {
+        margin-bottom: 4px;
+      }
+
+      section {
+        margin-top: 8px;
+      }
+
+      h2 {
+        margin-bottom: 6px;
+        padding-bottom: 3px;
+      }
+
+      .item {
+        margin-bottom: 9px;
+      }
+
+      ul {
+        margin-top: 4px;
+      }
+
+      li {
+        margin-bottom: 2px;
+      }
+
+      .highlights {
+        gap: 4px;
+      }
+
+      .rows {
+        gap: 6px;
+      }
+
+      .item,
+      .highlights li,
+      .row {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+
+      /* Page 2 (projects, skills, education): looser spacing so the second
+         page fills toward the bottom without crowding page 1. */
+      section:nth-of-type(4) .item li,
+      section:nth-of-type(5) .row,
+      section:nth-of-type(6) .row {
+        line-height: 1.5;
+      }
+
+      section:nth-of-type(4) .item {
+        margin-bottom: 16px;
+      }
+
+      section:nth-of-type(4) .item ul {
+        margin-top: 7px;
+      }
+
+      section:nth-of-type(5),
+      section:nth-of-type(6) {
+        margin-top: 20px;
+      }
+
+      .rows {
+        gap: 12px;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv">
+    <header>
+      <h1>Jihyun <strong>Yoon</strong></h1>
+      <p class="role">Data Center Logistics Specialist</p>
+      <address class="contact">
+        <span>Seoul, South Korea</span><span class="sep">|</span>
+        <span><a href="mailto:wlgus1805@naver.com">wlgus1805@naver.com</a></span><span class="sep">|</span>
+        <span><a href="tel:+821040088197">+82 10-4008-8197</a></span><br />
+        <span><a href="https://evan-yoon.com">evan-yoon.com</a></span><span class="sep">|</span>
+        <span><a href="https://www.linkedin.com/in/jihyun-yoon-a436101a3">linkedin.com/in/jihyun-yoon-a436101a3</a></span><span class="sep">|</span>
+        <span><a href="https://github.com/Evan-Yoon">github.com/Evan-Yoon</a></span>
+      </address>
+    </header>
+
+    <section class="summary">
+      <h2>Professional Summary</h2>
+      <p>
+        Operations-focused professional with <b>6+ years</b> of experience: three and a half years in
+        general affairs, asset, and vendor operations at a 400-employee hotel, and nearly three years in
+        customer support at a global game company. Experienced in <b>inventory and asset management</b>,
+        stock control, reverse logistics, and supplier coordination, with a record of preventing missing
+        items and duplicate purchases through accurate record-keeping. Comfortable handling confidential
+        information, standardizing recurring tasks through documentation, and meeting deadlines in a
+        fast-paced environment. Communicates fluently in <b>Korean and English</b> and is expanding an
+        IT and cloud foundation through AWS certifications.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Achievements</h2>
+      <ul class="highlights">
+        <li><b>400</b><span>Employees supported across office asset, supply, and rental-device operations, including inbound, issue, replacement, return, and reverse logistics.</span></li>
+        <li><b>90%</b><span>Vendor service-level target set in a performance-based agreement — fees held flat until the rate was sustained for 3 months, controlling cost while protecting service quality.</span></li>
+        <li><b>US HQ</b><span>Recurring refund exceptions documented with data and turned into an official standard procedure approved by overseas headquarters.</span></li>
+        <li><b>74% → 83%</b><span>Team customer-satisfaction (CSAT) improvement while handling high-volume cases on deadline at Blizzard Entertainment.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>General Affairs (GA) · Asset &amp; Vendor Operations</h3>
+            <p class="org">Josun Hotels &amp; Resorts</p>
+          </div>
+          <div class="meta">Feb 2022 – Jul 2025<br />Seoul, South Korea</div>
+        </div>
+        <ul>
+          <li>Managed office assets, supplies, and rental devices for a <b>400-employee</b> operation — tracking inbound, issue, replacement, return, and reverse logistics, and maintaining accurate records to prevent missing items, delays, and <b>duplicate purchases</b>.</li>
+          <li>Acted as the link between internal departments and external suppliers: coordinated supplies, rental devices, facilities, and outsourced services, verified vendor billing and delivery against orders and contracts, and supported contract documentation and <span class="nb">internal approval procedures</span>.</li>
+          <li>Turned a vendor's fee-increase demand into a performance-based agreement built on call data both sides trusted: fees stayed flat until the vendor sustained a <b>90% response rate</b> for 3 months, then rose 2.5% only after that proof.</li>
+          <li>Created and updated operational <b>checklists and SOPs</b> to standardize recurring tasks, improving handover accuracy and following up on open requests until completion.</li>
+          <li>Handled confidential employee, vendor, and administrative information with accuracy and discretion under strict confidentiality requirements.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Customer Support / Operations</h3>
+            <p class="org">Blizzard Entertainment</p>
+          </div>
+          <div class="meta">May 2019 – Dec 2021<br />Seoul, South Korea</div>
+        </div>
+        <ul>
+          <li>Resolved a high volume of cases (accounts, refunds, bugs, and incidents) on deadline using internal tools and English logs, helping raise team CSAT from <b>74% to 83%</b> and earning Employee of the Month.</li>
+          <li>Identified a recurring exception — payments on the wrong account that missed the 7-day refund window — <b>documented every recurrence with data</b>, and won team and US HQ approval to adopt it into the standard refund procedure.</li>
+          <li>Documented recurring issues and produced self-service content, including <b>60+ Korean player guides</b> on Wowhead, sharing only externally verified information and nothing internal or confidential.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Applied AI Program — Hands-on IT &amp; Cloud Projects</h3>
+            <p class="org">Intel AI for Future Workforce · team and solo projects</p>
+          </div>
+          <div class="meta">2025 – 2026</div>
+        </div>
+        <ul>
+          <li>Built <b>WalkMate</b>, an AI walking-guidance prototype, as team lead — connecting an app, AI detection, backend, and an operator dashboard for quality review <span class="nb">(React, FastAPI, Supabase, AWS&nbsp;S3)</span>.</li>
+          <li>Designed the core logic for <b>DeToks</b>, an LLM cost-optimization CLI, defining when saved results can safely be reused and collecting the edge cases where reuse would fail — a process-rules and exception-handling exercise.</li>
+          <li>Strengthened comfort with <b>cloud and IT systems</b>, technical documentation, and data-driven problem solving, reinforced by AWS Cloud Practitioner and AI Practitioner certifications.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="rows">
+        <div class="row"><b>Operations &amp; Logistics</b><span>Inventory &amp; asset management, stock control, reverse logistics, internal request handling, vendor coordination, documentation &amp; SOP updates</span></div>
+        <div class="row"><b>Tools &amp; Data</b><span>Microsoft Excel, Word, PowerPoint, Outlook, data tracking &amp; reporting, ticket / workflow systems</span></div>
+        <div class="row"><b>Process &amp; Communication</b><span>Process standardization, confidential information handling, cross-functional coordination, stakeholder follow-up, Kaizen / continuous-improvement mindset</span></div>
+        <div class="row"><b>Languages</b><span>Korean (native), English (business fluent: TOEIC 980, OPIc AL)</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education &amp; Certifications</h2>
+      <div class="rows">
+        <div class="row"><b>2025 – 2026</b><span>Intel AI for Future Workforce, Applied AI Program — <span class="nb">Outstanding Graduate Award</span></span></div>
+        <div class="row"><b>2013 – 2019</b><span>B.A. in Public Administration, Hankuk University of Foreign Studies</span></div>
+        <div class="row"><b>Certifications</b><span>AWS Certified Cloud Practitioner · AWS Certified AI Practitioner · Computer Specialist in Spreadsheet &amp; Database Level 1</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -28,7 +28,12 @@
       "Bash(node check-overflow.js)",
       "Bash(cp /tmp/shot.js /Users/evan-yoon/dev/personal/portfolio/portfolio-csm/shot.js)",
       "Bash(node shot.js)",
-      "Bash(node measure-issues.js)"
+      "Bash(node measure-issues.js)",
+      "Bash(mkdir -p Logistics-portfolio/english/reference Logistics-portfolio/assets)",
+      "Bash(cp portfolio-csm/styles.css Logistics-portfolio/styles.css)",
+      "Bash(cp portfolio-csm/print.css Logistics-portfolio/print.css)",
+      "Bash(cp portfolio-csm/english/styles.css Logistics-portfolio/english/styles.css)",
+      "Bash(cp portfolio-csm/assets/profile.png Logistics-portfolio/assets/profile.png)"
     ]
   }
 }
