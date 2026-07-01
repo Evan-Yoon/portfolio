@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jihyun Yoon | Cisco Associate Sales Representative — Application</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --body: #2c2c2e;
+      --muted: #6e6e73;
+      --accent: #0a6b91;
+      --rule: #1d1d1f;
+      --rule-soft: #d8d8dc;
+      --bg: #eceef0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--body);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nb {
+      white-space: nowrap;
+    }
+
+    .doc {
+      width: min(100%, 820px);
+      margin: 0 auto 40px;
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(29, 29, 31, 0.1);
+      padding: 64px 68px 72px;
+    }
+
+    .doc:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===================================================================
+       COVER LETTER  (.letter)
+       =================================================================== */
+
+    .letter {
+      line-height: 1.6;
+    }
+
+    .letter header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .letter h1 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .letter h1 strong {
+      font-weight: 700;
+    }
+
+    .letter .contact {
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .letter .contact span {
+      white-space: nowrap;
+    }
+
+    .letter .contact .sep {
+      margin: 0 7px;
+      color: var(--rule-soft);
+    }
+
+    .letter .rule {
+      border: none;
+      border-top: 1.5px solid var(--rule);
+      margin: 0 0 28px;
+    }
+
+    .letter .meta-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 26px;
+      font-size: 14px;
+    }
+
+    .letter .meta-line .to b {
+      color: var(--ink);
+    }
+
+    .letter .meta-line .to span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .letter .meta-line .date {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .letter .body p {
+      margin: 0 0 14px;
+      font-size: 14.5px;
+    }
+
+    .letter .body p.salute {
+      margin-bottom: 16px;
+    }
+
+    .letter .signoff {
+      margin-top: 22px;
+      font-size: 14.5px;
+    }
+
+    .letter .signoff .name {
+      margin-top: 4px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* ===================================================================
+       RESUME  (.cv)
+       =================================================================== */
+
+    .cv {
+      line-height: 1.55;
+    }
+
+    .cv header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .cv h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 300;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .cv h1 strong {
+      font-weight: 700;
+    }
+
+    .cv .role {
+      margin: 10px 0 0;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .cv .contact {
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .cv .contact span {
+      white-space: nowrap;
+    }
+
+    .cv .contact .sep {
+      margin: 0 7px;
+      color: var(--rule-soft);
+    }
+
+    .cv section {
+      margin-top: 30px;
+    }
+
+    .cv h2 {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--rule);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .cv .summary p {
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    .cv .highlights {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .cv .highlights li {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 16px;
+      align-items: baseline;
+      font-size: 14px;
+    }
+
+    .cv .highlights b {
+      color: var(--accent);
+      font-size: 15px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .cv .item {
+      margin-bottom: 22px;
+      break-inside: avoid;
+    }
+
+    .cv .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .cv .item h3 {
+      margin: 0;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .cv .item .org {
+      margin: 1px 0 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .cv .meta {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cv ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+    }
+
+    .cv li {
+      margin-bottom: 5px;
+      padding-left: 3px;
+      font-size: 14px;
+    }
+
+    .cv li:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv li b {
+      color: var(--ink);
+    }
+
+    .cv .rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cv .row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .cv .row b {
+      color: var(--ink);
+    }
+
+    .cv .row .meta {
+      text-align: left;
+      white-space: normal;
+    }
+
+    .cv .cert-list {
+      display: grid;
+      gap: 4px;
+    }
+
+    /* ===================================================================
+       SCREEN: small
+       =================================================================== */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 0;
+      }
+
+      .doc {
+        padding: 44px 26px 52px;
+        box-shadow: none;
+        margin-bottom: 0;
+      }
+
+      .letter h1 {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+
+      .letter .meta-line {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .cv h1 {
+        font-size: 26px;
+        letter-spacing: 3px;
+      }
+
+      .cv .item-head {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .cv .meta {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .cv .highlights li {
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .cv .row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    /* ===================================================================
+       PRINT
+       Page 1        = cover letter
+       Pages 2 & 3   = resume (summary + key results + experience,
+                       then projects + skills + education)
+       =================================================================== */
+
+    @page {
+      size: A4;
+      margin: 10mm 14mm;
+    }
+
+    @page cover {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+
+    .letter {
+      page: cover;
+    }
+
+    @media print {
+      html {
+        background: #fff;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .doc {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      /* ---- Cover letter ---- */
+
+      .letter {
+        line-height: 1.5;
+      }
+
+      .letter h1 {
+        font-size: 26px;
+      }
+
+      .letter .contact {
+        font-size: 11.5px;
+      }
+
+      .letter header {
+        margin-bottom: 24px;
+      }
+
+      .letter .rule {
+        margin-bottom: 20px;
+      }
+
+      .letter .meta-line {
+        margin-bottom: 18px;
+        font-size: 12.5px;
+      }
+
+      .letter .meta-line .to span,
+      .letter .meta-line .date {
+        font-size: 11.5px;
+      }
+
+      .letter .body p {
+        font-size: 12.5px;
+        margin-bottom: 11px;
+      }
+
+      .letter .signoff {
+        font-size: 12.5px;
+        margin-top: 16px;
+      }
+
+      /* ---- Resume ---- */
+
+      .cv {
+        line-height: 1.4;
+        break-before: page;
+      }
+
+      .cv h1 {
+        font-size: 24px;
+      }
+
+      .cv .contact {
+        margin-top: 8px;
+        font-size: 11.5px;
+      }
+
+      .cv .role {
+        font-size: 13px;
+      }
+
+      .cv .summary p,
+      .cv li,
+      .cv .highlights li,
+      .cv .row {
+        font-size: 12px;
+      }
+
+      .cv .highlights b {
+        font-size: 13px;
+      }
+
+      .cv h2 {
+        font-size: 12px;
+        margin-bottom: 8px;
+        padding-bottom: 3px;
+      }
+
+      .cv .item h3 {
+        font-size: 13.5px;
+      }
+
+      .cv .item .org {
+        font-size: 12px;
+      }
+
+      .cv .meta {
+        font-size: 11.5px;
+      }
+
+      .cv header {
+        margin-bottom: 4px;
+      }
+
+      .cv section {
+        margin-top: 15px;
+      }
+
+      .cv .item {
+        margin-bottom: 13px;
+      }
+
+      .cv ul {
+        margin-top: 5px;
+      }
+
+      .cv li {
+        margin-bottom: 3px;
+      }
+
+      .cv .highlights {
+        gap: 6px;
+      }
+
+      .cv .rows {
+        gap: 8px;
+      }
+
+      .cv .item,
+      .cv .highlights li,
+      .cv .row {
+        break-inside: avoid;
+      }
+
+      .cv h2 {
+        break-after: avoid;
+      }
+
+      /* Force the split: resume page 1 = summary + key results + experience,
+         resume page 2 = projects + skills + education. */
+      .cv .page-break {
+        break-before: page;
+      }
+
+      /* Resume page 2 sections: looser spacing so the second page fills out. */
+      .cv .page-break,
+      .cv .page-break ~ section {
+        margin-top: 26px;
+      }
+
+      .cv .page-break .item li,
+      .cv .page-break ~ section .row {
+        line-height: 1.6;
+      }
+
+      .cv .page-break .item {
+        margin-bottom: 20px;
+      }
+
+      .cv .page-break .item ul {
+        margin-top: 9px;
+      }
+
+      .cv .page-break .item li {
+        margin-bottom: 5px;
+      }
+
+      .cv .page-break ~ section .rows {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ============================ COVER LETTER ============================ -->
+  <main class="doc letter">
+    <header>
+      <h1>Jihyun <strong>Yoon</strong></h1>
+      <address class="contact">
+        <span>Seoul, South Korea</span><span class="sep">|</span>
+        <span><a href="mailto:wlgus1805@gmail.com">wlgus1805@gmail.com</a></span><span class="sep">|</span>
+        <span><a href="tel:+821040088197">+82 10-4008-8197</a></span><span class="sep">|</span>
+        <span><a href="https://evan-yoon.com">evan-yoon.com</a></span>
+      </address>
+    </header>
+
+    <hr class="rule" />
+
+    <div class="meta-line">
+      <div class="to">
+        <b>Cisco — Cisco Sales Associates Program (CSAP)</b>
+        <span>Associate Sales Representative, Korea — Training in Singapore</span>
+      </div>
+      <div class="date">July 2026</div>
+    </div>
+
+    <div class="body">
+      <p class="salute">Dear Cisco Hiring Team,</p>
+
+      <p>
+        I'm applying for the Associate Sales Representative role in the Cisco Sales Associates Program.
+        I'll be honest about where I stand: my background isn't in sales or technology, and I don't have
+        direct experience closing deals or selling networking and security solutions. What I do have is
+        the part of sales that's hardest to teach — building trust, handling a "no," and staying focused
+        when a conversation gets difficult — plus a real, recent turn toward technology that I want to
+        build a career on.
+      </p>
+
+      <p>
+        For three and a half years at Josun Hotels &amp; Resorts I managed partner relationships and
+        negotiated on shared numbers. My best result was turning a vendor's flat fee-increase demand into
+        a win&#8211;win: fees stayed frozen until they proved a 90% call-answer rate for three months,
+        and rose only 2.5% after that. I learned to lead with what the other side cares about — with
+        university partners, their students' careers rather than my open roles — and those relationships
+        kept sending referrals year after year. Before that, at Blizzard, I handled high-volume customer
+        cases in Korean and English, took plenty of "no" answers, and still helped lift team CSAT from
+        74% to 83%.
+      </p>
+
+      <p>
+        The turn toward technology is recent and deliberate. Through Intel's Applied AI program I led
+        small teams to ship working AI and cloud prototypes end to end, and I earned two AWS
+        certifications. On my own I built a market analysis that classified nearly 30,000 public
+        inquiries and benchmarked five vendors — the kind of prospecting and analysis this role's
+        AI-first approach rewards. I'm not going to pretend I'm an engineer, but I'm comfortable using AI
+        and cloud tools, and I get up to speed on something new by reading first, then asking.
+      </p>
+
+      <p>
+        So I want to be clear about why I'm applying to a program rather than a senior seat: I know this
+        is where I need to start, and that's exactly what draws me to CSAP. A structured year of
+        bootcamp, rotations, and coaching in Singapore is the fastest way for me to close the gap between
+        the relationship skills I already have and the technical sales craft I don't yet. If I'm selected
+        next year, I will give that training everything I have — I've changed direction once already to
+        chase this, and I don't intend to waste the chance.
+      </p>
+
+      <p>
+        I'm a native Korean speaker with business-level English (TOEIC&nbsp;980, OPIc&nbsp;AL), legally
+        authorized to work in Korea, and used to fast-paced, matrixed environments. More than any single
+        line on my resume, I want to do this work at Cisco. Thank you for considering someone who's
+        earlier in the journey but serious about it — I'd be glad to talk.
+      </p>
+
+      <div class="signoff">
+        Sincerely,
+        <div class="name">Jihyun Yoon</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================== RESUME ============================== -->
+  <main class="doc cv">
+    <header>
+      <h1>Jihyun <strong>Yoon</strong></h1>
+      <p class="role">Associate Sales Representative</p>
+      <address class="contact">
+        <span>Seoul, South Korea</span><span class="sep">|</span>
+        <span><a href="mailto:wlgus1805@gmail.com">wlgus1805@gmail.com</a></span><span class="sep">|</span>
+        <span><a href="tel:+821040088197">+82 10-4008-8197</a></span><br />
+        <span><a href="https://evan-yoon.com">evan-yoon.com</a></span><span class="sep">|</span>
+        <span><a href="https://www.linkedin.com/in/jihyun-yoon-a436101a3">linkedin.com/in/jihyun-yoon-a436101a3</a></span><span class="sep">|</span>
+        <span><a href="https://github.com/Evan-Yoon">github.com/Evan-Yoon</a></span>
+      </address>
+    </header>
+
+    <section class="summary">
+      <h2>Professional Summary</h2>
+      <p>
+        Relationship-driven professional moving into <b>technology sales</b>, with a Social Sciences
+        background and experience turning tough conversations into <b>win&#8211;win outcomes</b>. Spent
+        3.5&nbsp;years managing partners and negotiating on shared KPIs, plus nearly three years handling
+        high-volume customer cases where I learned to take the "no," pivot under pressure, and keep the
+        relationship. Comfortable using <b>AI and cloud tools</b> for market analysis and prospecting,
+        backed by AWS certifications and applied AI projects. Fluent in <b>Korean and English</b>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Results</h2>
+      <ul class="highlights">
+        <li><b>Win&#8211;win</b><span>Turned a vendor's flat fee-increase demand into a performance deal: fees held until the vendor proved a <b>90% call-answer rate</b> for 3&nbsp;months, then rose only&nbsp;2.5%.</span></li>
+        <li><b>5x</b><span>Growth in qualified pipeline inflow from a multi-channel prospecting strategy (LinkedIn, job boards, social, and ~50 partner&nbsp;relationships).</span></li>
+        <li><b>74% → 83%</b><span>Team customer satisfaction (CSAT) lift while handling high-volume cases under pressure at Blizzard Entertainment &#8212; earning Employee of the&nbsp;Month.</span></li>
+        <li><b>29,872</b><span>Public inquiries classified and 5 vendors benchmarked in a self-built market analysis using AI and cloud&nbsp;data.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Partner &amp; Talent Operations</h3>
+            <p class="org">Josun Hotels &amp; Resorts</p>
+          </div>
+          <div class="meta">Feb 2022 – Jul 2025<br />Seoul, South Korea</div>
+        </div>
+        <ul>
+          <li>Built and grew <b>long-term partner relationships</b> by leading with their goals rather than mine &#8212; for ~50 university partners, student internships and career outcomes over my vacancy list &#8212; so joint programs and referrals repeated <span class="nb">every year</span>.</li>
+          <li>Ran a <b>multi-channel prospecting pipeline</b> (LinkedIn, job boards, social media, and partnerships), growing qualified inflow <b>more than 5x</b> and keeping a standing pipeline for hard-to-fill needs.</li>
+          <li>Turned a vendor's fee-increase demand into a <b>win&#8211;win negotiation</b> tied to a metric both sides trusted: fees stayed flat until the vendor held a <b>90% call-answer rate</b> for 3&nbsp;months, and rose 2.5% only after that proof.</li>
+          <li>Aligned <b>hiring managers and internal stakeholders</b> across a matrixed organization &#8212; standardizing intake criteria and status tracking so every decision-maker had a clear, current view.</li>
+          <li>Helped cut annual turnover from <b>50% to 15%</b> by redesigning onboarding and holding 1:1 <span class="nb">follow-up interviews</span>, then routing each issue to the responsible owner and closing the loop.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Game Master / Customer Support</h3>
+            <p class="org">Blizzard Entertainment</p>
+          </div>
+          <div class="meta">May 2019 – Dec 2021<br />Seoul, South Korea</div>
+        </div>
+        <ul>
+          <li>Handled a high volume of player cases under pressure while juggling competing priorities, helping raise team CSAT from <b>74% to 83%</b> and earning <span class="nb">Employee of the Month</span>.</li>
+          <li>When policy forced a <b>"no,"</b> answered the customer's real question, owned the refusal, and proposed a product fix &#8212; showing refund terms before purchase &#8212; so a hard answer still built trust.</li>
+          <li>Spotted a recurring edge case, proved it with log data, and won team and <b>US HQ approval</b> to make the exception official policy, turning a one-off call into a repeatable rule.</li>
+          <li>Worked daily in <b>Korean and English</b> across a global organization, coordinating local and HQ stakeholders to get decisions made.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="page-break">
+      <h2>Selected Projects</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>AICC Adoption &amp; Automation Analysis</h3>
+            <p class="org">Market analysis &amp; opportunity mapping · <span class="nb">Solo project</span></p>
+          </div>
+          <div class="meta">2026<br /><a href="https://github.com/Evan-Yoon/aicc-ops-insight">github.com/Evan-Yoon/aicc-ops-insight</a></div>
+        </div>
+        <ul>
+          <li>Classified <b>29,872 public inquiries</b> into 8 categories and benchmarked <b>5 vendors</b> on product pages, onboarding, and disclosed metrics &#8212; the kind of <span class="nb">market analysis</span> that sharpens prospecting.</li>
+          <li>Mapped high-volume, low-risk clusters to automation and routed complex cases to expert review, translating raw data into a <b>clear business case</b> for where to focus.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>Applied AI Program — Hands-on Technical Projects</h3>
+            <p class="org">Intel AI for Future Workforce · Team Lead on multiple builds</p>
+          </div>
+          <div class="meta">2025 – 2026<br /><a href="https://evan-yoon.com">evan-yoon.com</a></div>
+        </div>
+        <ul>
+          <li>Led small teams to ship working <b>AI and cloud prototypes</b> end to end (RAG chatbots, AWS delivery, real-time 3D) &#8212; enough <b>technical fluency</b> to bridge customer needs and solutions.</li>
+          <li>Coordinated scope, schedule, and roles across 3&#8211;4 person teams, the same planning and prioritization a rotational sales program demands.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="rows">
+        <div class="row"><b>Sales &amp; Commercial</b><span>Relationship building, prospecting &amp; pipeline development, objection handling, KPI/value-based negotiation, stakeholder alignment, storytelling</span></div>
+        <div class="row"><b>Technology &amp; AI</b><span>AWS Cloud, AI tools for market analysis &amp; prospecting, RAG/LLM workflows, digital fluency across networking, security &amp; cloud concepts</span></div>
+        <div class="row"><b>Ways of Working</b><span>Fast-paced, matrixed environments, resilience under pressure, onboarding &amp; process design, reporting &amp; documentation</span></div>
+        <div class="row"><b>Languages</b><span>Korean (native), English (business fluent: TOEIC 980, OPIc AL)</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education &amp; Certifications</h2>
+      <div class="rows">
+        <div class="row"><b>2025 – 2026</b><span>Intel AI for Future Workforce, Applied AI Program — <span class="nb">Outstanding Graduate Award</span></span></div>
+        <div class="row"><b>2013 – 2019</b><span>B.A. in Public Administration, Hankuk University of Foreign Studies</span></div>
+        <div class="row"><b>Certifications</b><span>AWS Certified AI Practitioner · AWS Certified Cloud Practitioner · Computer Specialist in Spreadsheet &amp; Database Level 1</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
