@@ -34,7 +34,10 @@
       "Bash(cp portfolio-csm/print.css Logistics-portfolio/print.css)",
       "Bash(cp portfolio-csm/english/styles.css Logistics-portfolio/english/styles.css)",
       "Bash(cp portfolio-csm/assets/profile.png Logistics-portfolio/assets/profile.png)",
-      "PowerShell(node \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--dev-project-portfolio\\\\67d07063-9212-410c-abe6-010445a29a73\\\\scratchpad\\\\check.js\")"
+      "PowerShell(node \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--dev-project-portfolio\\\\67d07063-9212-410c-abe6-010445a29a73\\\\scratchpad\\\\check.js\")",
+      "Bash(mkdir -p \"C:/dev/project/portfolio/cv/Nexon/assets\")",
+      "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/styles.css\" \"C:/dev/project/portfolio/cv/AhnLab/print.css\" \"C:/dev/project/portfolio/cv/Nexon/\")",
+      "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/assets/profile.png\" \"C:/dev/project/portfolio/cv/Nexon/assets/\")"
     ]
   }
 }
