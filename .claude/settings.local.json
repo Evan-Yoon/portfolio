@@ -37,7 +37,9 @@
       "PowerShell(node \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--dev-project-portfolio\\\\67d07063-9212-410c-abe6-010445a29a73\\\\scratchpad\\\\check.js\")",
       "Bash(mkdir -p \"C:/dev/project/portfolio/cv/Nexon/assets\")",
       "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/styles.css\" \"C:/dev/project/portfolio/cv/AhnLab/print.css\" \"C:/dev/project/portfolio/cv/Nexon/\")",
-      "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/assets/profile.png\" \"C:/dev/project/portfolio/cv/Nexon/assets/\")"
+      "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/assets/profile.png\" \"C:/dev/project/portfolio/cv/Nexon/assets/\")",
+      "Bash(mkdir -p /c/dev/project/portfolio/cv/Sungdam/assets)",
+      "Bash(cp /c/dev/project/portfolio/portfolio-csm/assets/profile.png /c/dev/project/portfolio/cv/Sungdam/assets/profile.png)"
     ]
   }
 }
