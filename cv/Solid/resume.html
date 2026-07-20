@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤지현 | 인사·총무 (HRM · HRD · GA)</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --body: #2c2c2e;
+      --muted: #6e6e73;
+      --accent: #1f5fae;
+      --rule: #1d1d1f;
+      --rule-soft: #d8d8dc;
+      --bg: #eceef0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--body);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 24px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv {
+      width: min(100%, 820px);
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 12px 40px rgba(29, 29, 31, 0.1);
+      padding: 64px 68px 72px;
+    }
+
+    /* ---------- Header ---------- */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 8px;
+    }
+
+    .id-block {
+      text-align: left;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: var(--ink);
+    }
+
+    .role {
+      margin: 10px 0 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .contact {
+      margin: 12px 0 0;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .contact span {
+      white-space: nowrap;
+    }
+
+    .contact .sep {
+      margin: 0 7px;
+      color: var(--rule-soft);
+    }
+
+    .photo {
+      flex-shrink: 0;
+      width: 102px;
+      height: 132px;
+      object-fit: cover;
+      object-position: top;
+      border: 1px solid var(--rule-soft);
+      border-radius: 4px;
+    }
+
+    /* ---------- Sections ---------- */
+
+    section {
+      margin-top: 30px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--rule);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--ink);
+    }
+
+    .summary p {
+      margin: 0;
+      font-size: 14.5px;
+    }
+
+    /* ---------- Experience ---------- */
+
+    .item {
+      margin-bottom: 22px;
+      break-inside: avoid;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .item .org {
+      margin: 2px 0 0;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      padding-left: 3px;
+      font-size: 14px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    li b {
+      color: var(--ink);
+    }
+
+    /* ---------- Definition rows (skills, education) ---------- */
+
+    .rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 168px minmax(0, 1fr);
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .row b {
+      color: var(--ink);
+    }
+
+    .nb {
+      white-space: nowrap;
+    }
+
+    /* ---------- Screen: small ---------- */
+
+    @media (max-width: 720px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        padding: 44px 26px 52px;
+        box-shadow: none;
+      }
+
+      header {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .id-block {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+      }
+
+      .item-head {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .meta {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    /* ---------- Print ---------- */
+
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+
+    @media print {
+      html {
+        background: #fff;
+        line-height: 1.4;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .role {
+        font-size: 13px;
+      }
+
+      .contact {
+        margin-top: 8px;
+        font-size: 11.5px;
+      }
+
+      .photo {
+        width: 88px;
+        height: 114px;
+      }
+
+      .summary p,
+      li,
+      .row {
+        font-size: 12.5px;
+      }
+
+      h2 {
+        font-size: 12px;
+        margin-bottom: 9px;
+        padding-bottom: 5px;
+      }
+
+      .item h3 {
+        font-size: 13.5px;
+      }
+
+      .item .org {
+        font-size: 12px;
+      }
+
+      .meta {
+        font-size: 11.5px;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      header {
+        margin-bottom: 6px;
+      }
+
+      section {
+        margin-top: 18px;
+      }
+
+      .item {
+        margin-bottom: 12px;
+      }
+
+      ul {
+        margin-top: 5px;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .rows {
+        gap: 8px;
+      }
+
+      .item,
+      .row {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="cv">
+    <header>
+      <div class="id-block">
+        <h1>윤 지 현</h1>
+        <p class="role">인사 · 총무 (HRM · HRD · GA)</p>
+        <address class="contact">
+          <span>용인시 수지구</span><span class="sep">|</span>
+          <span><a href="mailto:wlgus1805@naver.com">wlgus1805@naver.com</a></span><span class="sep">|</span>
+          <span><a href="tel:+821040088197">010-4008-8197</a></span><br />
+          <span><a href="https://www.linkedin.com/in/jihyun-yoon-a436101a3">linkedin.com/in/jihyun-yoon-a436101a3</a></span>
+        </address>
+      </div>
+      <img class="photo" src="assets/profile.png" alt="윤지현 증명사진" />
+    </header>
+
+    <section class="summary">
+      <h2>요약</h2>
+      <p>
+        조선호텔앤리조트에서 <b>3년 6개월간 인사·총무 Generalist</b>로 채용(HRM)부터 온보딩·교육·조직문화
+        관리(HRD), 자산·계약·비용 관리(GA)까지 <b>인사총무 전 영역</b>을 담당했습니다. 연 약 600명 규모
+        채용을 운영해 충원율을 <b>60%에서 98%</b>로 높였고, 온보딩·조직문화 체계를 재설계해 연 이직률을
+        <b>50%에서 15%</b>로 낮췄습니다. 그 이전 블리자드 미국 본사와 협업하며 약 3년간 영어로 실무를 수행했고, <b>컴퓨터활용능력 1급</b>으로 MS-Office를 능숙하게
+        다룹니다. 통신·기술 중견기업의 인재육성 조직에서 HRD와 조직문화를 중심으로 기여하고자 지원합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2>경력</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>영업지원팀 · 인사/총무 담당</h3>
+            <p class="org">조선호텔앤리조트</p>
+          </div>
+          <div class="meta">2022.02 – 2025.07 (3년 6개월)<br />서울</div>
+        </div>
+        <ul>
+          <li><b>HRM · 채용</b> — 링크드인 등 채용 플랫폼·SNS·약 50개 대학 산학협력 채널을 운영해 연 약 600명 채용에서 지원자를 <b>5배</b>로 늘리고, 충원율을 <b>60%에서 98%</b>로 높였습니다.</li>
+          <li><b>HRD · 교육/온보딩</b> — 웰컴키트, 복리후생 제도 안내, 신규 입사자 교육, 신규 입사자 1:1 정기 면담까지 입사 초기 과정을 재설계해 조기 정착을 도왔습니다.</li>
+          <li><b>HRD · 조직문화</b> — 온보딩·면담 체계와 조직문화 개선을 통해 연 이직률을 <b>50%에서 15%</b>로 낮추고, 재직자 몰입도를 끌어올렸습니다.</li>
+          <li><b>보상·정산</b> — 산학실습생의 실습지원비를 근태 확인부터 지급액 산정·정산·지급까지 전담해, 지급 오류·민원 없이 운영했습니다.</li>
+          <li><b>GA · 총무/계약</b> — 콜센터 협력사의 수수료 인상 요구에 통화량·응대율 데이터를 근거로 <b>응대율 90%를 3개월 유지 시 2.5% 인상</b>하는 성과 연동 계약을 제안·합의하고, 계약 행정과 비용 정산을 관리했습니다.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div>
+            <h3>고객지원 게임마스터(GM)</h3>
+            <p class="org">Blizzard Entertainment</p>
+          </div>
+          <div class="meta">2019.05 – 2021.12 (2년 8개월)<br />서울</div>
+        </div>
+        <ul>
+          <li>계정·환불·버그 등 다양한 고객 문의를 사내 규정과 <b>영문 문서</b>를 근거로 처리해 팀 고객만족도(CSAT)를 <b>74%에서 83%</b>로 높였고, 이달의 사원에 선정되었습니다.</li>
+          <li>반복 민원의 원인을 로그 데이터로 입증해 팀과 <b>미국 본사</b>의 승인을 받아 예외 처리를 공식 규정으로 만드는 등, 근거 자료 기반의 제도화 경험을 쌓았습니다.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>보유 역량</h2>
+      <div class="rows">
+        <div class="row"><b>HRM</b><span>채용 기획·운영(플랫폼·SNS·산학협력), 실습지원비 산정·정산·지급, 근태 확인 — 평가·보상·인사제도 운영에 응용 가능</span></div>
+        <div class="row"><b>HRD</b><span>온보딩 설계·운영, 교육 일정 기획·조율, 조직문화 개선, 1:1 면담 운영(연 이직률 50%→15%)</span></div>
+        <div class="row"><b>GA · 총무</b><span>협력사 계약·수수료 협상, 데이터 기반 성과 연동 계약 설계, 계약 행정, 비용 정산, 복리후생 안내, 문서화·보고</span></div>
+        <div class="row"><b>영어</b><span>원어민급 영어 — TOEIC 980 · OPIc AL, 미국 본사와 직접 협업·영문 규정 검토 경험</span></div>
+        <div class="row"><b>OA 활용</b><span>MS-Office(Excel·PowerPoint·Word) 능숙 — 컴퓨터활용능력 1급, 데이터 정리·분석 및 보고 자료 작성</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>학력 · 자격증</h2>
+      <div class="rows">
+        <div class="row"><b>2013 – 2019</b><span>한국외국어대학교 행정학 학사</span></div>
+        <div class="row"><b>2025 – 2026</b><span>Intel AI for Future Workforce 응용 AI 과정 최우수 수료 — 인사 데이터 정리·업무 자동화에 활용</span></div>
+        <div class="row"><b>자격증</b><span>컴퓨터활용능력 1급 · TOEIC 980 · OPIc AL · AWS Certified AI Practitioner · AWS Certified Cloud Practitioner</span></div>
+      </div>
+    </section>
+
+  </main>
+</body>
+
+</html>

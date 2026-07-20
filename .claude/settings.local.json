@@ -39,7 +39,9 @@
       "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/styles.css\" \"C:/dev/project/portfolio/cv/AhnLab/print.css\" \"C:/dev/project/portfolio/cv/Nexon/\")",
       "Bash(cp \"C:/dev/project/portfolio/cv/AhnLab/assets/profile.png\" \"C:/dev/project/portfolio/cv/Nexon/assets/\")",
       "Bash(mkdir -p /c/dev/project/portfolio/cv/Sungdam/assets)",
-      "Bash(cp /c/dev/project/portfolio/portfolio-csm/assets/profile.png /c/dev/project/portfolio/cv/Sungdam/assets/profile.png)"
+      "Bash(cp /c/dev/project/portfolio/portfolio-csm/assets/profile.png /c/dev/project/portfolio/cv/Sungdam/assets/profile.png)",
+      "Bash(mkdir -p \"c:/dev/project/portfolio/cv/Solid/assets\")",
+      "Bash(cp \"c:/dev/project/portfolio/cv/Sungdam/assets/profile.png\" \"c:/dev/project/portfolio/cv/Solid/assets/profile.png\")"
     ]
   }
 }
